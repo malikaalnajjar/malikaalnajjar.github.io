@@ -21,8 +21,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#080812;--bg2:#0f0f23;--card:rgba(255,255,255,.04);
@@ -31,7 +31,7 @@
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6}
+    body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.6}
 
     /* scrollbar */
     ::-webkit-scrollbar{width:6px}
@@ -76,8 +76,10 @@
     .coop-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;flex-shrink:0}
 
     /* ── hero ── */
-    #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 2rem 2rem;text-align:center}
-    .hero-content{max-width:900px}
+    #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 2rem 4rem}
+    .hero-inner{display:flex;align-items:center;gap:5rem;width:100%;max-width:1200px;margin:0 auto}
+    .hero-content{flex:1}
+    .hero-photo{position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
     .hero-greeting{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:.92rem;margin-bottom:1rem;opacity:0;animation:fadeUp .6s .2s forwards}
     .hero-name{font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.1;margin-bottom:.9rem;opacity:0;animation:fadeUp .6s .4s forwards}
     .hero-name span{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -85,26 +87,26 @@
     .tw{color:var(--cyan);font-weight:600}
     .cur{display:inline-block;width:2px;height:1em;background:var(--cyan);margin-left:2px;animation:blink 1s infinite;vertical-align:middle}
     @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
-    .hero-desc{color:var(--muted);max-width:600px;margin:0 auto 2rem;font-size:1.02rem;line-height:1.85;opacity:0;animation:fadeUp .6s .8s forwards}
+    .hero-desc{color:var(--muted);max-width:600px;margin:0 0 2rem;font-size:1.02rem;line-height:1.85;opacity:0;animation:fadeUp .6s .8s forwards}
     .hero-desc strong{color:var(--text)}
-    .hero-badges{display:flex;gap:.55rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .95s forwards}
+    .hero-badges{display:flex;gap:.55rem;justify-content:flex-start;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .95s forwards}
     .badge{padding:.28rem .75rem;border-radius:50px;font-size:.76rem;font-weight:500;font-family:'JetBrains Mono',monospace}
     .badge-c{background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);color:var(--cyan)}
     .badge-p{background:rgba(0,191,165,.1);border:1px solid rgba(0,191,165,.3);color:var(--purple)}
-    .hero-btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+    .hero-btns{display:flex;gap:.9rem;justify-content:flex-start;flex-wrap:wrap;margin-bottom:2.5rem}
     .hb-anim{opacity:0;animation:fadeUp .6s 1.1s forwards}
-    .btn{padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.93rem;text-decoration:none;transition:.3s;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:none;font-family:'Inter',sans-serif}
+    .btn{padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.93rem;text-decoration:none;transition:.3s;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:none;font-family:'Space Grotesk',sans-serif}
     .btn-p{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
     .btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,230,118,.38)}
     .btn-s{background:transparent;color:var(--text);border:1px solid var(--border)}
     .btn-s:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
     .btn-g{background:rgba(255,255,255,.06);color:var(--text);border:1px solid var(--border)}
     .btn-g:hover{background:rgba(255,255,255,.1);transform:translateY(-3px)}
-    .hero-social{display:flex;gap:1.5rem;justify-content:center;opacity:0;animation:fadeUp .6s 1.2s forwards}
+    .hero-social{display:flex;gap:1.5rem;justify-content:flex-start;opacity:0;animation:fadeUp .6s 1.2s forwards}
     .soc{color:var(--muted);text-decoration:none;font-size:.86rem;display:flex;align-items:center;gap:.4rem;transition:.3s}
     .soc:hover{color:var(--cyan);transform:translateY(-2px)}
     .soc svg{width:17px;height:17px}
-    .hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);opacity:0;animation:fadeUp .6s 1.35s forwards;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border);opacity:0;animation:fadeUp .6s 1.35s forwards;flex-wrap:wrap;width:100%;max-width:1200px}
     .stat-num{font-size:2rem;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .stat-lbl{font-size:.73rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
 
@@ -117,7 +119,7 @@
 
     /* ── about ── */
     #about{padding:100px 0}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .about-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:start;max-width:800px;margin:0 auto}
     .about-text p{color:var(--muted);margin-bottom:1.2rem;line-height:1.85;font-size:1rem}
     .about-text p strong{color:var(--text)}
     .highlights{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.6rem}
@@ -235,10 +237,10 @@
     .form-box .sub{color:var(--muted);font-size:.81rem;margin-bottom:1.5rem}
     .fg{margin-bottom:1rem}
     .fg label{display:block;font-size:.8rem;font-weight:500;color:var(--muted);margin-bottom:.38rem}
-    .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.78rem .95rem;color:var(--text);font-size:.92rem;font-family:'Inter',sans-serif;transition:.3s;outline:none;resize:vertical}
+    .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.78rem .95rem;color:var(--text);font-size:.92rem;font-family:'Space Grotesk',sans-serif;transition:.3s;outline:none;resize:vertical}
     .fg textarea{min-height:100px}
     .fg input:focus,.fg textarea:focus{border-color:var(--cyan);background:rgba(0,230,118,.04);box-shadow:0 0 0 3px rgba(0,230,118,.1)}
-    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Inter',sans-serif}
+    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Space Grotesk',sans-serif}
     .form-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,230,118,.36)}
 
     /* ── cv dropdown ── */
@@ -385,7 +387,9 @@
       .hamburger{display:flex}
       #themeBtn span{display:none}
       .about-grid,.contact-grid{grid-template-columns:1fr}
-      .about-visual{order:-1;margin-bottom:1rem}
+      .hero-inner{flex-direction:column;gap:2.5rem;text-align:center}
+      .hero-badges,.hero-btns,.hero-social,.hero-sys{justify-content:center}
+      .hero-photo .photo-wrap{max-width:220px}
       .photo-wrap{max-width:240px;margin:0 auto}
       .loc-badge{display:none}
       .hero-stats{gap:1.4rem}
@@ -413,7 +417,7 @@
     .tl-dot{position:relative}
     .tl-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--cyan);opacity:0;animation:dot-ring 3s ease-in-out infinite}
     @keyframes dot-ring{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.9);opacity:0}}
-    .hero-sys{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.8rem;opacity:0;animation:fadeUp .6s .9s forwards}
+    .hero-sys{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);display:flex;align-items:center;justify-content:flex-start;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.8rem;opacity:0;animation:fadeUp .6s .9s forwards}
     .hsys-item{display:flex;align-items:center;gap:.35rem}
     .hsys-k{color:var(--cyan);opacity:.75}
     .hsys-v{color:var(--text)}
@@ -525,7 +529,8 @@
 
 <!-- ── Hero ── -->
 <section id="hero">
-  <div class="hero-content">
+  <div class="hero-inner">
+    <div class="hero-content">
     <div class="coop-banner"><span class="coop-dot"></span> Open to Co-op · Available from Jun 2026 · Jeddah, KSA</div>
     <p class="hero-greeting">// Hello, World! I'm</p>
     <h1 class="hero-name">Malik <span>AlNajjar</span></h1>
@@ -597,12 +602,23 @@
         Email
       </a>
     </div>
-    <div class="hero-stats">
-      <div class="stat-box"><span class="stat-key">gpa_score</span><div class="stat-num">4.96</div><div class="stat-lbl">/ 5.0</div></div>
-      <div class="stat-box"><span class="stat-key">certifications</span><div class="stat-num">10+</div><div class="stat-lbl">Earned</div></div>
-      <div class="stat-box"><span class="stat-key">projects_built</span><div class="stat-num">4+</div><div class="stat-lbl">Production</div></div>
-      <div class="stat-box"><span class="stat-key">students_reached</span><div class="stat-num">500+</div><div class="stat-lbl">Via GDG & ACM</div></div>
+    </div><!-- end hero-content -->
+    <div class="hero-photo">
+      <div class="photo-wrap">
+        <div class="photo-ring"></div>
+        <div class="photo-glow"></div>
+        <img src="profile.jpg" alt="Malik AlNajjar" id="profile-img">
+        <div id="photo-fallback" style="display:none;width:100%;aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,rgba(0,230,118,.1),rgba(0,191,165,.1));border:3px solid var(--bg);align-items:center;justify-content:center;position:relative;z-index:1;font-size:8rem;font-weight:900;color:rgba(0,191,165,.3)">MA</div>
+      </div>
+      <div class="loc-badge">📍 Jeddah, Saudi Arabia</div>
+      <div class="avail-badge"><span class="avail-dot"></span> Available for Co-op</div>
     </div>
+  </div><!-- end hero-inner -->
+  <div class="hero-stats">
+    <div class="stat-box"><span class="stat-key">gpa_score</span><div class="stat-num">4.96</div><div class="stat-lbl">/ 5.0</div></div>
+    <div class="stat-box"><span class="stat-key">certifications</span><div class="stat-num">10+</div><div class="stat-lbl">Earned</div></div>
+    <div class="stat-box"><span class="stat-key">projects_built</span><div class="stat-num">4+</div><div class="stat-lbl">Production</div></div>
+    <div class="stat-box"><span class="stat-key">students_reached</span><div class="stat-num">500+</div><div class="stat-lbl">Via GDG & ACM</div></div>
   </div>
 </section>
 
@@ -626,16 +642,6 @@
           <div class="hl-card"><div class="hl-icon">🌍</div><div class="hl-title">Bilingual</div><div class="hl-desc">Arabic · English (IELTS 7.5)</div></div>
           <div class="hl-card"><div class="hl-icon">🤖</div><div class="hl-title">KAUST AI</div><div class="hl-desc">Advanced AI Specialization · 2025</div></div>
         </div>
-      </div>
-      <div class="about-visual fi" data-d="2">
-        <div class="photo-wrap">
-          <div class="photo-ring"></div>
-          <div class="photo-glow"></div>
-          <img src="profile.jpg" alt="Malik AlNajjar" id="profile-img">
-          <div id="photo-fallback" style="display:none;width:100%;aspect-ratio:1;border-radius:18px;background:linear-gradient(135deg,rgba(0,230,118,.1),rgba(0,191,165,.1));border:3px solid var(--bg);align-items:center;justify-content:center;position:relative;z-index:1;font-size:8rem;font-weight:900;background-clip:text;-webkit-background-clip:text;color:rgba(0,191,165,.3)">MA</div>
-        </div>
-        <div class="loc-badge">📍 Jeddah, Saudi Arabia</div>
-        <div class="avail-badge"><span class="avail-dot"></span> Available for Co-op</div>
       </div>
     </div>
   </div>
