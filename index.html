@@ -419,9 +419,86 @@
     .hsys-k{color:var(--cyan);opacity:.75}
     .hsys-v{color:var(--text)}
     .hsys-sep{opacity:.2;font-size:.7rem}
+
+    /* ── deep data theme ── */
+    /* scan lines */
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.018) 3px,rgba(0,0,0,.018) 4px);pointer-events:none;z-index:0}
+    /* HUD corner overlays */
+    .hud{position:fixed;font-family:'JetBrains Mono',monospace;font-size:.55rem;color:rgba(0,230,118,.28);pointer-events:none;z-index:50;letter-spacing:.5px;line-height:1.7;transition:.3s}
+    .hud-tl{top:4.8rem;left:1.1rem}
+    .hud-tr{top:4.8rem;right:1.1rem;text-align:right}
+    .hud-bl{bottom:2rem;left:1.1rem}
+    .hud-br{bottom:2rem;right:1.1rem;text-align:right}
+    body.light .hud{color:rgba(0,122,69,.25)}
+    @media(max-width:1024px){.hud{display:none}}
+    /* card corner brackets */
+    .proj-card::after{content:'';position:absolute;inset:0;border-radius:20px;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(to right,var(--cyan) 10px,transparent 10px) top left / 100% 1px no-repeat,linear-gradient(to bottom,var(--cyan) 10px,transparent 10px) top left / 1px 100% no-repeat,linear-gradient(to left,var(--cyan) 10px,transparent 10px) top right / 100% 1px no-repeat,linear-gradient(to bottom,var(--cyan) 10px,transparent 10px) top right / 1px 100% no-repeat,linear-gradient(to right,var(--cyan) 10px,transparent 10px) bottom left / 100% 1px no-repeat,linear-gradient(to top,var(--cyan) 10px,transparent 10px) bottom left / 1px 100% no-repeat,linear-gradient(to left,var(--cyan) 10px,transparent 10px) bottom right / 100% 1px no-repeat,linear-gradient(to top,var(--cyan) 10px,transparent 10px) bottom right / 1px 100% no-repeat}
+    .proj-card:hover::after{opacity:.5}
+    .skill-cat::after{content:'';position:absolute;inset:0;border-radius:16px;opacity:0;transition:opacity .35s;pointer-events:none;background:linear-gradient(to right,var(--cyan) 8px,transparent 8px) top left / 100% 1px no-repeat,linear-gradient(to bottom,var(--cyan) 8px,transparent 8px) top left / 1px 100% no-repeat,linear-gradient(to left,var(--cyan) 8px,transparent 8px) top right / 100% 1px no-repeat,linear-gradient(to bottom,var(--cyan) 8px,transparent 8px) top right / 1px 100% no-repeat,linear-gradient(to right,var(--cyan) 8px,transparent 8px) bottom left / 100% 1px no-repeat,linear-gradient(to top,var(--cyan) 8px,transparent 8px) bottom left / 1px 100% no-repeat,linear-gradient(to left,var(--cyan) 8px,transparent 8px) bottom right / 100% 1px no-repeat,linear-gradient(to top,var(--cyan) 8px,transparent 8px) bottom right / 1px 100% no-repeat}
+    .skill-cat:hover::after{opacity:.45}
+    .skill-cat{position:relative}
+    /* status bar */
+    #statusbar{position:fixed;bottom:0;left:0;right:0;height:22px;background:rgba(0,230,118,.05);border-top:1px solid rgba(0,230,118,.12);display:flex;align-items:center;padding:0 1.2rem;gap:0;z-index:90;backdrop-filter:blur(12px);overflow:hidden}
+    .sb-seg{display:flex;align-items:center;gap:.5rem;padding:0 .9rem;border-right:1px solid rgba(0,230,118,.1);height:100%;font-family:'JetBrains Mono',monospace;font-size:.58rem;color:rgba(0,230,118,.5);white-space:nowrap}
+    .sb-seg:first-child{padding-left:0}
+    .sb-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0;animation:pulse 2s infinite}
+    .sb-right{margin-left:auto;border-right:none;border-left:1px solid rgba(0,230,118,.1)}
+    body.light #statusbar{background:rgba(0,122,69,.04);border-top-color:rgba(0,122,69,.12)}
+    body.light .sb-seg{color:rgba(0,122,69,.5)}
+    @media(max-width:900px){#statusbar{display:none}}
+    /* section header accent line */
+    .sec-hdr{position:relative;padding-bottom:.5rem}
+    .sec-tag{display:inline-flex;align-items:center;gap:.5rem}
+    .sec-tag::before{content:'';display:inline-block;width:18px;height:1px;background:var(--cyan);opacity:.6}
+    .sec-tag::after{content:'';display:inline-block;width:18px;height:1px;background:var(--cyan);opacity:.6}
+    /* logo glitch */
+    .logo:hover{animation:glitch .35s steps(2,end)}
+    @keyframes glitch{0%{transform:none;opacity:1}25%{transform:translate(-2px,0) skewX(-2deg);opacity:.9}50%{transform:translate(2px,0) skewX(1deg);opacity:.95}75%{transform:translate(-1px,1px);opacity:.9}100%{transform:none;opacity:1}}
+    /* skill count badge */
+    .sk-count{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--cyan);background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.18);border-radius:4px;padding:.06rem .32rem;margin-left:auto;flex-shrink:0;opacity:.85}
+    body.light .sk-count{background:rgba(0,122,69,.08);border-color:rgba(0,122,69,.2)}
+    /* timeline live badge */
+    .tl-live{display:inline-flex;align-items:center;gap:.3rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--cyan);background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.22);border-radius:4px;padding:.1rem .38rem;margin-top:.45rem}
+    .tl-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;flex-shrink:0}
+    /* data divider */
+    .data-divider{display:flex;align-items:center;gap:.6rem;margin:0 0 3rem;opacity:.2;pointer-events:none}
+    .data-divider span{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:var(--cyan);white-space:nowrap}
+    .data-divider::before,.data-divider::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,var(--cyan),transparent)}
+    /* cert mini bar */
+    .cert-meta{display:flex;align-items:center;gap:.5rem;margin-top:.3rem}
+    .cert-bar-wrap{flex:1;height:2px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+    body.light .cert-bar-wrap{background:rgba(0,0,0,.07)}
+    .cert-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+    /* project card row labels */
+    .proj-row-label{font-family:'JetBrains Mono',monospace;font-size:.57rem;color:var(--cyan);opacity:.6;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.25rem;display:flex;align-items:center;gap:.35rem}
+    .proj-row-label::before{content:'';width:8px;height:1px;background:currentColor}
+    /* hero sys enhancements */
+    .hero-sys{border:1px solid rgba(0,230,118,.12);border-radius:8px;padding:.5rem 1rem;background:rgba(0,230,118,.03)}
+    body.light .hero-sys{border-color:rgba(0,122,69,.12);background:rgba(0,122,69,.03)}
+    /* skills grid position:relative for ::after */
+    .skill-cat{position:relative}
+    /* about highlights data style */
+    .hl-card{position:relative;overflow:hidden}
+    .hl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.3s}
+    .hl-card:hover::before{opacity:.6}
   </style>
 </head>
 <body>
+
+<!-- HUD corners -->
+<div class="hud hud-tl">SYS :: PORTFOLIO_v2<br>STATUS :: ONLINE<br>NODE :: MAN_JEDDAH_SA</div>
+<div class="hud hud-tr">LAT: 21.4858°N<br>LON: 39.1925°E<br>UTC+03:00 · KSA</div>
+<div class="hud hud-bl">BUILD :: 2026.04<br>STACK :: PY|SQL|AWS<br>GPA :: 4.96/5.0</div>
+<div class="hud hud-br">CERT_COUNT :: 10+<br>PROJECTS :: 4+<br>BRANCH :: main</div>
+<!-- status bar -->
+<div id="statusbar">
+  <div class="sb-seg"><span class="sb-dot"></span>malik.portfolio.v2</div>
+  <div class="sb-seg">Python · SQL · AWS · dbt</div>
+  <div class="sb-seg">GPA: 4.96/5.0</div>
+  <div class="sb-seg">10+ Certs</div>
+  <div class="sb-seg">Open to Co-op</div>
+  <div class="sb-seg sb-right">Jeddah, KSA · UTC+03:00</div>
+</div>
 
 <div id="progress"></div>
 <div class="orb orb1"></div>
@@ -538,6 +615,7 @@
       <h2 class="sec-title">Who I <span>Am</span></h2>
       <p class="sec-sub">A passionate builder at the intersection of data and engineering</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="about-grid">
       <div class="about-text fi" data-d="1">
         <p>I'm a <strong>final-year Software Engineering student</strong> at the University of Business and Technology (UBT) in Jeddah, Saudi Arabia, graduating June 2026 with a GPA of <strong>4.96/5.0</strong>.</p>
@@ -572,6 +650,7 @@
       <h2 class="sec-title">My <span>Timeline</span></h2>
       <p class="sec-sub">Key milestones from certifications to competitions</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="tl-wrap">
 
       <div class="tl-item fi" data-d="1">
@@ -599,7 +678,7 @@
       </div>
 
       <div class="tl-item fi" data-d="5">
-        <div class="tl-left tl-content"><div class="tl-date">Oct 2025</div><div class="tl-title">GDG Outreach Team Leader</div><div class="tl-sub">Led outreach for GDG On Campus UBT, organizing workshops and community events for 100+ students.</div><span class="tl-tag">Leadership</span></div>
+        <div class="tl-left tl-content"><div class="tl-date">Oct 2025</div><div class="tl-title">GDG Outreach Team Leader</div><div class="tl-sub">Led outreach for GDG On Campus UBT, organizing workshops and community events for 100+ students.</div><span class="tl-tag">Leadership</span><span class="tl-live">LIVE · ongoing</span></div>
         <div class="tl-dot-col"><div class="tl-dot"></div></div>
         <div class="tl-empty"></div>
       </div>
@@ -646,24 +725,25 @@
       <h2 class="sec-title">Technical <span>Arsenal</span></h2>
       <p class="sec-sub">Tools and technologies I work with daily</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="skills-grid">
       <div class="skill-cat fi" data-d="1">
-        <div class="sk-hdr"><div class="sk-icon c">☁️</div><div class="sk-title">Cloud & Data Engineering</div></div>
+        <div class="sk-hdr"><div class="sk-icon c">☁️</div><div class="sk-title">Cloud & Data Engineering</div><span class="sk-count">10 tools</span></div>
         <div class="sk-schema"><b>▸</b> SCHEMA: cloud_engineering</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (S3, Glue, Athena, Lambda)</span><span class="tt">ETL/ELT Pipeline Design</span><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Great Expectations</span><span class="tt">Docker</span><span class="tt">ECS Fargate</span><span class="tt">CloudWatch</span><span class="tt">IAM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="2">
-        <div class="sk-hdr"><div class="sk-icon p">💻</div><div class="sk-title">Languages & Databases</div></div>
+        <div class="sk-hdr"><div class="sk-icon p">💻</div><div class="sk-title">Languages & Databases</div><span class="sk-count">9 tools</span></div>
         <div class="sk-schema"><b>▸</b> SCHEMA: languages_databases</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, Scikit-learn)</span><span class="tt">SQL (PostgreSQL, MySQL)</span><span class="tt">JavaScript</span><span class="tt">R</span><span class="tt">Redis</span><span class="tt">FastAPI</span><span class="tt">Prophet</span><span class="tt">One-Class SVM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="3">
-        <div class="sk-hdr"><div class="sk-icon pk">📊</div><div class="sk-title">BI & Analytics</div></div>
+        <div class="sk-hdr"><div class="sk-icon pk">📊</div><div class="sk-title">BI & Analytics</div><span class="sk-count">8 tools</span></div>
         <div class="sk-schema"><b>▸</b> SCHEMA: analytics_viz</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Power BI (DAX, Power Query, RLS)</span><span class="tt">Tableau</span><span class="tt">Statistical Analysis / EDA</span><span class="tt">Predictive Analytics</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span><span class="tt">Excel (Adv.)</span><span class="tt">QuickSight</span></div>
       </div>
       <div class="skill-cat fi" data-d="4">
-        <div class="sk-hdr"><div class="sk-icon g">🔧</div><div class="sk-title">IoT & Systems</div></div>
+        <div class="sk-hdr"><div class="sk-icon g">🔧</div><div class="sk-title">IoT & Systems</div><span class="sk-count">9 tools</span></div>
         <div class="sk-schema"><b>▸</b> SCHEMA: iot_systems</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">IoT (ESP32, MQTT)</span><span class="tt">Edge Computing (Jetson Nano, ROS)</span><span class="tt">REST APIs & WebSocket</span><span class="tt">Linux / Bash</span><span class="tt">TLS 1.3</span><span class="tt">AES-256</span><span class="tt">LiDAR</span><span class="tt">RealSense</span><span class="tt">Git</span></div>
       </div>
@@ -679,6 +759,7 @@
       <h2 class="sec-title">What I've <span>Built</span></h2>
       <p class="sec-sub">Real-world systems solving real problems</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">SENSE</span><span class="pipe-arr">→</span><span class="pipe-step">MQTT</span><span class="pipe-arr">→</span><span class="pipe-step">POSTGRES</span><span class="pipe-arr">→</span><span class="pipe-step">FORECAST</span></div></div></div>
@@ -687,6 +768,7 @@
           <div class="proj-name">AUJ / أوج</div>
           <div class="proj-type">Smart Retail Shelf System</div>
           <span class="proj-qchip">SELECT * FROM iot_pipeline WHERE status = 'live'</span>
+          <div class="proj-row-label">output metrics</div>
           <p class="proj-desc">Full-stack IoT data pipeline: 3 ESP32 nodes → MQTT → PostgreSQL (8-table schema, 4+ indexes) → FastAPI (30 REST endpoints + real-time WebSocket) → Power BI dashboard with 5+ KPIs. Prophet forecasting on 6-month dataset automates restocking decisions.</p>
           <div class="proj-stack"><span class="stag">ESP32</span><span class="stag">MQTT</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">Prophet</span><span class="stag">WebSocket</span><span class="stag">Power BI</span><span class="stag">React</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -704,6 +786,7 @@
           <div class="proj-name">Sadeed / سديد</div>
           <div class="proj-type">Data Quality & Validation Platform</div>
           <span class="proj-qchip">VALIDATE :: gastat_datasets | anomaly_detection = ON</span>
+          <div class="proj-row-label">output metrics</div>
           <p class="proj-desc">3-layer ETL validation across 3–5 GASTAT government datasets: schema checks (Great Expectations), statistical profiling, ML anomaly detection (One-Class SVM, zero labelled examples). AWS ECS Fargate with Redis caching: 60%+ latency reduction. Arabic LLM reports with zero data leaving the government network.</p>
           <div class="proj-stack"><span class="stag">FastAPI</span><span class="stag">Redis</span><span class="stag">Great Expectations</span><span class="stag">One-Class SVM</span><span class="stag">AWS ECS</span><span class="stag">Ollama</span><span class="stag">Browser Ext.</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -761,16 +844,17 @@
       <h2 class="sec-title">Industry <span>Expertise</span></h2>
       <p class="sec-sub">Recognized credentials across cloud, data, and management</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="certs-grid">
 
       <a class="cert-card fi" data-d="1" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e8f3f85e0d1d48ca96ae3df34a5c1d8b" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div></div>
+        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:95%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="2" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2269df70c0b541a7b84f18c44f1af1d7" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div></div>
+        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:85%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="3" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b49917149eb4b62b2511ab26977c150" target="_blank" rel="noopener">
@@ -785,7 +869,7 @@
 
       <a class="cert-card fi" data-d="5" href="https://certificates.cdmp.info/23a27237-e1f7-4983-ae06-1fe4cac8e6b5" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(0,58,112,.15)"><img src="dama.png" alt="DAMA"><span class="fb" style="color:#4a9edd">DAMA</span></div>
-        <div><div class="cert-name">Certified Data Management Prof.</div><div class="cert-issuer">DAMA International</div><div class="cert-date">CDMP · Jan 2026</div></div>
+        <div><div class="cert-name">Certified Data Management Prof.</div><div class="cert-issuer">DAMA International</div><div class="cert-date">CDMP · Jan 2026</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:80%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="6" href="https://www.credly.com/badges/d742f1a6-64b2-4faf-92ae-f039d93beb1f/linked_in_profile" target="_blank" rel="noopener">
@@ -835,6 +919,7 @@
       <h2 class="sec-title">Achievements & <span>Impact</span></h2>
       <p class="sec-sub">Beyond the code: competing, leading, and contributing</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="awards-grid">
       <div class="aw-card fi" data-d="1"><div class="aw-icon">🥈</div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">UBT · Saudi Arabia</div><p class="aw-desc">Achieved 2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication.</p><div class="aw-date">2025</div></div>
       <div class="aw-card fi" data-d="2"><div class="aw-icon">🏆</div><div class="aw-title">Top 15 Nationwide: AVITHON 2025</div><div class="aw-org">GACA, General Authority of Civil Aviation</div><p class="aw-desc">Ranked Top 15 of 500+ teams with Project Tayseer, an autonomous wheelchair pipeline. Field research at KAIA Jeddah Airport.</p><div class="aw-date">Jul 2025</div></div>
@@ -857,6 +942,7 @@
       <h2 class="sec-title">Let's <span>Connect</span></h2>
       <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
     </div>
+    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="contact-grid">
       <div class="fi" data-d="1">
         <div class="contact-info">
@@ -910,13 +996,14 @@
 <button class="stbtn" id="stbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// ── PARTICLES ──
+// ── CANVAS ──
 const cvs = document.getElementById('canvas-bg');
 const cx = cvs.getContext('2d');
-let pts = [];
+let pts = [], rainCols = [];
+const RAIN_CHARS = '0123456789ABCDEF01><{}[];=_|+';
 function resize(){ cvs.width=innerWidth; cvs.height=innerHeight; }
 resize();
-window.addEventListener('resize',()=>{ resize(); init(); });
+window.addEventListener('resize',()=>{ resize(); init(); initRain(); });
 class P {
   constructor(){ this.r(); }
   r(){ this.x=Math.random()*cvs.width; this.y=Math.random()*cvs.height; this.vx=(Math.random()-.5)*.38; this.vy=(Math.random()-.5)*.38; this.s=Math.random()*1.4+.4; this.o=Math.random()*.38+.08; this.col=Math.random()>.5?'0,230,118':'0,191,165'; }
@@ -924,8 +1011,36 @@ class P {
   d(){ cx.beginPath(); cx.arc(this.x,this.y,this.s,0,Math.PI*2); cx.fillStyle=`rgba(${this.col},${this.o})`; cx.fill(); }
 }
 function init(){ pts=[]; const n=Math.min(Math.floor(cvs.width*cvs.height/11000),110); for(let i=0;i<n;i++)pts.push(new P()); }
+function initRain(){
+  rainCols=[];
+  const cw=28, num=Math.floor(cvs.width/cw);
+  for(let i=0;i<num;i++){
+    const len=Math.floor(Math.random()*8+5);
+    rainCols.push({
+      x:i*cw+cw/2, y:Math.random()*cvs.height,
+      speed:Math.random()*.5+.2,
+      chars:Array.from({length:len},()=>RAIN_CHARS[Math.floor(Math.random()*RAIN_CHARS.length)]),
+      op:Math.random()*.045+.015, active:Math.random()>.4
+    });
+  }
+}
+function drawRain(){
+  cx.font='9px JetBrains Mono,monospace';
+  rainCols.forEach(col=>{
+    if(!col.active)return;
+    col.y+=col.speed;
+    if(col.y>cvs.height+col.chars.length*13){ col.y=-col.chars.length*13; col.op=Math.random()*.045+.015; col.active=Math.random()>.35; }
+    col.chars.forEach((ch,i)=>{
+      const fade=1-i/col.chars.length;
+      cx.fillStyle=`rgba(0,230,118,${col.op*fade})`;
+      cx.fillText(ch,col.x,col.y-i*13);
+    });
+    if(Math.random()<.04) col.chars[Math.floor(Math.random()*col.chars.length)]=RAIN_CHARS[Math.floor(Math.random()*RAIN_CHARS.length)];
+  });
+}
 function draw(){
   cx.clearRect(0,0,cvs.width,cvs.height);
+  drawRain();
   pts.forEach(p=>{p.u();p.d();});
   for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
     const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
@@ -933,7 +1048,7 @@ function draw(){
   }
   requestAnimationFrame(draw);
 }
-init(); draw();
+init(); initRain(); draw();
 
 // ── TYPEWRITER ──
 const roles=['Data Engineer','Software Engineer','Data Analyst','AWS Cloud Architect','ETL Pipeline Builder'];
@@ -970,6 +1085,34 @@ const hbg=document.getElementById('hbg');
 const nl=document.getElementById('navLinks');
 hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); nl.classList.toggle('open'); document.body.classList.toggle('nav-open',nl.classList.contains('open')); });
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); nl.classList.remove('open'); document.body.classList.remove('nav-open'); }));
+
+// ── STAT COUNTERS ──
+function animCount(el,raw,dur){
+  const isFloat=raw.includes('.');
+  const num=parseFloat(raw);
+  const suf=raw.replace(/[\d.]/g,'');
+  const start=Date.now();
+  const tick=()=>{
+    const p=Math.min((Date.now()-start)/dur,1);
+    const e=1-Math.pow(1-p,3);
+    el.textContent=(isFloat?( num*e).toFixed(2):Math.floor(num*e))+suf;
+    if(p<1)requestAnimationFrame(tick);
+    else el.textContent=raw;
+  };
+  tick();
+}
+const statObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const numEl=e.target.querySelector('.stat-num');
+      if(numEl&&!e.target.dataset.counted){
+        e.target.dataset.counted='1';
+        animCount(numEl,numEl.textContent,1400);
+      }
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.stat-box').forEach(b=>statObs.observe(b));
 
 // ── SCROLL ANIMATIONS ──
 const obs=new IntersectionObserver(entries=>{
