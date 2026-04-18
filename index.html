@@ -257,15 +257,54 @@
     .cv-item-sub{font-size:.73rem;color:var(--muted)}
 
     /* ── light mode ── */
-    body.light{--bg:#f4f6f8;--bg2:#e8ecf0;--card:rgba(0,0,0,.04);--text:#1a1a2e;--muted:#5a5a7a;--border:rgba(0,0,0,.09)}
-    body.light nav.scrolled{background:rgba(244,246,248,.95)}
-    body.light .orb{opacity:.06}
-    body.light #canvas-bg{opacity:.35}
-    body.light .cv-menu{background:#ffffff;border-color:rgba(0,0,0,.14);box-shadow:0 12px 40px rgba(0,0,0,.14),0 0 0 1px rgba(0,230,118,.07)}
-    body.light .cv-item{color:#1a1a2e}
-    body.light .cv-item-sub{color:#5a5a7a}
+    body.light{
+      --bg:#f5f7fa;--bg2:#eaedf2;--card:rgba(0,0,0,.045);
+      --text:#0d1117;--muted:#5a6478;--border:rgba(0,0,0,.1);
+      --cyan:#007a45;--purple:#006b5e;--pink:#2d9e6e;--green:#1a7a3c;
+    }
+    body.light nav.scrolled{background:rgba(245,247,250,.96);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+    body.light .orb{opacity:.04}
+    body.light #canvas-bg{opacity:.12}
+    /* section alternating backgrounds */
+    body.light #timeline,body.light #skills,body.light #certifications,body.light #contact{background:rgba(0,0,0,.025)}
+    /* hero badges */
+    body.light .badge-c{background:rgba(0,122,69,.1);border-color:rgba(0,122,69,.3)}
+    body.light .badge-p{background:rgba(0,107,94,.1);border-color:rgba(0,107,94,.3)}
+    /* tech tags */
+    body.light .tt{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.1);color:var(--muted)}
+    body.light .tt:hover{background:rgba(0,122,69,.1);border-color:rgba(0,122,69,.3);color:var(--cyan)}
+    /* stack tags on project cards */
+    body.light .stag{background:rgba(0,107,94,.08);border-color:rgba(0,107,94,.2)}
+    /* timeline & award tags */
+    body.light .tl-tag{background:rgba(0,122,69,.1);border-color:rgba(0,122,69,.25)}
+    body.light .tl-content:hover{border-color:rgba(0,122,69,.35);box-shadow:0 8px 24px rgba(0,122,69,.1)}
+    /* project card accents */
+    body.light .proj-card:hover{border-color:rgba(0,122,69,.3);box-shadow:0 32px 64px rgba(0,0,0,.1),0 0 30px rgba(0,122,69,.08)}
+    body.light .proj-link{background:rgba(0,122,69,.08);border-color:rgba(0,122,69,.3)}
+    body.light .proj-link:hover{background:rgba(0,122,69,.15);border-color:var(--cyan)}
+    /* cert cards */
+    body.light .cert-card:hover{border-color:rgba(0,122,69,.3);box-shadow:0 0 22px rgba(0,122,69,.08)}
+    /* award cards */
+    body.light .aw-card:hover{border-color:rgba(0,122,69,.22)}
+    /* highlight cards */
+    body.light .hl-card:hover{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,122,69,.1)}
+    /* contact links */
+    body.light .clink:hover{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,122,69,.08)}
+    body.light .clink-ico{background:rgba(0,122,69,.1)}
+    /* form inputs */
+    body.light .fg input,body.light .fg textarea{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.12)}
+    body.light .fg input:focus,body.light .fg textarea:focus{background:rgba(0,122,69,.03);border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,122,69,.1)}
+    /* cv dropdown */
+    body.light .cv-menu{background:#ffffff;border-color:rgba(0,0,0,.14);box-shadow:0 12px 40px rgba(0,0,0,.14)}
+    body.light .cv-item{color:#0d1117}
+    body.light .cv-item-sub{color:#5a6478}
     body.light .cv-item-icon{background:rgba(0,0,0,.06)}
-    body.light .cv-item:hover{background:rgba(0,230,118,.07);border-color:rgba(0,230,118,.2)}
+    body.light .cv-item:hover{background:rgba(0,122,69,.07);border-color:rgba(0,122,69,.2)}
+    /* copy email tooltip */
+    body.light .clink-copy .tooltip{background:#ffffff;border-color:rgba(0,0,0,.12);color:#0d1117}
+    /* scroll progress & scroll-to-top */
+    body.light #progress{background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink))}
+    body.light .stbtn{background:linear-gradient(135deg,var(--cyan),var(--purple))}
 
     /* ── theme toggle ── */
     .theme-btn{background:none;border:1px solid var(--border);border-radius:50px;padding:.35rem .8rem;color:var(--muted);cursor:pointer;font-size:.8rem;display:flex;align-items:center;gap:.4rem;transition:.25s;flex-shrink:0}
@@ -274,7 +313,7 @@
 
     /* ── timeline ── */
     #timeline{padding:100px 0;background:rgba(15,15,35,.5)}
-    body.light #timeline{background:rgba(0,0,0,.02)}
+
     .tl-wrap{position:relative;max-width:800px;margin:0 auto}
     .tl-wrap::before{content:'';position:absolute;left:50%;transform:translateX(-50%);top:0;bottom:0;width:2px;background:linear-gradient(var(--cyan),var(--purple));opacity:.25}
     .tl-item{display:grid;grid-template-columns:1fr 44px 1fr;gap:0;margin-bottom:2.5rem;align-items:start}
