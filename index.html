@@ -130,8 +130,7 @@
     /* ── profile photo ── */
     .about-visual{position:relative;display:flex;align-items:center;justify-content:center}
     .photo-wrap{position:relative;width:min(360px,100%)}
-    .photo-ring{position:absolute;inset:-4px;border-radius:22px;background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));z-index:0;animation:spinGrad 6s linear infinite}
-    @keyframes spinGrad{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+    .photo-ring{position:absolute;inset:-4px;border-radius:22px;background:var(--cyan);z-index:0}
     .photo-glow{position:absolute;inset:-8px;border-radius:26px;background:linear-gradient(135deg,var(--cyan),var(--purple));filter:blur(22px);opacity:.35;z-index:-1}
     .photo-wrap img{width:100%;aspect-ratio:1;object-fit:cover;object-position:top center;border-radius:18px;display:block;position:relative;z-index:1;border:3px solid var(--bg)}
     .avail-badge{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:var(--bg2);border:1px solid rgba(34,197,94,.4);border-radius:50px;padding:.45rem 1.1rem;font-size:.8rem;font-weight:600;color:var(--green);display:flex;align-items:center;gap:.45rem;white-space:nowrap;z-index:2;backdrop-filter:blur(10px)}
