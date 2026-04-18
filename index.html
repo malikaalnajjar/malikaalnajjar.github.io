@@ -379,8 +379,9 @@
     }
     /* ── mobile ── */
     @media(max-width:768px){
-      .nav-links{display:none;position:fixed;inset:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;font-size:1.15rem}
+      .nav-links{display:none;position:fixed;inset:0;background:var(--bg);background-color:var(--bg);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;font-size:1.15rem}
       .nav-links.open{display:flex}
+      body.nav-open #canvas-bg,body.nav-open .orb{opacity:0;pointer-events:none}
       .hamburger{display:flex}
       #themeBtn span{display:none}
       .about-grid,.contact-grid{grid-template-columns:1fr}
@@ -923,8 +924,8 @@ window.addEventListener('scroll',()=>{
 // ── HAMBURGER ──
 const hbg=document.getElementById('hbg');
 const nl=document.getElementById('navLinks');
-hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); nl.classList.toggle('open'); });
-nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); nl.classList.remove('open'); }));
+hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); nl.classList.toggle('open'); document.body.classList.toggle('nav-open',nl.classList.contains('open')); });
+nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ hbg.classList.remove('open'); nl.classList.remove('open'); document.body.classList.remove('nav-open'); }));
 
 // ── SCROLL ANIMATIONS ──
 const obs=new IntersectionObserver(entries=>{
