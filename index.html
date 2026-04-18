@@ -4,6 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malik AlNajjar — Data Engineer & Software Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080812'/><text x='50' y='72' font-family='Inter,sans-serif' font-size='58' font-weight='900' text-anchor='middle' fill='%2300e676'>M</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Malik AlNajjar — Data Engineer & Software Engineer">
+  <meta property="og:description" content="Final-year SWE student at UBT (GPA 4.96/5.0). Building ETL/ELT pipelines, AWS cloud infrastructure, and IoT data systems. 10+ certifications. Open to co-op.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malikaalnajjar.github.io">
+  <meta property="og:image" content="https://malikaalnajjar.github.io/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Malik AlNajjar — Data Engineer & Software Engineer">
+  <meta name="twitter:description" content="Final-year SWE at UBT · AWS DEA-C01 · DAMA CDMP · PMI CAPM · Open to co-op">
+  <meta name="twitter:image" content="https://malikaalnajjar.github.io/profile.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,7 +54,8 @@
     .logo{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
     .nav-links{display:flex;gap:2rem;list-style:none}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:.3s;position:relative;padding-bottom:2px}
-    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--cyan);transition:.3s}
+    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--cyan);transition:width .35s cubic-bezier(.4,0,.2,1),opacity .35s}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .35s;position:relative;padding-bottom:2px}
     .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
     .nav-links a:hover::after,.nav-links a.active::after{width:100%}
     .nav-cta{background:linear-gradient(135deg,var(--cyan),var(--purple))!important;color:#fff!important;padding:.4rem 1.1rem;border-radius:50px;font-weight:600!important}
@@ -54,6 +70,10 @@
     /* ── sections / layout ── */
     section{position:relative;z-index:1}
     .container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+    /* ── coop banner ── */
+    .coop-banner{display:inline-flex;align-items:center;gap:.55rem;background:rgba(0,230,118,.07);border:1px solid rgba(0,230,118,.25);border-radius:50px;padding:.4rem 1rem;font-size:.8rem;font-weight:600;color:var(--cyan);margin-bottom:1.2rem;opacity:0;animation:fadeUp .6s .05s forwards}
+    .coop-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;flex-shrink:0}
 
     /* ── hero ── */
     #hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 2rem 2rem;text-align:center}
@@ -138,6 +158,11 @@
     .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));opacity:0;transition:.3s}
     .proj-card:hover::before{opacity:1}
     .proj-card:hover{transform:translateY(-9px);border-color:rgba(0,230,118,.3);box-shadow:0 32px 64px rgba(0,0,0,.4),0 0 30px rgba(0,230,118,.08)}
+    .proj-visual{height:90px;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+    .proj-visual::before{content:'';position:absolute;inset:0;opacity:.15}
+    .proj-visual-inner{position:relative;z-index:1;display:flex;align-items:center;gap:.6rem}
+    .proj-visual-ico{font-size:2rem;filter:drop-shadow(0 0 12px currentColor)}
+    .proj-visual-tag{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;padding:.22rem .6rem;border-radius:20px;backdrop-filter:blur(6px)}
     .proj-top{padding:1.75rem 1.75rem .9rem;display:flex;justify-content:space-between;align-items:flex-start}
     .proj-ico{width:52px;height:52px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
     .proj-award{background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.28);color:#ffd700;padding:.26rem .65rem;border-radius:50px;font-size:.72rem;font-weight:600}
@@ -170,6 +195,15 @@
     .cert-name{font-weight:700;font-size:.85rem;margin-bottom:.15rem;line-height:1.3}
     .cert-issuer{color:var(--muted);font-size:.75rem;margin-bottom:.15rem}
     .cert-date{font-family:'JetBrains Mono',monospace;font-size:.69rem;color:var(--cyan)}
+    .cert-valid{font-family:'JetBrains Mono',monospace;font-size:.63rem;color:var(--green);opacity:.7;margin-top:.1rem}
+
+    /* ── copy email ── */
+    .clink-copy{position:relative;margin-left:auto;background:none;border:none;color:var(--muted);cursor:pointer;padding:.3rem;border-radius:6px;transition:.2s;flex-shrink:0;display:flex;align-items:center}
+    .clink-copy:hover{color:var(--cyan);background:rgba(0,230,118,.1)}
+    .clink-copy svg{width:14px;height:14px}
+    .clink-copy .tooltip{position:absolute;right:0;top:-28px;background:#13132a;border:1px solid var(--border);border-radius:6px;padding:.2rem .5rem;font-size:.7rem;white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
+    .clink-copy.copied .tooltip{opacity:1}
+    .clink-copy.copied{color:var(--cyan)}
 
     /* ── awards ── */
     #awards{padding:100px 0}
@@ -285,6 +319,7 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <div class="hero-content">
+    <div class="coop-banner"><span class="coop-dot"></span> Open to Co-op · Available from Jun 2026 · Jeddah, KSA</div>
     <p class="hero-greeting">// Hello, World! I'm</p>
     <h1 class="hero-name">Malik <span>AlNajjar</span></h1>
     <p class="hero-role"><span id="tw" class="tw"></span><span class="cur"></span></p>
@@ -428,6 +463,7 @@
     </div>
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"><div class="proj-visual-inner"><span class="proj-visual-ico">🛒</span><span class="proj-visual-tag" style="background:rgba(0,230,118,.15);color:#00e676;border:1px solid rgba(0,230,118,.3)">IoT · Data Pipeline</span></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🛒</div><span class="proj-award">🎓 Senior Capstone 2025–26</span></div>
         <div class="proj-body">
           <div class="proj-name">AUJ / أوج</div>
@@ -437,6 +473,7 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="2">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"><div class="proj-visual-inner"><span class="proj-visual-ico">🔍</span><span class="proj-visual-tag" style="background:rgba(0,191,165,.15);color:#00bfa5;border:1px solid rgba(0,191,165,.3)">Data Quality · ML</span></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)">🔍</div><span class="proj-award">🏆 GASTAT Finalist</span></div>
         <div class="proj-body">
           <div class="proj-name">Sadeed / سديد</div>
@@ -447,6 +484,7 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="3">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><span class="proj-visual-ico">♿</span><span class="proj-visual-tag" style="background:rgba(105,240,174,.15);color:#69f0ae;border:1px solid rgba(105,240,174,.3)">Edge AI · Robotics</span></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)">♿</div><span class="proj-award">🥇 Top 15 / 500+ Teams</span></div>
         <div class="proj-body">
           <div class="proj-name">Tayseer / تيسير</div>
@@ -456,6 +494,7 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="4">
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><span class="proj-visual-ico">🏔️</span><span class="proj-visual-tag" style="background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)">Cloud · Vision 2030</span></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)">🏔️</div><span class="proj-award">🌟 Aseer Tabtaker 2025</span></div>
         <div class="proj-body">
           <div class="proj-name">Masra / مَشرَى</div>
@@ -480,17 +519,17 @@
 
       <a class="cert-card fi" data-d="1" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e8f3f85e0d1d48ca96ae3df34a5c1d8b" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div></div>
+        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div></div>
       </a>
 
       <a class="cert-card fi" data-d="2" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2269df70c0b541a7b84f18c44f1af1d7" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div></div>
+        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div></div>
       </a>
 
       <a class="cert-card fi" data-d="3" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b49917149eb4b62b2511ab26977c150" target="_blank" rel="noopener">
         <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">CLF-C02 · Nov 2025</div></div>
+        <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">CLF-C02 · Nov 2025</div><div class="cert-valid">Valid until Nov 2028</div></div>
       </a>
 
       <div class="cert-card fi" data-d="4">
@@ -579,6 +618,7 @@
           <a href="mailto:malik-naj@hotmail.com" class="clink">
             <div class="clink-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
             <div><div class="clink-lbl">Email</div><div class="clink-val">malik-naj@hotmail.com</div></div>
+            <button class="clink-copy" onclick="copyEmail(event)" title="Copy email"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg><span class="tooltip">Copied!</span></button>
           </a>
           <a href="https://linkedin.com/in/malik-alnajjar" target="_blank" class="clink">
             <div class="clink-ico" style="background:rgba(0,119,181,.15)"><svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
@@ -694,6 +734,9 @@ document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 // ── CV DROPDOWN ──
 function toggleCV(e){ e.stopPropagation(); const d=document.getElementById('cvDropdown'); const open=d.classList.toggle('open'); d.querySelector('.cv-trigger').setAttribute('aria-expanded',open); }
 document.addEventListener('click',()=>{ const d=document.getElementById('cvDropdown'); if(d){d.classList.remove('open');d.querySelector('.cv-trigger').setAttribute('aria-expanded','false');} });
+
+// ── COPY EMAIL ──
+function copyEmail(e){ e.preventDefault(); e.stopPropagation(); navigator.clipboard.writeText('malik-naj@hotmail.com').then(()=>{ const btn=e.currentTarget; btn.classList.add('copied'); setTimeout(()=>btn.classList.remove('copied'),2000); }); }
 
 // ── CONTACT FORM ──
 function handleForm(e){ e.preventDefault(); const btn=document.getElementById('fbtn'); btn.textContent='Sent! ✓'; btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)'; setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; e.target.reset(); },3200); }
