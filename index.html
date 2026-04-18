@@ -393,6 +393,32 @@
       .proj-grid,.skills-grid,.certs-grid,.awards-grid{grid-template-columns:1fr}
       .form-box{margin-top:0}
     }
+    /* ── data theme ── */
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,230,118,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,.018) 1px,transparent 1px);background-size:55px 55px;pointer-events:none;z-index:0}
+    body.light::before{background-image:linear-gradient(rgba(0,122,69,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,122,69,.04) 1px,transparent 1px)}
+    .pipe-flow{display:flex;align-items:center;gap:.28rem;font-family:'JetBrains Mono',monospace;font-size:.56rem;font-weight:700;flex-wrap:wrap;justify-content:center}
+    .pipe-step{padding:.14rem .4rem;border-radius:4px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.88)}
+    .pipe-arr{color:var(--cyan);font-size:.65rem;opacity:.65}
+    body.light .pipe-step{background:rgba(0,0,0,.07);border-color:rgba(0,0,0,.12);color:rgba(0,0,0,.7)}
+    .stat-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.9rem 1.4rem;text-align:center;backdrop-filter:blur(10px);transition:.3s}
+    .stat-box:hover{border-color:rgba(0,230,118,.35);box-shadow:0 0 24px rgba(0,230,118,.12);transform:translateY(-3px)}
+    body.light .stat-box:hover{border-color:rgba(0,122,69,.35);box-shadow:0 0 24px rgba(0,122,69,.1)}
+    .stat-key{font-family:'JetBrains Mono',monospace;font-size:.56rem;color:var(--muted);text-transform:lowercase;letter-spacing:.5px;margin-bottom:.25rem;display:block;opacity:.75}
+    .sk-schema{font-family:'JetBrains Mono',monospace;font-size:.6rem;display:flex;align-items:center;gap:.38rem;margin-bottom:.75rem;padding-bottom:.55rem;border-bottom:1px solid var(--border);color:var(--muted);opacity:.8}
+    .sk-schema b{color:var(--cyan);font-weight:700}
+    .proj-qchip{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);padding:.1rem .4rem;background:rgba(0,230,118,.06);border:1px solid rgba(0,230,118,.15);border-radius:4px;display:inline-block;margin-bottom:.35rem;letter-spacing:.2px}
+    body.light .proj-qchip{background:rgba(0,122,69,.06);border-color:rgba(0,122,69,.2)}
+    .proj-card:hover{box-shadow:inset 3px 0 0 var(--cyan),0 32px 64px rgba(0,0,0,.4),0 0 30px rgba(0,230,118,.08)}
+    .skill-cat:hover{box-shadow:inset 3px 0 0 var(--cyan),0 20px 40px rgba(0,0,0,.3)}
+    .aw-card:hover{box-shadow:inset 3px 0 0 var(--cyan)}
+    .tl-dot{position:relative}
+    .tl-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--cyan);opacity:0;animation:dot-ring 3s ease-in-out infinite}
+    @keyframes dot-ring{0%,100%{transform:scale(1);opacity:.35}50%{transform:scale(1.9);opacity:0}}
+    .hero-sys{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.8rem;opacity:0;animation:fadeUp .6s .9s forwards}
+    .hsys-item{display:flex;align-items:center;gap:.35rem}
+    .hsys-k{color:var(--cyan);opacity:.75}
+    .hsys-v{color:var(--text)}
+    .hsys-sep{opacity:.2;font-size:.7rem}
   </style>
 </head>
 <body>
@@ -441,6 +467,15 @@
       <span class="badge badge-c">CompTIA Data+</span>
       <span class="badge badge-p">IELTS 7.5</span>
     </div>
+    <div class="hero-sys">
+      <span class="hsys-item"><span class="hsys-k">role:</span><span class="hsys-v">data_engineer</span></span>
+      <span class="hsys-sep">//</span>
+      <span class="hsys-item"><span class="hsys-k">gpa:</span><span class="hsys-v">4.96/5.0</span></span>
+      <span class="hsys-sep">//</span>
+      <span class="hsys-item"><span class="hsys-k">certs:</span><span class="hsys-v">10+</span></span>
+      <span class="hsys-sep">//</span>
+      <span class="hsys-item"><span class="hsys-k">status:</span><span class="hsys-v" style="color:var(--cyan)">open_to_coop</span></span>
+    </div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-p hb-anim">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0l-7 7m7-7l-7-7"/></svg>
@@ -487,10 +522,10 @@
       </a>
     </div>
     <div class="hero-stats">
-      <div><div class="stat-num">4.96</div><div class="stat-lbl">GPA / 5.0</div></div>
-      <div><div class="stat-num">10+</div><div class="stat-lbl">Certifications</div></div>
-      <div><div class="stat-num">4+</div><div class="stat-lbl">Projects</div></div>
-      <div><div class="stat-num">500+</div><div class="stat-lbl">Students Reached</div></div>
+      <div class="stat-box"><span class="stat-key">gpa_score</span><div class="stat-num">4.96</div><div class="stat-lbl">/ 5.0</div></div>
+      <div class="stat-box"><span class="stat-key">certifications</span><div class="stat-num">10+</div><div class="stat-lbl">Earned</div></div>
+      <div class="stat-box"><span class="stat-key">projects_built</span><div class="stat-num">4+</div><div class="stat-lbl">Production</div></div>
+      <div class="stat-box"><span class="stat-key">students_reached</span><div class="stat-num">500+</div><div class="stat-lbl">Via GDG & ACM</div></div>
     </div>
   </div>
 </section>
@@ -499,7 +534,7 @@
 <section id="about">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">01 · About</span>
+      <span class="sec-tag">-- 01 // about</span>
       <h2 class="sec-title">Who I <span>Am</span></h2>
       <p class="sec-sub">A passionate builder at the intersection of data and engineering</p>
     </div>
@@ -533,7 +568,7 @@
 <section id="timeline">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">02 · Journey</span>
+      <span class="sec-tag">-- 02 // journey</span>
       <h2 class="sec-title">My <span>Timeline</span></h2>
       <p class="sec-sub">Key milestones from certifications to competitions</p>
     </div>
@@ -607,25 +642,29 @@
 <section id="skills">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">03 · Skills</span>
+      <span class="sec-tag">-- 03 // tech_stack</span>
       <h2 class="sec-title">Technical <span>Arsenal</span></h2>
       <p class="sec-sub">Tools and technologies I work with daily</p>
     </div>
     <div class="skills-grid">
       <div class="skill-cat fi" data-d="1">
         <div class="sk-hdr"><div class="sk-icon c">☁️</div><div class="sk-title">Cloud & Data Engineering</div></div>
+        <div class="sk-schema"><b>▸</b> SCHEMA: cloud_engineering</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (S3, Glue, Athena, Lambda)</span><span class="tt">ETL/ELT Pipeline Design</span><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Great Expectations</span><span class="tt">Docker</span><span class="tt">ECS Fargate</span><span class="tt">CloudWatch</span><span class="tt">IAM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="2">
         <div class="sk-hdr"><div class="sk-icon p">💻</div><div class="sk-title">Languages & Databases</div></div>
+        <div class="sk-schema"><b>▸</b> SCHEMA: languages_databases</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, Scikit-learn)</span><span class="tt">SQL (PostgreSQL, MySQL)</span><span class="tt">JavaScript</span><span class="tt">R</span><span class="tt">Redis</span><span class="tt">FastAPI</span><span class="tt">Prophet</span><span class="tt">One-Class SVM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="3">
         <div class="sk-hdr"><div class="sk-icon pk">📊</div><div class="sk-title">BI & Analytics</div></div>
+        <div class="sk-schema"><b>▸</b> SCHEMA: analytics_viz</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Power BI (DAX, Power Query, RLS)</span><span class="tt">Tableau</span><span class="tt">Statistical Analysis / EDA</span><span class="tt">Predictive Analytics</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span><span class="tt">Excel (Adv.)</span><span class="tt">QuickSight</span></div>
       </div>
       <div class="skill-cat fi" data-d="4">
         <div class="sk-hdr"><div class="sk-icon g">🔧</div><div class="sk-title">IoT & Systems</div></div>
+        <div class="sk-schema"><b>▸</b> SCHEMA: iot_systems</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">IoT (ESP32, MQTT)</span><span class="tt">Edge Computing (Jetson Nano, ROS)</span><span class="tt">REST APIs & WebSocket</span><span class="tt">Linux / Bash</span><span class="tt">TLS 1.3</span><span class="tt">AES-256</span><span class="tt">LiDAR</span><span class="tt">RealSense</span><span class="tt">Git</span></div>
       </div>
     </div>
@@ -636,17 +675,18 @@
 <section id="projects">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">04 · Projects</span>
+      <span class="sec-tag">-- 04 // project_log</span>
       <h2 class="sec-title">What I've <span>Built</span></h2>
       <p class="sec-sub">Real-world systems solving real problems</p>
     </div>
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"><div class="proj-visual-inner"><span class="proj-visual-ico">🛒</span><span class="proj-visual-tag" style="background:rgba(0,230,118,.15);color:#00e676;border:1px solid rgba(0,230,118,.3)">IoT · Data Pipeline</span></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">SENSE</span><span class="pipe-arr">→</span><span class="pipe-step">MQTT</span><span class="pipe-arr">→</span><span class="pipe-step">POSTGRES</span><span class="pipe-arr">→</span><span class="pipe-step">FORECAST</span></div></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🛒</div><span class="proj-award">🎓 Senior Capstone 2025–26</span></div>
         <div class="proj-body">
           <div class="proj-name">AUJ / أوج</div>
           <div class="proj-type">Smart Retail Shelf System</div>
+          <span class="proj-qchip">SELECT * FROM iot_pipeline WHERE status = 'live'</span>
           <p class="proj-desc">Full-stack IoT data pipeline: 3 ESP32 nodes → MQTT → PostgreSQL (8-table schema, 4+ indexes) → FastAPI (30 REST endpoints + real-time WebSocket) → Power BI dashboard with 5+ KPIs. Prophet forecasting on 6-month dataset automates restocking decisions.</p>
           <div class="proj-stack"><span class="stag">ESP32</span><span class="stag">MQTT</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">Prophet</span><span class="stag">WebSocket</span><span class="stag">Power BI</span><span class="stag">React</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -658,11 +698,12 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="2">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"><div class="proj-visual-inner"><span class="proj-visual-ico">🔍</span><span class="proj-visual-tag" style="background:rgba(0,191,165,.15);color:#00bfa5;border:1px solid rgba(0,191,165,.3)">Data Quality · ML</span></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">EXTRACT</span><span class="pipe-arr">→</span><span class="pipe-step">VALIDATE</span><span class="pipe-arr">→</span><span class="pipe-step">DETECT</span><span class="pipe-arr">→</span><span class="pipe-step">REPORT</span></div></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)">🔍</div><span class="proj-award">🏆 GASTAT Finalist</span></div>
         <div class="proj-body">
           <div class="proj-name">Sadeed / سديد</div>
           <div class="proj-type">Data Quality & Validation Platform</div>
+          <span class="proj-qchip">VALIDATE :: gastat_datasets | anomaly_detection = ON</span>
           <p class="proj-desc">3-layer ETL validation across 3–5 GASTAT government datasets: schema checks (Great Expectations), statistical profiling, ML anomaly detection (One-Class SVM, zero labelled examples). AWS ECS Fargate with Redis caching: 60%+ latency reduction. Arabic LLM reports with zero data leaving the government network.</p>
           <div class="proj-stack"><span class="stag">FastAPI</span><span class="stag">Redis</span><span class="stag">Great Expectations</span><span class="stag">One-Class SVM</span><span class="stag">AWS ECS</span><span class="stag">Ollama</span><span class="stag">Browser Ext.</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -675,11 +716,12 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="3">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><span class="proj-visual-ico">♿</span><span class="proj-visual-tag" style="background:rgba(105,240,174,.15);color:#69f0ae;border:1px solid rgba(105,240,174,.3)">Edge AI · Robotics</span></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">LIDAR</span><span class="pipe-arr">+</span><span class="pipe-step">DEPTH</span><span class="pipe-arr">→</span><span class="pipe-step">FUSE</span><span class="pipe-arr">→</span><span class="pipe-step">NAVIGATE</span></div></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)">♿</div><span class="proj-award">🥇 Top 15 / 500+ Teams</span></div>
         <div class="proj-body">
           <div class="proj-name">Tayseer / تيسير</div>
           <div class="proj-type">Autonomous Wheelchair Edge Pipeline · AVITHON 2025 (GACA)</div>
+          <span class="proj-qchip">PROCESS :: edge_inference | sensors = [lidar, depth]</span>
           <p class="proj-desc">2-source sensor fusion pipeline (LiDAR + Intel RealSense) on NVIDIA Jetson Nano for real-time obstacle detection. TLS 1.3/AES-256 security architecture. Field research at KAIA Jeddah Airport. Ranked Top 15 of 500+ teams nationwide.</p>
           <div class="proj-stack"><span class="stag">Jetson Nano</span><span class="stag">ROS</span><span class="stag">LiDAR</span><span class="stag">RealSense</span><span class="stag">TLS 1.3</span><span class="stag">AES-256</span><span class="stag">Python</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -691,11 +733,12 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="4">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><span class="proj-visual-ico">🏔️</span><span class="proj-visual-tag" style="background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3)">Cloud · Vision 2030</span></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">IOT</span><span class="pipe-arr">→</span><span class="pipe-step">INGEST</span><span class="pipe-arr">→</span><span class="pipe-step">ALERT</span><span class="pipe-arr">→</span><span class="pipe-step">SERVE</span></div></div></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)">🏔️</div><span class="proj-award">🌟 Aseer Tabtaker 2025</span></div>
         <div class="proj-body">
           <div class="proj-name">Masra / مَسرَى</div>
           <div class="proj-type">Smart Adventure Tourism Platform</div>
+          <span class="proj-qchip">INGEST :: iot_sensors | region = 'aseer_ksa'</span>
           <p class="proj-desc">Cloud data architecture for real-time IoT sensor ingestion and AI-powered safety alerts for adventure tourism in Aseer. Aligned with Saudi Vision 2030 and presented to regional government stakeholders.</p>
           <div class="proj-stack"><span class="stag">AI</span><span class="stag">IoT</span><span class="stag">Cloud</span><span class="stag">Mobile</span><span class="stag">Vision 2030</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -714,7 +757,7 @@
 <section id="certifications">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">05 · Certifications</span>
+      <span class="sec-tag">-- 05 // credentials</span>
       <h2 class="sec-title">Industry <span>Expertise</span></h2>
       <p class="sec-sub">Recognized credentials across cloud, data, and management</p>
     </div>
@@ -788,7 +831,7 @@
 <section id="awards">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">06 · Awards & Leadership</span>
+      <span class="sec-tag">-- 06 // achievements</span>
       <h2 class="sec-title">Achievements & <span>Impact</span></h2>
       <p class="sec-sub">Beyond the code: competing, leading, and contributing</p>
     </div>
@@ -810,7 +853,7 @@
 <section id="contact">
   <div class="container">
     <div class="sec-hdr fi">
-      <span class="sec-tag">07 · Contact</span>
+      <span class="sec-tag">-- 07 // connect</span>
       <h2 class="sec-title">Let's <span>Connect</span></h2>
       <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
     </div>
