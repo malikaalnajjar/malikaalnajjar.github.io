@@ -531,6 +531,30 @@
     .photo-ring{border-radius:50%}
     .photo-glow{border-radius:50%}
 
+    /* Aesthetic spacing & polish */
+    #about,#skills,#projects,#certifications,#awards,#contact,#timeline{padding:110px 0}
+    .sec-hdr{margin-bottom:3rem}
+    .sec-title{letter-spacing:-.02em}
+    .hero-name{letter-spacing:-.03em}
+    .skills-grid,.proj-grid{gap:1.6rem}
+    .certs-grid{gap:1.2rem}
+    .awards-grid{gap:1.6rem}
+    .highlights{gap:1rem}
+    .hl-card{padding:1.2rem 1.1rem}
+    .proj-card{border-radius:16px}
+    .cert-card{border-radius:12px;padding:1.2rem 1.4rem}
+    .aw-card{border-radius:14px;padding:1.6rem}
+    .tl-content{border-radius:12px}
+    .skill-cat{border-radius:14px;padding:1.6rem}
+    .contact-grid{gap:3rem}
+    .form-box{border-radius:16px;padding:2.2rem}
+    .clinks{gap:.65rem}
+    .clink{border-radius:10px}
+    /* CV dropdown cleaner */
+    .cv-item{padding:.75rem 1rem;gap:.7rem}
+    .cv-item-title{font-size:.9rem}
+    .cv-item-sub{font-size:.76rem}
+
     /* Loader */
     #loader{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:opacity .55s .05s,visibility .55s .05s}
     #loader.done{opacity:0;visibility:hidden;pointer-events:none}
@@ -629,15 +653,12 @@
         </button>
         <div class="cv-menu" id="cvMenu" role="menu">
           <a href="Malik AlNajjar CV.pdf" download class="cv-item" role="menuitem">
-            <div class="cv-item-icon"></div>
             <div><div class="cv-item-title">General CV</div><div class="cv-item-sub">Software Eng · Data Eng · Analyst</div></div>
           </a>
           <a href="Malik AlNajjar Data Engineer CV.pdf" download class="cv-item" role="menuitem">
-            <div class="cv-item-icon"></div>
             <div><div class="cv-item-title">Data Engineer CV</div><div class="cv-item-sub">Pipelines · AWS · Cloud Infra</div></div>
           </a>
           <a href="Malik AlNajjar Data Analyst CV.pdf" download class="cv-item" role="menuitem">
-            <div class="cv-item-icon"></div>
             <div><div class="cv-item-title">Data Analyst CV</div><div class="cv-item-sub">BI · Power BI · Analytics</div></div>
           </a>
         </div>
@@ -690,10 +711,10 @@
         <p>I specialize in <strong>ETL/ELT data pipelines</strong>, <strong>AWS cloud infrastructure</strong>, and <strong>IoT data ingestion systems</strong>. My projects span edge sensors all the way to cloud analytics dashboards and BI reports.</p>
         <p>I'm bilingual (Arabic/English, IELTS 7.5), an <strong>Agile team contributor</strong>, and a technical community leader through GDG and ACM, driven by data-powered solutions aligned with <strong>Saudi Vision 2030</strong>.</p>
         <div class="highlights">
-          <div class="hl-card"><div class="hl-title">UBT, Jeddah</div><div class="hl-desc">B.Sc. Software Engineering · GPA 4.96/5.0</div></div>
-          <div class="hl-card"><div class="hl-title">AWS Certified</div><div class="hl-desc">DEA-C01 · SAA-C03 · CLF-C02</div></div>
-          <div class="hl-card"><div class="hl-title">Bilingual</div><div class="hl-desc">Arabic · English (IELTS 7.5)</div></div>
-          <div class="hl-card"><div class="hl-title">KAUST AI</div><div class="hl-desc">Advanced AI Specialization · 2025</div></div>
+          <div class="hl-card"><div class="hl-icon">🎓</div><div class="hl-title">UBT, Jeddah</div><div class="hl-desc">B.Sc. Software Engineering · GPA 4.96/5.0</div></div>
+          <div class="hl-card"><div class="hl-icon">☁️</div><div class="hl-title">AWS Certified</div><div class="hl-desc">DEA-C01 · SAA-C03 · CLF-C02</div></div>
+          <div class="hl-card"><div class="hl-icon">🌍</div><div class="hl-title">Bilingual</div><div class="hl-desc">Arabic · English (IELTS 7.5)</div></div>
+          <div class="hl-card"><div class="hl-icon">🤖</div><div class="hl-title">KAUST AI</div><div class="hl-desc">Advanced AI Specialization · 2025</div></div>
         </div>
       </div>
     </div>
@@ -784,19 +805,19 @@
     </div>
     <div class="skills-grid">
       <div class="skill-cat fi" data-d="1">
-        <div class="sk-hdr"><div class="sk-icon c"></div><div class="sk-title">Cloud & Data Engineering</div><span class="sk-count">10 tools</span></div>
+        <div class="sk-hdr"><div class="sk-icon c">☁️</div><div class="sk-title">Cloud & Data Engineering</div><span class="sk-count">10 tools</span></div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (S3, Glue, Athena, Lambda)</span><span class="tt">ETL/ELT Pipeline Design</span><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Great Expectations</span><span class="tt">Docker</span><span class="tt">ECS Fargate</span><span class="tt">CloudWatch</span><span class="tt">IAM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="2">
-        <div class="sk-hdr"><div class="sk-icon p"></div><div class="sk-title">Languages & Databases</div><span class="sk-count">9 tools</span></div>
+        <div class="sk-hdr"><div class="sk-icon p">💻</div><div class="sk-title">Languages & Databases</div><span class="sk-count">9 tools</span></div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, Scikit-learn)</span><span class="tt">SQL (PostgreSQL, MySQL)</span><span class="tt">JavaScript</span><span class="tt">R</span><span class="tt">Redis</span><span class="tt">FastAPI</span><span class="tt">Prophet</span><span class="tt">One-Class SVM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="3">
-        <div class="sk-hdr"><div class="sk-icon pk"></div><div class="sk-title">BI & Analytics</div><span class="sk-count">8 tools</span></div>
+        <div class="sk-hdr"><div class="sk-icon pk">📊</div><div class="sk-title">BI & Analytics</div><span class="sk-count">8 tools</span></div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Power BI (DAX, Power Query, RLS)</span><span class="tt">Tableau</span><span class="tt">Statistical Analysis / EDA</span><span class="tt">Predictive Analytics</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span><span class="tt">Excel (Adv.)</span><span class="tt">QuickSight</span></div>
       </div>
       <div class="skill-cat fi" data-d="4">
-        <div class="sk-hdr"><div class="sk-icon g"></div><div class="sk-title">IoT & Systems</div><span class="sk-count">9 tools</span></div>
+        <div class="sk-hdr"><div class="sk-icon g">🔧</div><div class="sk-title">IoT & Systems</div><span class="sk-count">9 tools</span></div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">IoT (ESP32, MQTT)</span><span class="tt">Edge Computing (Jetson Nano, ROS)</span><span class="tt">REST APIs & WebSocket</span><span class="tt">Linux / Bash</span><span class="tt">TLS 1.3</span><span class="tt">AES-256</span><span class="tt">LiDAR</span><span class="tt">RealSense</span><span class="tt">Git</span></div>
       </div>
     </div>
@@ -814,7 +835,7 @@
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"></div>
-        <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)"></div><span class="proj-award">Senior Capstone 2025–26</span></div>
+        <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🛒</div><span class="proj-award">🎓 Senior Capstone 2025–26</span></div>
         <div class="proj-body">
           <div class="proj-name">AUJ / أوج</div>
           <div class="proj-type">Smart Retail Shelf System</div>
@@ -830,7 +851,7 @@
       </div>
       <div class="proj-card fi" data-d="2">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"></div>
-        <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)"></div><span class="proj-award">GASTAT Finalist</span></div>
+        <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)">🔍</div><span class="proj-award">🏆 GASTAT Finalist</span></div>
         <div class="proj-body">
           <div class="proj-name">Sadeed / سديد</div>
           <div class="proj-type">Data Quality & Validation Platform</div>
@@ -847,7 +868,7 @@
       </div>
       <div class="proj-card fi" data-d="3">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"></div>
-        <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)"></div><span class="proj-award">Top 15 / 500+ Teams</span></div>
+        <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)">♿</div><span class="proj-award">🥇 Top 15 / 500+ Teams</span></div>
         <div class="proj-body">
           <div class="proj-name">Tayseer / تيسير</div>
           <div class="proj-type">Autonomous Wheelchair Edge Pipeline · AVITHON 2025 (GACA)</div>
@@ -863,7 +884,7 @@
       </div>
       <div class="proj-card fi" data-d="4">
         <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"></div>
-        <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)"></div><span class="proj-award">Aseer Tabtaker 2025</span></div>
+        <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)">🏔️</div><span class="proj-award">🌟 Aseer Tabtaker 2025</span></div>
         <div class="proj-body">
           <div class="proj-name">Masra / مَسرَى</div>
           <div class="proj-type">Smart Adventure Tourism Platform</div>
