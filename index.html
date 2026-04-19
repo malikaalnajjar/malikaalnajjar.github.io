@@ -632,8 +632,22 @@
     .photo-wrap{width:min(360px,100%)!important}
     .photo-wrap img{aspect-ratio:3/4;object-position:center top}
 
-    /* iPad / tablet hero fix */
-    @media(min-width:769px) and (max-width:1400px){
+    /* iPad portrait: stack like mobile but larger */
+    @media(min-width:769px) and (max-width:1024px) and (orientation:portrait){
+      #hero{padding:100px 2.5rem 4rem}
+      .hero-inner{flex-direction:column!important;gap:2rem!important;padding:0 1.5rem!important;text-align:center;align-items:center}
+      .hero-content{width:100%;max-width:600px}
+      .hero-badges,.hero-btns,.hero-social{justify-content:center}
+      .hero-photo{align-self:center;margin-top:0!important}
+      .photo-wrap{width:min(280px,60%)!important}
+      .hero-btns{flex-wrap:wrap!important;gap:.5rem}
+      .hero-btns .btn{flex:1 1 calc(50% - .5rem);justify-content:center}
+      .hero-btns .cv-dropdown{flex:1 1 100%;width:100%}
+      .hero-btns .cv-trigger{width:100%;justify-content:center}
+    }
+
+    /* iPad landscape: side by side */
+    @media(min-width:769px) and (max-width:1400px) and (orientation:landscape){
       #hero{padding:100px 2rem 4rem}
       .hero-inner{padding:0 1rem!important;gap:2rem!important;justify-content:space-between}
       .hero-content{flex:1 1 auto;padding-left:2.5rem;max-width:none;min-width:0}
