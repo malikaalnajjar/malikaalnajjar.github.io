@@ -602,11 +602,11 @@
     body.light #cursor-ring{border-color:rgba(0,122,69,.4)}
     body.light.cursor-hover #cursor-ring{border-color:rgba(0,122,69,.9)}
 
-    /* Mobile: square photo */
+    /* Mobile: rectangular photo */
     @media(max-width:768px){
-      .photo-wrap img{aspect-ratio:1!important;object-position:center top!important;border-radius:50%!important}
-      .photo-ring{border-radius:50%!important}
-      .photo-glow{border-radius:50%!important}
+      .photo-wrap img{aspect-ratio:3/4!important;object-position:center top!important;border-radius:14px!important}
+      .photo-ring{border-radius:18px!important}
+      .photo-glow{border-radius:22px!important}
     }
 
     /* Awards: single column vertical list */
@@ -632,18 +632,24 @@
     .photo-wrap{width:min(360px,100%)!important}
     .photo-wrap img{aspect-ratio:3/4;object-position:center top}
 
-    /* iPad portrait: stack like mobile but larger */
+    /* iPad portrait: photo under co-op banner, centered */
     @media(min-width:769px) and (max-width:1024px) and (orientation:portrait){
       #hero{padding:100px 2.5rem 4rem}
-      .hero-inner{flex-direction:column!important;gap:2rem!important;padding:0 1.5rem!important;text-align:center;align-items:center}
-      .hero-content{width:100%;max-width:600px}
-      .hero-badges,.hero-btns,.hero-social{justify-content:center}
-      .hero-photo{align-self:center;margin-top:0!important}
-      .photo-wrap{width:min(280px,60%)!important}
-      .hero-btns{flex-wrap:wrap!important;gap:.5rem}
+      .hero-inner{flex-direction:column!important;gap:1.6rem!important;padding:0 1.5rem!important;text-align:center;align-items:center}
+      .hero-content{display:contents}
+      .coop-banner{order:1}
+      .hero-photo{order:2;align-self:center;margin-top:.5rem!important}
+      .hero-photo .photo-wrap{width:min(260px,60%)!important}
+      .hero-greeting{order:3}
+      .hero-name{order:4}
+      .hero-role{order:5}
+      .hero-desc{order:6}
+      .hero-badges{order:7;justify-content:center}
+      .hero-btns{order:8;flex-wrap:wrap!important;gap:.5rem;justify-content:center}
       .hero-btns .btn{flex:1 1 calc(50% - .5rem);justify-content:center}
       .hero-btns .cv-dropdown{flex:1 1 100%;width:100%}
       .hero-btns .cv-trigger{width:100%;justify-content:center}
+      .hero-social{order:9;justify-content:center}
     }
 
     /* iPad landscape: side by side */
