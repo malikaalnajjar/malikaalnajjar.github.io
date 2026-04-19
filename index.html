@@ -522,7 +522,10 @@
     /* Photo: raise it up */
     .hero-photo{align-self:flex-start;margin-top:2.5rem}
 
-    /* (hero layout moved to bottom overrides) */
+    /* Hero buttons: same size, one line */
+    .hero-btns{flex-wrap:nowrap!important;gap:.6rem;align-items:center}
+    .hero-btns .btn,.hero-btns .cv-trigger{padding:.6rem 1.1rem!important;font-size:.82rem!important}
+    .hero-btns .btn svg,.hero-btns .cv-trigger svg:not(.cv-chevron){width:14px!important;height:14px!important}
 
     /* Circular image */
     .photo-wrap img{border-radius:50%}
