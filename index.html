@@ -632,6 +632,15 @@
     .photo-wrap{width:min(360px,100%)!important}
     .photo-wrap img{aspect-ratio:3/4;object-position:center top}
 
+    /* iPad / tablet hero fix */
+    @media(min-width:769px) and (max-width:1100px){
+      #hero{padding:100px 4rem 4rem}
+      .hero-inner{padding:0 2rem!important;gap:2.8rem!important}
+      .hero-content{padding-left:1.5rem}
+      .photo-wrap{width:min(300px,100%)!important}
+      .hero-photo{margin-left:auto}
+    }
+
     /* Mobile hero: photo between banner and text, buttons in one row */
     @media(max-width:768px){
       .hero-inner{gap:1.4rem!important;padding:0 1.2rem!important;text-align:center;align-items:center}
