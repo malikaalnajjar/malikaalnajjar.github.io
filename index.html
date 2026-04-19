@@ -21,8 +21,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#080812;--bg2:#0f0f23;--card:rgba(255,255,255,.04);
@@ -31,7 +31,7 @@
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;line-height:1.6}
+    body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;overflow-x:hidden;line-height:1.6}
 
     /* scrollbar */
     ::-webkit-scrollbar{width:6px}
@@ -95,7 +95,7 @@
     .badge-p{background:rgba(0,191,165,.1);border:1px solid rgba(0,191,165,.3);color:var(--purple)}
     .hero-btns{display:flex;gap:.9rem;justify-content:flex-start;flex-wrap:wrap;margin-bottom:2.5rem}
     .hb-anim{opacity:0;animation:fadeUp .6s 1.1s forwards}
-    .btn{padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.93rem;text-decoration:none;transition:.3s;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:none;font-family:'Space Grotesk',sans-serif}
+    .btn{padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.93rem;text-decoration:none;transition:.3s;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:none;font-family:'Syne',sans-serif}
     .btn-p{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
     .btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,230,118,.38)}
     .btn-s{background:transparent;color:var(--text);border:1px solid var(--border)}
@@ -237,10 +237,10 @@
     .form-box .sub{color:var(--muted);font-size:.81rem;margin-bottom:1.5rem}
     .fg{margin-bottom:1rem}
     .fg label{display:block;font-size:.8rem;font-weight:500;color:var(--muted);margin-bottom:.38rem}
-    .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.78rem .95rem;color:var(--text);font-size:.92rem;font-family:'Space Grotesk',sans-serif;transition:.3s;outline:none;resize:vertical}
+    .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.78rem .95rem;color:var(--text);font-size:.92rem;font-family:'Syne',sans-serif;transition:.3s;outline:none;resize:vertical}
     .fg textarea{min-height:100px}
     .fg input:focus,.fg textarea:focus{border-color:var(--cyan);background:rgba(0,230,118,.04);box-shadow:0 0 0 3px rgba(0,230,118,.1)}
-    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Space Grotesk',sans-serif}
+    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Syne',sans-serif}
     .form-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,230,118,.36)}
 
     /* ── cv dropdown ── */
@@ -484,24 +484,84 @@
     .hl-card{position:relative;overflow:hidden}
     .hl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.3s}
     .hl-card:hover::before{opacity:.6}
+
+    /* ── OVERRIDES & NEW FEATURES ── */
+
+    /* Remove decorative noise */
+    body::before,body::after{display:none!important}
+
+    /* Logo bigger */
+    .logo{font-size:1.85rem}
+
+    /* Nav separators */
+    .nav-links{gap:0}
+    .nav-links li{display:flex;align-items:center}
+    .nav-links li a{padding-left:.85rem;padding-right:.85rem}
+    .nav-links li:not(:last-child)::after{content:'';width:1px;height:9px;background:rgba(255,255,255,.1);display:block;flex-shrink:0}
+
+    /* Language button */
+    .lang-btn{width:36px;height:36px;border-radius:50%;background:var(--card);border:1px solid var(--border);color:var(--muted);cursor:none;font-size:.72rem;display:inline-flex;align-items:center;justify-content:center;transition:.25s;text-decoration:none;font-family:'JetBrains Mono',monospace;flex-shrink:0;margin-right:.4rem;font-weight:600}
+    .lang-btn:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,230,118,.08)}
+    body.light .lang-btn{cursor:auto}
+
+    /* Faster animations */
+    .fi{transform:translateY(20px);transition:opacity .35s cubic-bezier(.4,0,.2,1),transform .35s cubic-bezier(.4,0,.2,1)}
+    .fi[data-d="1"]{transition-delay:.04s}
+    .fi[data-d="2"]{transition-delay:.08s}
+    .fi[data-d="3"]{transition-delay:.12s}
+    .fi[data-d="4"]{transition-delay:.16s}
+    .fi[data-d="5"]{transition-delay:.2s}
+    .fi[data-d="6"]{transition-delay:.24s}
+    .orb1{animation-duration:5s}
+    .orb2{animation-duration:7s}
+    .coop-banner{animation:fadeUp .3s .04s forwards}
+    .hero-greeting{animation:fadeUp .3s .08s forwards}
+    .hero-name{animation:fadeUp .3s .14s forwards}
+    .hero-role{animation:fadeUp .3s .2s forwards}
+    .hero-desc{animation:fadeUp .3s .26s forwards}
+    .hero-badges{animation:fadeUp .3s .32s forwards}
+    .hb-anim{animation:fadeUp .3s .38s forwards}
+    .hero-social{animation:fadeUp .3s .44s forwards}
+    .hero-stats{animation:fadeUp .3s .5s forwards}
+
+    /* Photo: raise it up */
+    .hero-photo{align-self:flex-start;margin-top:2.5rem}
+
+    /* Loader */
+    #loader{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:opacity .55s .05s,visibility .55s .05s}
+    #loader.done{opacity:0;visibility:hidden;pointer-events:none}
+    .loader-logo{font-family:'JetBrains Mono',monospace;font-size:clamp(2.8rem,9vw,5rem);font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;animation:loaderPulse .95s ease-in-out infinite}
+    .loader-bar{width:150px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-top:1.6rem}
+    .loader-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));animation:loaderLoad 1.15s ease-out forwards}
+    @keyframes loaderPulse{0%,100%{opacity:1}50%{opacity:.3}}
+    @keyframes loaderLoad{from{width:0}to{width:100%}}
+
+    /* Custom cursor */
+    @media(hover:hover){
+      body{cursor:none}
+      a,button,.btn,.cert-card,.proj-card,.hl-card,.aw-card{cursor:none}
+    }
+    #cursor-dot,#cursor-ring{position:fixed;pointer-events:none;transform:translate(-50%,-50%);border-radius:50%;z-index:9999;display:none}
+    @media(hover:hover){#cursor-dot,#cursor-ring{display:block}}
+    #cursor-dot{width:6px;height:6px;background:var(--cyan);transition:transform .1s,opacity .25s}
+    #cursor-ring{width:26px;height:26px;border:1.5px solid rgba(0,230,118,.45);transition:width .22s,height .22s,border-color .22s,opacity .25s}
+    body.cursor-hover #cursor-ring{width:48px;height:48px;border-color:rgba(0,230,118,.85)}
+    body.cursor-hover #cursor-dot{transform:translate(-50%,-50%) scale(.5)}
+    body.light #cursor-ring{border-color:rgba(0,122,69,.4)}
+    body.light.cursor-hover #cursor-ring{border-color:rgba(0,122,69,.9)}
   </style>
 </head>
 <body>
 
-<!-- HUD corners -->
-<div class="hud hud-tl">SYS :: PORTFOLIO_v2<br>STATUS :: ONLINE<br>NODE :: MAN_JEDDAH_SA</div>
-<div class="hud hud-tr">LAT: 21.4858°N<br>LON: 39.1925°E<br>UTC+03:00 · KSA</div>
-<div class="hud hud-bl">BUILD :: 2026.04<br>STACK :: PY|SQL|AWS<br>GPA :: 4.96/5.0</div>
-<div class="hud hud-br">CERT_COUNT :: 10+<br>PROJECTS :: 4+<br>BRANCH :: main</div>
-<!-- status bar -->
-<div id="statusbar">
-  <div class="sb-seg"><span class="sb-dot"></span>malik.portfolio.v2</div>
-  <div class="sb-seg">Python · SQL · AWS · dbt</div>
-  <div class="sb-seg">GPA: 4.96/5.0</div>
-  <div class="sb-seg">10+ Certs</div>
-  <div class="sb-seg">Open to Co-op</div>
-  <div class="sb-seg sb-right">Jeddah, KSA · UTC+03:00</div>
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-logo">&lt;MAN /&gt;</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
 </div>
+
+<!-- Custom cursor -->
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
 
 <div id="progress"></div>
 <div class="orb orb1"></div>
@@ -520,6 +580,7 @@
     <li><a href="#awards" data-sec="awards">Awards</a></li>
     <li><a href="#contact" class="nav-cta" data-sec="contact">Contact</a></li>
   </ul>
+  <a href="ar.html" class="lang-btn" aria-label="Switch to Arabic">عربي</a>
   <button class="theme-btn" id="themeBtn" aria-label="Toggle light/dark mode" onclick="toggleTheme()">
     <svg id="themeIcon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
     <span id="themeLabel">Light</span>
@@ -547,15 +608,6 @@
       <span class="badge badge-p">PMI CAPM</span>
       <span class="badge badge-c">CompTIA Data+</span>
       <span class="badge badge-p">IELTS 7.5</span>
-    </div>
-    <div class="hero-sys">
-      <span class="hsys-item"><span class="hsys-k">role:</span><span class="hsys-v">data_engineer</span></span>
-      <span class="hsys-sep">//</span>
-      <span class="hsys-item"><span class="hsys-k">gpa:</span><span class="hsys-v">4.96/5.0</span></span>
-      <span class="hsys-sep">//</span>
-      <span class="hsys-item"><span class="hsys-k">certs:</span><span class="hsys-v">10+</span></span>
-      <span class="hsys-sep">//</span>
-      <span class="hsys-item"><span class="hsys-k">status:</span><span class="hsys-v" style="color:var(--cyan)">open_to_coop</span></span>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn btn-p hb-anim">
@@ -630,7 +682,6 @@
       <h2 class="sec-title">Who I <span>Am</span></h2>
       <p class="sec-sub">A passionate builder at the intersection of data and engineering</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="about-grid">
       <div class="about-text fi" data-d="1">
         <p>I'm a <strong>final-year Software Engineering student</strong> at the University of Business and Technology (UBT) in Jeddah, Saudi Arabia, graduating June 2026 with a GPA of <strong>4.96/5.0</strong>.</p>
@@ -655,7 +706,6 @@
       <h2 class="sec-title">My <span>Timeline</span></h2>
       <p class="sec-sub">Key milestones from certifications to competitions</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="tl-wrap">
 
       <div class="tl-item fi" data-d="1">
@@ -730,26 +780,21 @@
       <h2 class="sec-title">Technical <span>Arsenal</span></h2>
       <p class="sec-sub">Tools and technologies I work with daily</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="skills-grid">
       <div class="skill-cat fi" data-d="1">
         <div class="sk-hdr"><div class="sk-icon c">☁️</div><div class="sk-title">Cloud & Data Engineering</div><span class="sk-count">10 tools</span></div>
-        <div class="sk-schema"><b>▸</b> SCHEMA: cloud_engineering</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (S3, Glue, Athena, Lambda)</span><span class="tt">ETL/ELT Pipeline Design</span><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Great Expectations</span><span class="tt">Docker</span><span class="tt">ECS Fargate</span><span class="tt">CloudWatch</span><span class="tt">IAM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="2">
         <div class="sk-hdr"><div class="sk-icon p">💻</div><div class="sk-title">Languages & Databases</div><span class="sk-count">9 tools</span></div>
-        <div class="sk-schema"><b>▸</b> SCHEMA: languages_databases</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, Scikit-learn)</span><span class="tt">SQL (PostgreSQL, MySQL)</span><span class="tt">JavaScript</span><span class="tt">R</span><span class="tt">Redis</span><span class="tt">FastAPI</span><span class="tt">Prophet</span><span class="tt">One-Class SVM</span><span class="tt">Apache Iceberg</span></div>
       </div>
       <div class="skill-cat fi" data-d="3">
         <div class="sk-hdr"><div class="sk-icon pk">📊</div><div class="sk-title">BI & Analytics</div><span class="sk-count">8 tools</span></div>
-        <div class="sk-schema"><b>▸</b> SCHEMA: analytics_viz</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">Power BI (DAX, Power Query, RLS)</span><span class="tt">Tableau</span><span class="tt">Statistical Analysis / EDA</span><span class="tt">Predictive Analytics</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span><span class="tt">Excel (Adv.)</span><span class="tt">QuickSight</span></div>
       </div>
       <div class="skill-cat fi" data-d="4">
         <div class="sk-hdr"><div class="sk-icon g">🔧</div><div class="sk-title">IoT & Systems</div><span class="sk-count">9 tools</span></div>
-        <div class="sk-schema"><b>▸</b> SCHEMA: iot_systems</div>
         <div class="tech-tags" style="margin-top:0"><span class="tt">IoT (ESP32, MQTT)</span><span class="tt">Edge Computing (Jetson Nano, ROS)</span><span class="tt">REST APIs & WebSocket</span><span class="tt">Linux / Bash</span><span class="tt">TLS 1.3</span><span class="tt">AES-256</span><span class="tt">LiDAR</span><span class="tt">RealSense</span><span class="tt">Git</span></div>
       </div>
     </div>
@@ -764,16 +809,13 @@
       <h2 class="sec-title">What I've <span>Built</span></h2>
       <p class="sec-sub">Real-world systems solving real problems</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">SENSE</span><span class="pipe-arr">→</span><span class="pipe-step">MQTT</span><span class="pipe-arr">→</span><span class="pipe-step">POSTGRES</span><span class="pipe-arr">→</span><span class="pipe-step">FORECAST</span></div></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🛒</div><span class="proj-award">🎓 Senior Capstone 2025–26</span></div>
         <div class="proj-body">
           <div class="proj-name">AUJ / أوج</div>
           <div class="proj-type">Smart Retail Shelf System</div>
-          <span class="proj-qchip">SELECT * FROM iot_pipeline WHERE status = 'live'</span>
-          <div class="proj-row-label">output metrics</div>
           <p class="proj-desc">Full-stack IoT data pipeline: 3 ESP32 nodes → MQTT → PostgreSQL (8-table schema, 4+ indexes) → FastAPI (30 REST endpoints + real-time WebSocket) → Power BI dashboard with 5+ KPIs. Prophet forecasting on 6-month dataset automates restocking decisions.</p>
           <div class="proj-stack"><span class="stag">ESP32</span><span class="stag">MQTT</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">Prophet</span><span class="stag">WebSocket</span><span class="stag">Power BI</span><span class="stag">React</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -785,13 +827,11 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="2">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">EXTRACT</span><span class="pipe-arr">→</span><span class="pipe-step">VALIDATE</span><span class="pipe-arr">→</span><span class="pipe-step">DETECT</span><span class="pipe-arr">→</span><span class="pipe-step">REPORT</span></div></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)">🔍</div><span class="proj-award">🏆 GASTAT Finalist</span></div>
         <div class="proj-body">
           <div class="proj-name">Sadeed / سديد</div>
           <div class="proj-type">Data Quality & Validation Platform</div>
-          <span class="proj-qchip">VALIDATE :: gastat_datasets | anomaly_detection = ON</span>
-          <div class="proj-row-label">output metrics</div>
           <p class="proj-desc">3-layer ETL validation across 3–5 GASTAT government datasets: schema checks (Great Expectations), statistical profiling, ML anomaly detection (One-Class SVM, zero labelled examples). AWS ECS Fargate with Redis caching: 60%+ latency reduction. Arabic LLM reports with zero data leaving the government network.</p>
           <div class="proj-stack"><span class="stag">FastAPI</span><span class="stag">Redis</span><span class="stag">Great Expectations</span><span class="stag">One-Class SVM</span><span class="stag">AWS ECS</span><span class="stag">Ollama</span><span class="stag">Browser Ext.</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -804,12 +844,11 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="3">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">LIDAR</span><span class="pipe-arr">+</span><span class="pipe-step">DEPTH</span><span class="pipe-arr">→</span><span class="pipe-step">FUSE</span><span class="pipe-arr">→</span><span class="pipe-step">NAVIGATE</span></div></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)">♿</div><span class="proj-award">🥇 Top 15 / 500+ Teams</span></div>
         <div class="proj-body">
           <div class="proj-name">Tayseer / تيسير</div>
           <div class="proj-type">Autonomous Wheelchair Edge Pipeline · AVITHON 2025 (GACA)</div>
-          <span class="proj-qchip">PROCESS :: edge_inference | sensors = [lidar, depth]</span>
           <p class="proj-desc">2-source sensor fusion pipeline (LiDAR + Intel RealSense) on NVIDIA Jetson Nano for real-time obstacle detection. TLS 1.3/AES-256 security architecture. Field research at KAIA Jeddah Airport. Ranked Top 15 of 500+ teams nationwide.</p>
           <div class="proj-stack"><span class="stag">Jetson Nano</span><span class="stag">ROS</span><span class="stag">LiDAR</span><span class="stag">RealSense</span><span class="stag">TLS 1.3</span><span class="stag">AES-256</span><span class="stag">Python</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -821,12 +860,11 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="4">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"><div class="proj-visual-inner"><div class="pipe-flow"><span class="pipe-step">IOT</span><span class="pipe-arr">→</span><span class="pipe-step">INGEST</span><span class="pipe-arr">→</span><span class="pipe-step">ALERT</span><span class="pipe-arr">→</span><span class="pipe-step">SERVE</span></div></div></div>
+        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)">🏔️</div><span class="proj-award">🌟 Aseer Tabtaker 2025</span></div>
         <div class="proj-body">
           <div class="proj-name">Masra / مَسرَى</div>
           <div class="proj-type">Smart Adventure Tourism Platform</div>
-          <span class="proj-qchip">INGEST :: iot_sensors | region = 'aseer_ksa'</span>
           <p class="proj-desc">Cloud data architecture for real-time IoT sensor ingestion and AI-powered safety alerts for adventure tourism in Aseer. Aligned with Saudi Vision 2030 and presented to regional government stakeholders.</p>
           <div class="proj-stack"><span class="stag">AI</span><span class="stag">IoT</span><span class="stag">Cloud</span><span class="stag">Mobile</span><span class="stag">Vision 2030</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
@@ -849,7 +887,6 @@
       <h2 class="sec-title">Industry <span>Expertise</span></h2>
       <p class="sec-sub">Recognized credentials across cloud, data, and management</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="certs-grid">
 
       <a class="cert-card fi" data-d="1" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e8f3f85e0d1d48ca96ae3df34a5c1d8b" target="_blank" rel="noopener">
@@ -924,7 +961,6 @@
       <h2 class="sec-title">Achievements & <span>Impact</span></h2>
       <p class="sec-sub">Beyond the code: competing, leading, and contributing</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="awards-grid">
       <div class="aw-card fi" data-d="1"><div class="aw-icon">🥈</div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">UBT · Saudi Arabia</div><p class="aw-desc">Achieved 2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication.</p><div class="aw-date">2025</div></div>
       <div class="aw-card fi" data-d="2"><div class="aw-icon">🏆</div><div class="aw-title">Top 15 Nationwide: AVITHON 2025</div><div class="aw-org">GACA, General Authority of Civil Aviation</div><p class="aw-desc">Ranked Top 15 of 500+ teams with Project Tayseer, an autonomous wheelchair pipeline. Field research at KAIA Jeddah Airport.</p><div class="aw-date">Jul 2025</div></div>
@@ -947,7 +983,6 @@
       <h2 class="sec-title">Let's <span>Connect</span></h2>
       <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
     </div>
-    <div class="data-divider"><span>◈ DATA STREAM ◈</span></div>
     <div class="contact-grid">
       <div class="fi" data-d="1">
         <div class="contact-info">
@@ -1182,6 +1217,29 @@ document.addEventListener('mousemove',e=>{
   document.querySelector('.orb1').style.transform=`translate(${x*.4}px,${y*.4}px)`;
   document.querySelector('.orb2').style.transform=`translate(${-x*.3}px,${-y*.3}px)`;
 });
+
+// ── LOADER ──
+window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('loader').classList.add('done'),350); });
+
+// ── CUSTOM CURSOR ──
+(function(){
+  if(!window.matchMedia('(hover:hover)').matches) return;
+  const dot=document.getElementById('cursor-dot');
+  const ring=document.getElementById('cursor-ring');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{
+    mx=e.clientX; my=e.clientY;
+    dot.style.left=mx+'px'; dot.style.top=my+'px';
+  });
+  (function raf(){ rx+=(mx-rx)*.14; ry+=(my-ry)*.14; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(raf); })();
+  const hoverEls='a,button,.btn,.cert-card,.proj-card,.hl-card,.aw-card,.tl-content,.skill-cat';
+  document.querySelectorAll(hoverEls).forEach(el=>{
+    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
+  });
+  document.addEventListener('mouseleave',()=>{ dot.style.opacity='0'; ring.style.opacity='0'; });
+  document.addEventListener('mouseenter',()=>{ dot.style.opacity='1'; ring.style.opacity='1'; });
+})();
 </script>
 </body>
 </html>
