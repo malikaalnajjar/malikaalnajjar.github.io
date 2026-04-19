@@ -556,12 +556,14 @@
 
     /* Aesthetic spacing & polish */
     #about,#skills,#projects,#certifications,#awards,#contact,#timeline{padding:110px 0}
-    .sec-hdr{margin-bottom:3rem}
-    .sec-title{letter-spacing:-.02em}
+    .sec-hdr{margin-bottom:3rem;text-align:center}
+    .sec-sub{text-align:center;margin:0 auto}
+    .sec-title{letter-spacing:-.02em;text-align:center}
+    .sec-tag{text-align:center;justify-content:center}
     .hero-name{letter-spacing:-.03em}
     .skills-grid,.proj-grid{gap:1.6rem}
     .certs-grid{gap:1.2rem}
-    .awards-grid{gap:1.6rem}
+    .awards-grid{gap:.9rem}
     .highlights{gap:1rem}
     .hl-card{padding:1.2rem 1.1rem}
     .proj-card{border-radius:16px}
@@ -619,11 +621,22 @@
     .aw-date{margin-top:.25rem;font-size:.7rem}
 
     /* Contact: stacked single column */
-    .contact-stack{display:flex;flex-direction:column;gap:2.2rem;max-width:720px;margin:0 auto}
+    .contact-stack{display:flex;flex-direction:column;gap:2.2rem;max-width:680px;margin:0 auto;align-items:center}
+    .contact-info{width:100%;text-align:center}
     .contact-info h3{font-size:1.5rem;font-weight:800;margin-bottom:.8rem}
-    .contact-info p{color:var(--muted);line-height:1.85;font-size:.96rem;max-width:600px}
-    .form-box{margin-top:0!important}
-    .clinks-icons{margin-top:0}
+    .contact-info p{color:var(--muted);line-height:1.85;font-size:.96rem;margin:0 auto}
+    .contact-stack .form-box{width:100%;margin-top:0!important}
+    .clinks-icons{margin-top:0;justify-content:center!important}
+
+    /* Hero: bring text closer to photo */
+    .hero-inner{max-width:1060px!important;gap:3.5rem!important;padding:0 2.5rem!important}
+    #hero{padding:100px 2rem 4rem}
+
+    /* Section content max-width polish */
+    .awards-grid{max-width:860px;margin-left:auto;margin-right:auto}
+    .certs-grid{max-width:960px;margin-left:auto;margin-right:auto}
+    .proj-grid{max-width:960px;margin-left:auto;margin-right:auto}
+    .skills-grid{max-width:960px;margin-left:auto;margin-right:auto}
   </style>
 </head>
 <body>
