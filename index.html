@@ -522,9 +522,7 @@
     /* Photo: raise it up */
     .hero-photo{align-self:flex-start;margin-top:2.5rem}
 
-    /* Hero layout balance */
-    .hero-inner{gap:3rem;padding:0 2rem}
-    .photo-wrap{width:min(290px,100%)}
+    /* (hero layout moved to bottom overrides) */
 
     /* Circular image */
     .photo-wrap img{border-radius:50%}
@@ -540,11 +538,8 @@
     .photo-wrap img{border-radius:14px!important;aspect-ratio:3/4;object-position:center top}
     .photo-ring{border-radius:18px!important}
     .photo-glow{border-radius:22px!important}
-    .photo-wrap{width:min(270px,100%)}
 
-    /* Hero wider */
-    .hero-inner{max-width:1350px;gap:5rem;padding:0 1rem}
-    #hero{padding:100px 3rem 4rem}
+    /* (hero sizing moved to bottom overrides) */
 
     /* Contact icon-only links */
     .clinks-icons{display:flex;gap:.85rem;flex-wrap:wrap;margin-top:1.8rem}
@@ -605,10 +600,9 @@
 
     /* Mobile: square photo */
     @media(max-width:768px){
-      .photo-wrap img{aspect-ratio:1!important;object-position:center top!important}
+      .photo-wrap img{aspect-ratio:1!important;object-position:center top!important;border-radius:50%!important}
       .photo-ring{border-radius:50%!important}
       .photo-glow{border-radius:50%!important}
-      .photo-wrap img{border-radius:50%!important}
     }
 
     /* Awards: single column vertical list */
@@ -628,9 +622,29 @@
     .contact-stack .form-box{width:100%;margin-top:0!important}
     .clinks-icons{margin-top:0;justify-content:center!important}
 
-    /* Hero: bring text closer to photo */
-    .hero-inner{max-width:1060px!important;gap:3.5rem!important;padding:0 2.5rem!important}
-    #hero{padding:100px 2rem 4rem}
+    /* Hero: wider + larger photo */
+    .hero-inner{max-width:1280px!important;gap:4rem!important;padding:0 1.5rem!important}
+    #hero{padding:100px 1.5rem 4rem}
+    .photo-wrap{width:min(360px,100%)!important}
+    .photo-wrap img{aspect-ratio:3/4;object-position:center top}
+
+    /* Mobile hero: photo between banner and text, buttons in one row */
+    @media(max-width:768px){
+      .hero-inner{gap:1.4rem!important;padding:0 1.2rem!important;text-align:center;align-items:center}
+      .hero-content{display:contents}
+      .coop-banner{order:1}
+      .hero-photo{order:2;margin-top:.5rem!important;align-self:center}
+      .hero-photo .photo-wrap{width:min(230px,80%)!important}
+      .hero-greeting{order:3}
+      .hero-name{order:4}
+      .hero-role{order:5}
+      .hero-desc{order:6}
+      .hero-badges{order:7}
+      .hero-btns{order:8;flex-wrap:nowrap!important;justify-content:center;gap:.4rem}
+      .hero-btns .btn{padding:.55rem .75rem!important;font-size:.75rem!important;gap:.28rem}
+      .hero-btns .btn svg{width:13px!important;height:13px!important}
+      .hero-social{order:9;justify-content:center}
+    }
 
     /* Section content max-width polish */
     .awards-grid{max-width:860px;margin-left:auto;margin-right:auto}
