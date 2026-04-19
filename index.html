@@ -600,6 +600,30 @@
     body.cursor-hover #cursor-dot{transform:translate(-50%,-50%) scale(.5)}
     body.light #cursor-ring{border-color:rgba(0,122,69,.4)}
     body.light.cursor-hover #cursor-ring{border-color:rgba(0,122,69,.9)}
+
+    /* Mobile: square photo */
+    @media(max-width:768px){
+      .photo-wrap img{aspect-ratio:1!important;object-position:center top!important}
+      .photo-ring{border-radius:50%!important}
+      .photo-glow{border-radius:50%!important}
+      .photo-wrap img{border-radius:50%!important}
+    }
+
+    /* Awards: single column vertical list */
+    .awards-grid{grid-template-columns:1fr!important;gap:.9rem}
+    .aw-card{flex-direction:row!important;align-items:flex-start!important;gap:1.3rem;padding:1.1rem 1.5rem}
+    .aw-icon{font-size:1.7rem;margin-bottom:0!important;flex-shrink:0;padding-top:.15rem}
+    .aw-title{font-size:.93rem;margin-bottom:.12rem}
+    .aw-org{margin-bottom:.3rem}
+    .aw-desc{font-size:.82rem;line-height:1.6}
+    .aw-date{margin-top:.25rem;font-size:.7rem}
+
+    /* Contact: stacked single column */
+    .contact-stack{display:flex;flex-direction:column;gap:2.2rem;max-width:720px;margin:0 auto}
+    .contact-info h3{font-size:1.5rem;font-weight:800;margin-bottom:.8rem}
+    .contact-info p{color:var(--muted);line-height:1.85;font-size:.96rem;max-width:600px}
+    .form-box{margin-top:0!important}
+    .clinks-icons{margin-top:0}
   </style>
 </head>
 <body>
@@ -857,7 +881,6 @@
     </div>
     <div class="proj-grid">
       <div class="proj-card fi" data-d="1">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,230,118,.18),rgba(0,191,165,.1))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🛒</div><span class="proj-award">🎓 Senior Capstone 2025–26</span></div>
         <div class="proj-body">
           <div class="proj-name">AUJ / أوج</div>
@@ -873,7 +896,6 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="2">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(0,191,165,.18),rgba(139,92,246,.1))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,191,165,.15)">🔍</div><span class="proj-award">🏆 GASTAT Finalist</span></div>
         <div class="proj-body">
           <div class="proj-name">Sadeed / سديد</div>
@@ -890,7 +912,6 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="3">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(105,240,174,.18),rgba(0,230,118,.08))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(105,240,174,.15)">♿</div><span class="proj-award">🥇 Top 15 / 500+ Teams</span></div>
         <div class="proj-body">
           <div class="proj-name">Tayseer / تيسير</div>
@@ -906,7 +927,6 @@
         </div>
       </div>
       <div class="proj-card fi" data-d="4">
-        <div class="proj-visual" style="background:linear-gradient(135deg,rgba(34,197,94,.18),rgba(0,230,118,.08))"></div>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(34,197,94,.15)">🏔️</div><span class="proj-award">🌟 Aseer Tabtaker 2025</span></div>
         <div class="proj-body">
           <div class="proj-name">Masra / مَسرَى</div>
@@ -1008,15 +1028,15 @@
       <p class="sec-sub">Beyond the code: competing, leading, and contributing</p>
     </div>
     <div class="awards-grid">
-      <div class="aw-card fi" data-d="1"><div class="aw-icon">🥈</div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">UBT · Saudi Arabia</div><p class="aw-desc">Achieved 2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication.</p><div class="aw-date">2025</div></div>
-      <div class="aw-card fi" data-d="2"><div class="aw-icon">🏆</div><div class="aw-title">Top 15 Nationwide: AVITHON 2025</div><div class="aw-org">GACA, General Authority of Civil Aviation</div><p class="aw-desc">Ranked Top 15 of 500+ teams with Project Tayseer, an autonomous wheelchair pipeline. Field research at KAIA Jeddah Airport.</p><div class="aw-date">Jul 2025</div></div>
-      <div class="aw-card fi" data-d="3"><div class="aw-icon">🌱</div><div class="aw-title">Volunteer: Falling Walls Foundation</div><div class="aw-org">Falling Walls Foundation</div><p class="aw-desc">Supported the Falling Walls global innovation event, connecting researchers and innovators to break walls in science and society.</p><div class="aw-date">Sep 2025</div></div>
-      <div class="aw-card fi" data-d="4"><div class="aw-icon">⚽</div><div class="aw-title">Brand Protection: AFC Asian Cup U-23</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Monitored live broadcast compliance across 3+ venues, enforcing AFC trademark and sponsorship protocols under real-time pressure.</p><div class="aw-date">Jan 2026</div></div>
-      <div class="aw-card fi" data-d="5"><div class="aw-icon">🎓</div><div class="aw-title">Volunteer: APCG 2026</div><div class="aw-org">UBT · Jeddah, Saudi Arabia</div><p class="aw-desc">Volunteered in organising and supporting the APCG 2026 event hosted at the University of Business and Technology.</p><div class="aw-date">Feb 2026</div></div>
-      <div class="aw-card fi" data-d="6"><div class="aw-icon">🏟️</div><div class="aw-title">Rights Protection: AFC Champions League Elite Finals</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Currently serving on the Rights Protection Team for the ACLE Finals 2026, safeguarding AFC intellectual property and broadcast rights across elite continental club football.</p><div class="aw-date">Apr 2026 – Present</div></div>
-      <div class="aw-card fi" data-d="1"><div class="aw-icon">🌐</div><div class="aw-title">Outreach Team Leader: GDG On Campus</div><div class="aw-org">Google Developer Groups · UBT</div><p class="aw-desc">Led 5-member team organising cloud and data workshops for 100+ students (30–50/session). Grew attendance 40%+.</p><div class="aw-date">Oct 2025 – Present</div></div>
-      <div class="aw-card fi" data-d="2"><div class="aw-icon">💼</div><div class="aw-title">Vice Chair & Treasurer: ACM Chapter</div><div class="aw-org">UBT ACM Student Chapter</div><p class="aw-desc">Managed SAR 5,000 budget; delivered 3–5 technical events per cycle (30+ participants each) including hackathons and cloud workshops.</p><div class="aw-date">Feb – Dec 2025</div></div>
-      <div class="aw-card fi" data-d="3"><div class="aw-icon">🧠</div><div class="aw-title">KAUST Advanced AI Specialization</div><div class="aw-org">King Abdullah University of Science & Technology</div><p class="aw-desc">Completed intensive ML, Deep Learning, and Python specialization at one of the region's most prestigious research institutions.</p><div class="aw-date">Jan – Feb 2025</div></div>
+      <div class="aw-card fi" data-d="1"><div class="aw-icon">🧠</div><div><div class="aw-title">KAUST Advanced AI Specialization</div><div class="aw-org">King Abdullah University of Science & Technology</div><p class="aw-desc">Completed intensive ML, Deep Learning, and Python specialization at one of the region's most prestigious research institutions.</p><div class="aw-date">Jan – Feb 2025</div></div></div>
+      <div class="aw-card fi" data-d="2"><div class="aw-icon">💼</div><div><div class="aw-title">Vice Chair & Treasurer: ACM Chapter</div><div class="aw-org">UBT ACM Student Chapter</div><p class="aw-desc">Managed SAR 5,000 budget; delivered 3–5 technical events per cycle (30+ participants each) including hackathons and cloud workshops.</p><div class="aw-date">Feb – Dec 2025</div></div></div>
+      <div class="aw-card fi" data-d="3"><div class="aw-icon">🏆</div><div><div class="aw-title">Top 15 Nationwide: AVITHON 2025</div><div class="aw-org">GACA, General Authority of Civil Aviation</div><p class="aw-desc">Ranked Top 15 of 500+ teams with Project Tayseer, an autonomous wheelchair pipeline. Field research at KAIA Jeddah Airport.</p><div class="aw-date">Jul 2025</div></div></div>
+      <div class="aw-card fi" data-d="4"><div class="aw-icon">🌱</div><div><div class="aw-title">Volunteer: Falling Walls Foundation</div><div class="aw-org">Falling Walls Foundation</div><p class="aw-desc">Supported the Falling Walls global innovation event, connecting researchers and innovators to break walls in science and society.</p><div class="aw-date">Sep 2025</div></div></div>
+      <div class="aw-card fi" data-d="5"><div class="aw-icon">🌐</div><div><div class="aw-title">Outreach Team Leader: GDG On Campus</div><div class="aw-org">Google Developer Groups · UBT</div><p class="aw-desc">Led 5-member team organising cloud and data workshops for 100+ students (30–50/session). Grew attendance 40%+.</p><div class="aw-date">Oct 2025 – Present</div></div></div>
+      <div class="aw-card fi" data-d="6"><div class="aw-icon">🥈</div><div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">Beyond Company · Saudi Arabia</div><p class="aw-desc">Achieved 2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication.</p><div class="aw-date">Dec 2025</div></div></div>
+      <div class="aw-card fi" data-d="1"><div class="aw-icon">⚽</div><div><div class="aw-title">Brand Protection: AFC Asian Cup U-23</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Monitored live broadcast compliance across 3+ venues, enforcing AFC trademark and sponsorship protocols under real-time pressure.</p><div class="aw-date">Jan 2026</div></div></div>
+      <div class="aw-card fi" data-d="2"><div class="aw-icon">🎓</div><div><div class="aw-title">Volunteer: APCG 2026</div><div class="aw-org">UBT · Jeddah, Saudi Arabia</div><p class="aw-desc">Volunteered in organising and supporting the APCG 2026 event hosted at the University of Business and Technology.</p><div class="aw-date">Feb 2026</div></div></div>
+      <div class="aw-card fi" data-d="3"><div class="aw-icon">🏟️</div><div><div class="aw-title">Rights Protection: AFC Champions League Elite Finals</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Currently serving on the Rights Protection Team for the ACLE Finals 2026, safeguarding AFC intellectual property and broadcast rights across elite continental club football.</p><div class="aw-date">Apr 2026 – Present</div></div></div>
     </div>
   </div>
 </section>
@@ -1029,29 +1049,10 @@
       <h2 class="sec-title">Let's <span>Connect</span></h2>
       <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
     </div>
-    <div class="contact-grid">
-      <div class="fi" data-d="1">
-        <div class="contact-info">
-          <h3>Ready to build something impactful?</h3>
-          <p>I'm actively seeking co-op and internship opportunities in data engineering, cloud infrastructure, and analytics. Graduating June 2026, bilingual, certified, and ready to contribute.</p>
-        </div>
-        <div class="clinks-icons">
-          <a href="mailto:malik-naj@hotmail.com" class="clink-icon" title="malik-naj@hotmail.com">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/malik-alnajjar" target="_blank" class="clink-icon" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://github.com/malikaalnajjar" target="_blank" class="clink-icon" title="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-          <a href="tel:+966562989838" class="clink-icon" title="+966 56 298 9838">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-          </a>
-          <span class="clink-icon clink-icon-loc" title="Jeddah, Saudi Arabia">
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </span>
-        </div>
+    <div class="contact-stack">
+      <div class="contact-info fi" data-d="1">
+        <h3>Ready to build something impactful?</h3>
+        <p>I'm actively seeking co-op and internship opportunities in data engineering, cloud infrastructure, and analytics. Graduating June 2026, bilingual, certified, and ready to contribute.</p>
       </div>
       <div class="form-box fi" data-d="2">
         <h3>Send a Message</h3>
@@ -1062,6 +1063,20 @@
           <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" placeholder="Tell me about the opportunity..." required></textarea></div>
           <button type="submit" class="form-btn" id="fbtn">Send Message →</button>
         </form>
+      </div>
+      <div class="clinks-icons fi" data-d="3">
+        <a href="mailto:malik-naj@hotmail.com" class="clink-icon" title="malik-naj@hotmail.com">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/malik-alnajjar" target="_blank" class="clink-icon" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/malikaalnajjar" target="_blank" class="clink-icon" title="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="tel:+966562989838" class="clink-icon" title="+966 56 298 9838">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </a>
       </div>
     </div>
   </div>
