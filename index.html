@@ -1223,7 +1223,7 @@
       <div class="form-box fi" data-d="2">
         <h3>Send a Message</h3>
         <p class="sub">I'll get back to you within 24 hours.</p>
-        <form id="cform" onsubmit="handleForm(event)">
+        <form id="cform" action="https://formspree.io/f/xpqgdlay" method="POST" onsubmit="handleForm(event)">
           <div class="fg"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" required></div>
           <div class="fg"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="your@email.com" required></div>
           <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" placeholder="Tell me about the opportunity..." required></textarea></div>
@@ -1454,7 +1454,7 @@ function toggleCS(btn){
 }
 
 // ── CONTACT FORM ──
-function handleForm(e){ e.preventDefault(); const name=document.getElementById('f-name').value; const email=document.getElementById('f-email').value; const msg=document.getElementById('f-msg').value; const subject=encodeURIComponent('Portfolio Contact from '+name); const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\n\nMessage:\n'+msg); window.location.href='mailto:malik-naj@hotmail.com?subject='+subject+'&body='+body; const btn=document.getElementById('fbtn'); btn.textContent='Opening mail… ✓'; btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)'; setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; e.target.reset(); },3200); }
+function handleForm(e){ e.preventDefault(); const btn=document.getElementById('fbtn'); btn.textContent='Sending…'; btn.disabled=true; const data=new FormData(e.target); fetch('https://formspree.io/f/xpqgdlay',{method:'POST',body:data,headers:{Accept:'application/json'}}).then(r=>{ if(r.ok){ btn.textContent='Sent! ✓'; btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)'; e.target.reset(); setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; btn.disabled=false; },3200); } else { btn.textContent='Error — try again'; btn.style.background='linear-gradient(135deg,#ef4444,#dc2626)'; setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; btn.disabled=false; },3000); } }).catch(()=>{ btn.textContent='Error — try again'; btn.style.background='linear-gradient(135deg,#ef4444,#dc2626)'; setTimeout(()=>{ btn.textContent='Send Message →'; btn.style.background=''; btn.disabled=false; },3000); }); }
 
 // ── PHOTO FALLBACK ──
 const profileImg=document.getElementById('profile-img');
