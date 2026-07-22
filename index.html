@@ -161,9 +161,8 @@
 
     /* ── about ── */
     #about{padding:100px 0}
-    .about-grid{display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start;max-width:960px;margin:0 auto}
-    @media(max-width:768px){.about-grid{grid-template-columns:1fr}}
-    .about-text p{color:var(--muted);margin-bottom:1.2rem;line-height:1.85;font-size:1rem}
+    .about-grid{max-width:760px;margin:0 auto}
+    .about-text p{color:var(--muted);margin-bottom:1.2rem;line-height:1.85;font-size:1rem;text-align:center}
     .about-text p strong{color:var(--text)}
     .highlights{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.6rem}
     .hl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem;backdrop-filter:blur(10px);transition:.3s}
@@ -173,7 +172,6 @@
     .hl-desc{color:var(--muted);font-size:.77rem}
 
     /* ── profile photo ── */
-    .about-visual{position:relative;display:flex;align-items:center;justify-content:center}
     .photo-wrap{position:relative;width:min(360px,100%)}
     .photo-ring{position:absolute;inset:-4px;border-radius:22px;background:linear-gradient(135deg,#00e676,#1de9b6,#69f0ae,#00c853,#00e676);z-index:0}
     .photo-glow{position:absolute;inset:-8px;border-radius:26px;background:linear-gradient(135deg,var(--cyan),var(--purple));filter:blur(22px);opacity:.35;z-index:-1}
@@ -866,13 +864,6 @@
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><div class="hl-title">AWS Certified</div><div class="hl-desc">DEA-C01 · SAA-C03 · CLF-C02</div></div>
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="hl-title">Bilingual</div><div class="hl-desc">Arabic · English (IELTS 7.5)</div></div>
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><div class="hl-title">KAUST AI</div><div class="hl-desc">Advanced AI Specialization · 2025</div></div>
-        </div>
-      </div>
-      <div class="about-visual fi" data-d="2">
-        <div class="photo-wrap" style="width:100%">
-          <div class="photo-ring"></div>
-          <div class="photo-glow"></div>
-          <img src="profile.jpg" alt="Malik AlNajjar" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
