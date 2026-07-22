@@ -15,6 +15,17 @@
   <meta name="author" content="Malik AlNajjar">
   <link rel="canonical" href="https://malikaalnajjar.github.io">
   <meta name="theme-color" content="#030803">
+
+  <!-- Social link previews (LinkedIn, WhatsApp, X) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://malikaalnajjar.github.io">
+  <meta property="og:title" content="Malik AlNajjar - Data Engineer & Software Engineer">
+  <meta property="og:description" content="AWS-certified Data Engineer (DEA-C01, SAA-C03) and UBT First Class Honours graduate. ETL pipelines, cloud infrastructure, IoT systems. Available now in Jeddah, KSA.">
+  <meta property="og:image" content="https://malikaalnajjar.github.io/profile.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Malik AlNajjar - Data Engineer & Software Engineer">
+  <meta name="twitter:description" content="AWS-certified Data Engineer and UBT First Class Honours graduate. ETL pipelines, cloud infrastructure, IoT systems.">
+  <meta name="twitter:image" content="https://malikaalnajjar.github.io/profile.jpg">
   <!-- Preload hero image for performance -->
   <link rel="preload" as="image" href="profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -948,7 +959,7 @@
         <div class="photo-wrap" style="width:100%">
           <div class="photo-ring"></div>
           <div class="photo-glow"></div>
-          <img src="profile.jpg" alt="Malik AlNajjar">
+          <img src="profile.jpg" alt="Malik AlNajjar" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -1209,9 +1220,9 @@
         <span class="proj-num">05</span>
         <div class="proj-top"><div class="proj-ico" style="background:rgba(0,230,118,.15)">🚲</div><span class="proj-award">🟢 Live & Deployed</span></div>
         <div class="proj-body">
-          <div class="proj-name">Corniche Circuit Queue</div>
-          <div class="proj-type">Micromobility Inventory & Booking System · PWA</div>
-          <p class="proj-desc">Full-stack PWA for managing bike rentals at the Corniche Circuit, Jeddah. Real-time queue management with Supabase (Postgres + live subscriptions), dual customer/staff interfaces, inventory tracking, add-ons with photo uploads, POS with cash/card split, per-receipt discounts, refunds, and offline-resilient service worker. Bilingual (Arabic/English).</p>
+          <div class="proj-name">MicroMobility Rentals</div>
+          <div class="proj-type">Bike Rental Booking & Events Platform · PWA</div>
+          <p class="proj-desc">Full-stack PWA running a real bike-rental operation in Jeddah. Real-time queue management with Supabase (Postgres + live subscriptions + RLS), customer accounts with OAuth sign-in, invite-only community events with staff approval workflow, Apple Wallet passes, inventory and POS with cash/card split, refunds, and offline-resilient service worker. Trilingual (Arabic/English/Spanish).</p>
           <div class="proj-stack"><span class="stag">Supabase</span><span class="stag">PostgreSQL</span><span class="stag">JavaScript</span><span class="stag">PWA</span><span class="stag">Service Worker</span><span class="stag">Real-time</span><span class="stag">Cloudflare Pages</span></div>
           <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
           <div class="cs-body">
@@ -1219,7 +1230,7 @@
             <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">Supabase Postgres with live subscriptions replaces polling. A service worker enables PWA install and offline fallback. Staff and customer views are fully separate. Sales engine handles cash/card splits, per-receipt discounts, add-ons with photo uploads, and refunds with audit trail.</div></div>
             <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Live in production — replaced paper-based queuing for a real rental operation. Handles concurrent bookings across multiple staff devices with zero downtime, real-time inventory sync, and a full POS that works offline.</div></div>
           </div>
-          <a href="https://micromobility-queue.pages.dev/" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> View Live ↗</a>
+          <a href="https://micromobilityrentals.pages.dev/" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> View Live ↗</a>
         </div>
       </div>
     </div>
@@ -1240,66 +1251,66 @@
       <div class="cert-group-label">☁️ Amazon Web Services</div>
 
       <a class="cert-card fi" data-d="1" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e8f3f85e0d1d48ca96ae3df34a5c1d8b" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
         <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:95%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="2" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2269df70c0b541a7b84f18c44f1af1d7" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
         <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:85%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="3" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b49917149eb4b62b2511ab26977c150" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
         <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">CLF-C02 · Nov 2025</div><div class="cert-valid">Valid until Nov 2028</div></div>
       </a>
 
       <div class="cert-group-label">📊 Professional & Management</div>
 
       <div class="cert-card fi" data-d="4">
-        <div class="cert-logo" style="background:rgba(0,120,212,.12)"><img src="microsoft.jpg" alt="Microsoft"><span class="fb" style="color:#F2C811">Power<br>BI</span></div>
+        <div class="cert-logo" style="background:rgba(0,120,212,.12)"><img src="microsoft.jpg" alt="Microsoft" loading="lazy" decoding="async"><span class="fb" style="color:#F2C811">Power<br>BI</span></div>
         <div><div class="cert-name">Power BI Data Analyst Associate</div><div class="cert-issuer">Microsoft</div><div class="cert-date">PL-300 · Scheduled Jul 2026</div></div>
       </div>
 
       <a class="cert-card fi" data-d="5" href="https://certificates.cdmp.info/23a27237-e1f7-4983-ae06-1fe4cac8e6b5" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(0,58,112,.15)"><img src="dama.png" alt="DAMA"><span class="fb" style="color:#4a9edd">DAMA</span></div>
+        <div class="cert-logo" style="background:rgba(0,58,112,.15)"><img src="dama.png" alt="DAMA" loading="lazy" decoding="async"><span class="fb" style="color:#4a9edd">DAMA</span></div>
         <div><div class="cert-name">Certified Data Management Prof.</div><div class="cert-issuer">DAMA International</div><div class="cert-date">CDMP · Jan 2026</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:80%"></div></div></div></div>
       </a>
 
       <a class="cert-card fi" data-d="6" href="https://www.credly.com/badges/d742f1a6-64b2-4faf-92ae-f039d93beb1f/linked_in_profile" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(212,39,42,.1)"><img src="pmi.png" alt="PMI"><span class="fb" style="color:#d4272a">PMI</span></div>
+        <div class="cert-logo" style="background:rgba(212,39,42,.1)"><img src="pmi.png" alt="PMI" loading="lazy" decoding="async"><span class="fb" style="color:#d4272a">PMI</span></div>
         <div><div class="cert-name">Certified Associate in Project Mgmt</div><div class="cert-issuer">Project Management Institute</div><div class="cert-date">CAPM · Jan 2026</div></div>
       </a>
 
       <div class="cert-group-label">🔬 Data Engineering & Analytics</div>
 
       <a class="cert-card fi" data-d="1" href="https://www.coursera.org/account/accomplishments/professional-cert/GQ6JVF1IX8DX" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(5,47,173,.15)"><img src="ibm.png" alt="IBM"><span class="fb" style="color:#1261FE">IBM</span></div>
+        <div class="cert-logo" style="background:rgba(5,47,173,.15)"><img src="ibm.png" alt="IBM" loading="lazy" decoding="async"><span class="fb" style="color:#1261FE">IBM</span></div>
         <div><div class="cert-name">Data Engineering Professional Cert.</div><div class="cert-issuer">IBM</div><div class="cert-date">Dec 2025</div></div>
       </a>
 
       <a class="cert-card fi" data-d="2" href="https://www.coursera.org/account/accomplishments/professional-cert/0KKNTJTVIPTL" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google"><span class="fb" style="color:#4285F4">Google</span></div>
+        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
         <div><div class="cert-name">Google Data Analytics Certificate</div><div class="cert-issuer">Google</div><div class="cert-date">Dec 2025</div></div>
       </a>
 
       <a class="cert-card fi" data-d="3" href="https://www.coursera.org/account/accomplishments/professional-cert/QQUN7XEULA6Z" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google"><span class="fb" style="color:#4285F4">Google</span></div>
+        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
         <div><div class="cert-name">Google Project Management Cert.</div><div class="cert-issuer">Google</div><div class="cert-date">Jan 2026</div></div>
       </a>
 
       <a class="cert-card fi" data-d="4" href="https://www.credly.com/badges/41e7dde9-0e57-4d69-a4c9-40777bfee88c/public_url" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(0,51,102,.15)"><img src="mckinsey.png" alt="McKinsey"><span class="fb" style="color:#6699cc">McKin<br>sey</span></div>
+        <div class="cert-logo" style="background:rgba(0,51,102,.15)"><img src="mckinsey.png" alt="McKinsey" loading="lazy" decoding="async"><span class="fb" style="color:#6699cc">McKin<br>sey</span></div>
         <div><div class="cert-name">McKinsey Forward Program</div><div class="cert-issuer">McKinsey & Company</div><div class="cert-date">Jul 2025</div></div>
       </a>
 
       <a class="cert-card fi" data-d="5" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/72b470664c1ee41d4f4402e67b110d8fa0a0d6a5" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(3,143,140,.15)"><img src="datacamp.svg" alt="DataCamp"><span class="fb" style="color:#03EF62">Data<br>Camp</span></div>
+        <div class="cert-logo" style="background:rgba(3,143,140,.15)"><img src="datacamp.svg" alt="DataCamp" loading="lazy" decoding="async"><span class="fb" style="color:#03EF62">Data<br>Camp</span></div>
         <div><div class="cert-name">Associate Data Engineer in SQL</div><div class="cert-issuer">DataCamp</div><div class="cert-date">Jun 2025</div></div>
       </a>
 
       <a class="cert-card fi" data-d="6" href="https://cp.certmetrics.com/CompTIA/en/public/verify/credential/d0b8a00c6d3741958627fa9111521119" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(200,32,46,.12)"><img src="comptia.png" alt="CompTIA"><span class="fb" style="color:#C8202E">Comp<br>TIA</span></div>
+        <div class="cert-logo" style="background:rgba(200,32,46,.12)"><img src="comptia.png" alt="CompTIA" loading="lazy" decoding="async"><span class="fb" style="color:#C8202E">Comp<br>TIA</span></div>
         <div><div class="cert-name">CompTIA Data+</div><div class="cert-issuer">CompTIA</div><div class="cert-date">DA0-001 · Nov 2025</div></div>
       </a>
 
@@ -1342,7 +1353,7 @@
       <span class="sec-ghost">08</span>
       <span class="sec-tag">-- 08 // connect</span>
       <h2 class="sec-title">Let's <span>Connect</span></h2>
-      <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
+      <p class="sec-sub">Open to full-time roles and exciting opportunities</p>
     </div>
     <div class="contact-stack">
       <div class="contact-info fi" data-d="1">
@@ -1353,9 +1364,9 @@
         <h3>Send a Message</h3>
         <p class="sub">I'll get back to you within 24 hours.</p>
         <form id="cform" action="https://formspree.io/f/xpqgdlay" method="POST" onsubmit="handleForm(event)">
-          <div class="fg"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Your name" required></div>
-          <div class="fg"><label for="f-email">Email</label><input id="f-email" type="email" placeholder="your@email.com" required></div>
-          <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" placeholder="Tell me about the opportunity..." required></textarea></div>
+          <div class="fg"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
+          <div class="fg"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="your@email.com" required></div>
+          <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell me about the opportunity..." required></textarea></div>
           <button type="submit" class="form-btn" id="fbtn">Send Message →</button>
         </form>
       </div>
