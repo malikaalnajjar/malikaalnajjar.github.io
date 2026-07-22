@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OG Banner Template (1200x630)</title>
+  <!--
+    HOW TO USE:
+    1. Open this file in Chrome or Safari.
+    2. Screenshot the banner at exactly 1200x630 (easiest: DevTools device toolbar
+       set to 1200x630 responsive, then Cmd+Shift+P > "Capture screenshot").
+    3. Save it as og-banner.png in this folder.
+    4. Tell Claude to switch the og:image / twitter:image meta tags in index.html
+       from profile.jpg to og-banner.png.
+    This file is a design template only. It is not linked from the site.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#030803;--cyan:#00e676;--purple:#00c853;--pink:#69f0ae;--text:#edf5ed;--muted:#527852;--border:rgba(0,230,118,.13)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#111;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Manrope',sans-serif}
+    .banner{width:1200px;height:630px;background:var(--bg);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:0 90px;flex-shrink:0}
+    .banner::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,230,118,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,.03) 1px,transparent 1px);background-size:55px 55px}
+    .orb{position:absolute;border-radius:50%;filter:blur(110px)}
+    .orb1{width:500px;height:500px;background:var(--cyan);opacity:.13;top:-220px;right:-160px}
+    .orb2{width:400px;height:400px;background:var(--purple);opacity:.1;bottom:-200px;left:-140px}
+    .inner{position:relative;z-index:1}
+    .eyebrow{font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:22px;margin-bottom:18px}
+    .name{font-size:88px;font-weight:900;color:var(--text);line-height:1.05;letter-spacing:-.03em;margin-bottom:14px}
+    .name span{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .role{font-size:34px;font-weight:700;color:var(--muted);margin-bottom:38px}
+    .role b{color:var(--cyan);font-weight:700}
+    .badges{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
+    .badge{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:700;padding:9px 22px;border-radius:50px;background:rgba(0,230,118,.08);border:1.5px solid rgba(0,230,118,.32);color:var(--cyan)}
+    .badge.alt{background:rgba(0,191,165,.08);border-color:rgba(0,191,165,.32);color:#1de9b6}
+    .foot{display:flex;align-items:center;gap:26px;font-family:'JetBrains Mono',monospace;font-size:21px;color:var(--muted)}
+    .foot .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px rgba(0,230,118,.8)}
+    .foot .url{color:var(--text);font-weight:700}
+    .corner{position:absolute;font-family:'JetBrains Mono',monospace;font-size:16px;color:rgba(0,230,118,.3);letter-spacing:1px}
+    .corner.tl{top:34px;left:40px}
+    .corner.br{bottom:34px;right:40px}
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="corner tl">// portfolio</div>
+    <div class="corner br">&lt;MAN/&gt;</div>
+    <div class="inner">
+      <div class="eyebrow">// Hello, World! I'm</div>
+      <div class="name">Malik <span>AlNajjar</span></div>
+      <div class="role"><b>Data Engineer</b> &amp; Software Engineer</div>
+      <div class="badges">
+        <span class="badge">AWS DEA-C01</span>
+        <span class="badge">AWS SAA-C03</span>
+        <span class="badge alt">DAMA CDMP</span>
+        <span class="badge alt">PMI CAPM</span>
+        <span class="badge">GPA 4.97/5.0</span>
+      </div>
+      <div class="foot">
+        <span class="dot"></span>
+        <span>Available Now · Jeddah, KSA</span>
+        <span class="url">malikaalnajjar.github.io</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

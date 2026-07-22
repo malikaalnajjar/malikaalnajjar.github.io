@@ -50,6 +50,17 @@
       "https://github.com/malikaalnajjar"
     ],
     "knowsAbout": ["Data Engineering", "ETL Pipelines", "AWS", "Python", "SQL", "Power BI", "IoT Systems", "Cloud Infrastructure"],
+    "knowsLanguage": ["ar", "en"],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Data Engineer - Associate (DEA-C01)"},
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect - Associate (SAA-C03)"},
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner (CLF-C02)"},
+      {"@type": "EducationalOccupationalCredential", "name": "DAMA Certified Data Management Professional (CDMP)"},
+      {"@type": "EducationalOccupationalCredential", "name": "PMI Certified Associate in Project Management (CAPM)"},
+      {"@type": "EducationalOccupationalCredential", "name": "CompTIA Data+"},
+      {"@type": "EducationalOccupationalCredential", "name": "IBM Data Engineering Professional Certificate"},
+      {"@type": "EducationalOccupationalCredential", "name": "Google Data Analytics Certificate"}
+    ],
     "address": { "@type": "PostalAddress", "addressLocality": "Jeddah", "addressCountry": "SA" }
   }
   </script>
@@ -91,7 +102,7 @@
     .nav-cta{background:linear-gradient(135deg,var(--cyan),var(--purple))!important;color:#fff!important;padding:.4rem 1.1rem;border-radius:50px;font-weight:600!important}
     .nav-cta::after{display:none!important}
     .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,230,118,.35)}
-    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:0}
     .hamburger span{width:25px;height:2px;background:var(--text);transition:.3s;display:block}
     .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
     .hamburger.open span:nth-child(2){opacity:0}
@@ -379,6 +390,9 @@
     .cs-row{margin-bottom:.65rem}
     .cs-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:1px;margin-bottom:.2rem}
     .cs-text{color:var(--muted);font-size:.81rem;line-height:1.65}
+
+    /* ── screen-reader-only text (accessibility) ── */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 
     /* ── focus rings (accessibility) ── */
     :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
@@ -847,7 +861,7 @@
     <svg id="themeIcon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
     <span id="themeLabel">Light</span>
   </button>
-  <div class="hamburger" id="hbg"><span></span><span></span><span></span></div>
+  <button type="button" class="hamburger" id="hbg" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ── Hero ── -->
@@ -857,7 +871,7 @@
     <a href="#contact" class="coop-banner"><span class="coop-dot"></span> Open to Full-Time · Available Now · Jeddah, KSA →</a>
     <p class="hero-greeting">// Hello, World! I'm</p>
     <h1 class="hero-name">Malik <span>AlNajjar</span></h1>
-    <p class="hero-role"><span id="tw" class="tw"></span><span class="cur"></span></p>
+    <p class="hero-role"><span class="sr-only">Data Engineer · Software Engineer · Data Analyst</span><span aria-hidden="true"><span id="tw" class="tw"></span><span class="cur"></span></span></p>
     <p class="hero-desc">
       I turn raw data into reliable pipelines — building <strong>ETL/ELT systems</strong>,
       <strong>AWS cloud infrastructure</strong>, and <strong>IoT ingestion layers</strong> that actually reach production.
@@ -1364,6 +1378,7 @@
         <h3>Send a Message</h3>
         <p class="sub">I'll get back to you within 24 hours.</p>
         <form id="cform" action="https://formspree.io/f/xpqgdlay" method="POST" onsubmit="handleForm(event)">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="fg"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
           <div class="fg"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="your@email.com" required></div>
           <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell me about the opportunity..." required></textarea></div>
@@ -1522,9 +1537,10 @@ window.addEventListener('scroll',()=>{
 // ── HAMBURGER ──
 const hbg=document.getElementById('hbg');
 const nl=document.getElementById('navLinks');
-hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); nl.classList.toggle('open'); document.body.classList.toggle('nav-open',nl.classList.contains('open')); });
+hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); nl.classList.toggle('open'); const menuOpen=nl.classList.contains('open'); document.body.classList.toggle('nav-open',menuOpen); hbg.setAttribute('aria-expanded',menuOpen); hbg.setAttribute('aria-label',menuOpen?'Close menu':'Open menu'); });
 nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   hbg.classList.remove('open'); nl.classList.remove('open'); document.body.classList.remove('nav-open');
+  hbg.setAttribute('aria-expanded','false'); hbg.setAttribute('aria-label','Open menu');
   setTimeout(()=>{
     let cur='';
     sections.forEach(s=>{ if(scrollY>=s.offsetTop-120)cur=s.id; });
@@ -1602,7 +1618,9 @@ function toggleTheme(){
     localStorage.setItem('theme','dark');
   }
 }
-if(localStorage.getItem('theme')==='light') toggleTheme();
+// Respect the visitor's OS theme on first visit; their manual choice wins afterwards
+const _storedTheme=localStorage.getItem('theme');
+if(_storedTheme==='light'||(!_storedTheme&&window.matchMedia('(prefers-color-scheme: light)').matches)) toggleTheme();
 
 // ── CASE STUDY TOGGLE ──
 function toggleCS(btn){
