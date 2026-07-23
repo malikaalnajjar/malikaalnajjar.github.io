@@ -6,7 +6,7 @@
   <title>Malik AlNajjar - Data Engineer & Software Engineer</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23080812'/><text x='50' y='72' font-family='Inter,sans-serif' font-size='58' font-weight='900' text-anchor='middle' fill='%2300e676'>M</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030803'/><text x='50' y='63' font-family='monospace' font-size='38' font-weight='800' text-anchor='middle' fill='%2300e676'>MAN</text></svg>">
 
 
   <!-- SEO -->
@@ -20,6 +20,8 @@
   <!-- Social link previews (LinkedIn, WhatsApp, X) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://malikalnajjar.com">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
   <meta property="og:title" content="Malik AlNajjar - Data Engineer & Software Engineer">
   <meta property="og:description" content="AWS-certified Data Engineer (DEA-C01, SAA-C03) and UBT First Class Honours graduate. ETL pipelines, cloud infrastructure, IoT systems. Available now in Jeddah, KSA.">
   <meta property="og:image" content="https://malikalnajjar.com/profile.jpg">
@@ -372,6 +374,8 @@
     a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 
     /* ── polish ── */
+    .skip-link{position:fixed;top:-60px;left:1rem;z-index:300;background:var(--cyan);color:#03130a;padding:.6rem 1.1rem;border-radius:8px;font-weight:700;font-size:.85rem;text-decoration:none;transition:top .2s}
+    .skip-link:focus{top:1rem}
     ::selection{background:rgba(0,230,118,.28);color:#eafff2}
     body.light ::selection{background:rgba(0,107,46,.16);color:#07230f}
     section[id]{scroll-margin-top:80px}
@@ -730,9 +734,23 @@
     @media(max-width:768px){
       html[dir="rtl"] .tl-left,html[dir="rtl"] .tl-right{text-align:right;padding-right:1rem;padding-left:0}
     }
+
+    /* ── print / save-as-PDF ── */
+    @media print{
+      nav,#progress,.orb,#canvas-bg,#loader,#cursor-dot,#cursor-ring,.stbtn,.scroll-indicator,.skip-link,.hero-btns,.hero-social,.coop-banner,.hero-role,.form-box,.cs-toggle,.hamburger,.hero-photo{display:none!important}
+      body,body.light{--bg:#fff;--bg2:#fff;--card:#fff;--text:#111;--muted:#444;--cyan:#0a4d26;--purple:#0a4d26;--pink:#0a4d26;--green:#0a4d26;--border:#ddd;background:#fff!important;color:#111!important;cursor:auto}
+      section,#hero{padding:18px 0!important;min-height:0!important;background:none!important}
+      .hero-greeting,.hero-name,.hero-desc,.hero-badges,.hero-stats{opacity:1!important;animation:none!important}
+      .hero-name span,.sec-title span,.stat-num{background:none!important;-webkit-text-fill-color:#0a4d26!important;color:#0a4d26!important}
+      .fi{opacity:1!important;transform:none!important;transition:none!important}
+      .cs-body{display:block!important}
+      .proj-card,.skill-cat,.cert-card,.aw-card,.hl-card,.tl-content,.stat-box{box-shadow:none!important;break-inside:avoid;-webkit-backdrop-filter:none;backdrop-filter:none}
+      a{text-decoration:none}
+    }
   </style>
 </head>
 <body>
+<a class="skip-link" href="#hero">Skip to content</a>
 <noscript><style>.fi{opacity:1!important;transform:none!important}</style></noscript>
 
 <!-- Loader -->
@@ -1470,6 +1488,7 @@ function toggleTheme(){
     icon.innerHTML='<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>';
     localStorage.setItem('theme','dark');
   }
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m=>m.setAttribute('content',light?'#fafcfa':'#030803'));
 }
 // Respect the visitor's OS theme on first visit; their manual choice wins afterwards
 const _storedTheme=localStorage.getItem('theme');
@@ -1548,6 +1567,7 @@ window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('loa
 window.LANGCUR = localStorage.getItem('lang') || 'en';
 
 const AR_HTML = {
+  '.skip-link': 'تخطَّ إلى المحتوى',
   'a.coop-banner': '<span class="coop-dot"></span> متاح للعمل بدوام كامل · متاح الآن · جدة، السعودية ←',
   '.hero-greeting': 'أهلاً، أنا',
   '.hero-name': 'مالك <span>النجار</span>',
