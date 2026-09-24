@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Malik AlNajjar - Data Engineer & Software Engineer</title>
+  <!-- Plain-http visits stay on http unless something upgrades them; the proper fix is
+       Cloudflare's "Always Use HTTPS", this covers visitors until that is switched on -->
+  <script>if(location.protocol==='http:'&&/(^|\.)malikalnajjar\.com$/.test(location.hostname))location.replace('https:'+location.href.slice(5));</script>
+  <title>Malik AlNajjar - Software Engineer</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23030803'/><text x='50' y='63' font-family='monospace' font-size='38' font-weight='800' text-anchor='middle' fill='%2300e676'>MAN</text></svg>">
 
 
   <!-- SEO -->
-  <meta name="description" content="Malik AlNajjar - Data Engineer & Software Engineer. UBT graduate (GPA 4.97/5.0), AWS DEA-C01 & SAA-C03 certified, DAMA CDMP, PMI CAPM. Building ETL pipelines, cloud infrastructure, and IoT systems. Seeking a software engineering co-op in Jeddah.">
-  <meta name="keywords" content="Malik AlNajjar, Data Engineer, Software Engineer, AWS, ETL, Cloud, Saudi Arabia, UBT, portfolio">
+  <meta name="description" content="Malik AlNajjar - Software Engineer at MicroMobility in Jeddah. Builds production web platforms and data pipelines on PostgreSQL, Supabase, Cloudflare and AWS. UBT Software Engineering graduate (GPA 4.97/5.0, First Class Honours), AWS DEA-C01 & SAA-C03 certified.">
+  <meta name="keywords" content="Malik AlNajjar, Software Engineer, Full-Stack, Data Engineer, PostgreSQL, Supabase, Cloudflare, AWS, Jeddah, Saudi Arabia, UBT, portfolio">
   <meta name="author" content="Malik AlNajjar">
   <link rel="canonical" href="https://malikalnajjar.com">
   <meta name="theme-color" content="#030803" media="(prefers-color-scheme: dark)">
@@ -22,12 +25,15 @@
   <meta property="og:url" content="https://malikalnajjar.com">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="ar_SA">
-  <meta property="og:title" content="Malik AlNajjar - Data Engineer & Software Engineer">
-  <meta property="og:description" content="AWS-certified Data Engineer (DEA-C01, SAA-C03) and UBT First Class Honours graduate. ETL pipelines, cloud infrastructure, IoT systems. Seeking a software engineering co-op in Jeddah, KSA.">
+  <meta property="og:title" content="Malik AlNajjar - Software Engineer">
+  <meta property="og:description" content="Software Engineer at MicroMobility, Jeddah. Production web platforms and data pipelines on PostgreSQL, Supabase, Cloudflare and AWS. UBT First Class Honours (GPA 4.97/5.0), AWS certified.">
   <meta property="og:image" content="https://malikalnajjar.com/og-banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Malik AlNajjar, Software Engineer at MicroMobility, Jeddah">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Malik AlNajjar - Data Engineer & Software Engineer">
-  <meta name="twitter:description" content="AWS-certified Data Engineer and UBT First Class Honours graduate. ETL pipelines, cloud infrastructure, IoT systems.">
+  <meta name="twitter:title" content="Malik AlNajjar - Software Engineer">
+  <meta name="twitter:description" content="Software Engineer at MicroMobility, Jeddah. Production web platforms and data pipelines on PostgreSQL, Supabase, Cloudflare and AWS.">
   <meta name="twitter:image" content="https://malikalnajjar.com/og-banner.png">
   <!-- Preload hero image for performance -->
   <link rel="preload" as="image" href="profile.jpg">
@@ -40,8 +46,10 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Malik AlNajjar",
-    "jobTitle": "Data Engineer & Software Engineer",
+    "jobTitle": "Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "MicroMobility", "url": "https://micromobility.sa" },
     "url": "https://malikalnajjar.com",
+    "image": "https://malikalnajjar.com/profile.jpg",
     "email": "malik-naj@hotmail.com",
     "alumniOf": {
       "@type": "CollegeOrUniversity",
@@ -52,7 +60,7 @@
       "https://linkedin.com/in/malik-alnajjar",
       "https://github.com/malikaalnajjar"
     ],
-    "knowsAbout": ["Data Engineering", "ETL Pipelines", "AWS", "Python", "SQL", "Power BI", "IoT Systems", "Cloud Infrastructure"],
+    "knowsAbout": ["Software Engineering", "PostgreSQL", "Supabase", "Cloudflare", "JavaScript", "Data Engineering", "ETL Pipelines", "AWS", "Python", "SQL", "IoT Systems"],
     "knowsLanguage": ["ar", "en"],
     "hasCredential": [
       {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Data Engineer - Associate (DEA-C01)"},
@@ -72,6 +80,7 @@
       --bg:#030803;--bg2:#071007;--card:rgba(0,230,118,.04);
       --cyan:#00e676;--purple:#00c853;--pink:#69f0ae;--green:#22c55e;
       --text:#edf5ed;--muted:#74a074;--border:rgba(0,230,118,.13);
+      --on-accent:#03130a; /* text on the green buttons: white on #00e676 is under 2:1 */
     }
     *{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -95,14 +104,14 @@
 
     /* ── nav ── */
     nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;transition:.3s}
-    nav.scrolled{background:rgba(8,8,18,.93);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+    nav.scrolled{background:rgba(3,8,3,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
     .logo{font-family:'JetBrains Mono',monospace;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
     .nav-links{display:flex;gap:2rem;list-style:none}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .35s;position:relative;padding-bottom:2px}
     .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--cyan);transition:width .35s cubic-bezier(.4,0,.2,1),opacity .35s}
     .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
     .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{background:linear-gradient(135deg,var(--cyan),var(--purple))!important;color:#fff!important;padding:.4rem 1.1rem;border-radius:50px;font-weight:600!important}
+    .nav-cta{background:linear-gradient(135deg,var(--cyan),var(--purple))!important;color:var(--on-accent)!important;padding:.4rem 1.1rem;border-radius:50px;font-weight:600!important}
     .nav-cta::after{display:none!important}
     .nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,230,118,.35)}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101;background:none;border:none;padding:0}
@@ -129,8 +138,6 @@
     .hero-name span{background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-role{font-size:clamp(1.1rem,3vw,1.55rem);color:var(--muted);margin-bottom:1.5rem;min-height:2.2rem;opacity:0;animation:fadeUp .6s .6s forwards}
     .tw{color:var(--cyan);font-weight:600}
-    .cur{display:inline-block;width:2px;height:1em;background:var(--cyan);margin-left:2px;animation:blink 1s infinite;vertical-align:middle}
-    @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
     .hero-desc{color:var(--muted);max-width:600px;margin:0 0 2rem;font-size:1.02rem;line-height:1.85;opacity:0;animation:fadeUp .6s .8s forwards}
     .hero-desc strong{color:var(--text)}
     .hero-badges{display:flex;gap:.55rem;justify-content:flex-start;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .6s .95s forwards}
@@ -140,7 +147,7 @@
     .hero-btns{display:flex;gap:.9rem;justify-content:flex-start;flex-wrap:wrap;margin-bottom:2.5rem}
     .hb-anim{opacity:0;animation:fadeUp .6s 1.1s forwards}
     .btn{padding:.8rem 1.8rem;border-radius:50px;font-weight:600;font-size:.93rem;text-decoration:none;transition:.3s;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;border:none;font-family:'Manrope',sans-serif}
-    .btn-p{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
+    .btn-p{background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--on-accent)}
     .btn-p:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,230,118,.38)}
     .btn-s{background:transparent;color:var(--text);border:1px solid var(--border)}
     .btn-s:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
@@ -195,8 +202,7 @@
 
     /* ── projects ── */
     #projects{padding:100px 0}
-    .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
-    .proj-grid .proj-card:last-child:nth-child(2n+1){grid-column:1/-1;max-width:480px;margin:0 auto}
+    .proj-grid{display:grid;grid-template-columns:1fr;gap:2rem}
     .proj-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);transition:.4s cubic-bezier(.4,0,.2,1);position:relative;display:flex;flex-direction:column}
     .proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));opacity:0;transition:.3s}
     .proj-card:hover::before{opacity:1}
@@ -220,7 +226,6 @@
     .cert-card:hover{transform:translateY(-3px);border-color:rgba(0,230,118,.3);box-shadow:0 0 22px rgba(0,230,118,.1)}
     .cert-logo{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
     .cert-logo img{width:100%;height:100%;object-fit:contain;display:block;padding:7px;border-radius:10px}
-    .cert-logo img[src="microsoft.jpg"]{padding:5px;border-radius:8px;mix-blend-mode:luminosity;filter:brightness(1.4)}
     .cert-logo img.err{display:none}
     .cert-logo .fb{display:none;font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:800;text-align:center;line-height:1.3}
     .cert-logo img.err~.fb{display:block}
@@ -260,7 +265,7 @@
     .fg input,.fg textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:.78rem .95rem;color:var(--text);font-size:.92rem;font-family:'Manrope',sans-serif;transition:.3s;outline:none;resize:vertical}
     .fg textarea{min-height:100px}
     .fg input:focus,.fg textarea:focus{border-color:var(--cyan);background:rgba(0,230,118,.04);box-shadow:0 0 0 3px rgba(0,230,118,.1)}
-    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Manrope',sans-serif}
+    .form-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--purple));color:var(--on-accent);border:none;padding:.92rem;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:.3s;font-family:'Manrope',sans-serif}
     .form-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,230,118,.36)}
 
 
@@ -269,6 +274,7 @@
       --bg:#fafcfa;--bg2:#eef3ee;--card:#ffffff;
       --text:#0a1a0a;--muted:#3d5340;--border:rgba(16,45,26,.12);
       --cyan:#006b2e;--purple:#005a26;--pink:#2d8e5e;--green:#1a6a2e;
+      --on-accent:#fff;
     }
     /* light mode elevates with white surfaces + soft sage-tinted shadows, not glows */
     body.light .proj-card,body.light .skill-cat,body.light .cert-card,body.light .aw-card,body.light .hl-card,body.light .tl-content,body.light .stat-box,body.light .form-box{box-shadow:0 1px 2px rgba(22,52,32,.05),0 3px 10px rgba(22,52,32,.05)}
@@ -341,7 +347,7 @@
     footer span{color:var(--cyan)}
 
     /* ── scroll-to-top ── */
-    .stbtn{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;color:#fff;font-size:1.1rem;cursor:pointer;z-index:100;opacity:0;transform:translateY(20px);transition:.3s;display:flex;align-items:center;justify-content:center}
+    .stbtn{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));border:none;color:var(--on-accent);font-size:1.1rem;cursor:pointer;z-index:100;opacity:0;transform:translateY(20px);transition:.3s;display:flex;align-items:center;justify-content:center}
     .stbtn.show{opacity:1;transform:translateY(0)}
     .stbtn:hover{transform:translateY(-3px)!important;box-shadow:0 0 22px rgba(0,230,118,.42)}
 
@@ -393,11 +399,6 @@
     /* live "ongoing" badge (experience section) */
     .tl-live{display:inline-flex;align-items:center;gap:.3rem;font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--cyan);background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.22);border-radius:4px;padding:.1rem .38rem;margin-top:.45rem}
     .tl-live::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;flex-shrink:0}
-    /* cert mini bar */
-    .cert-meta{display:flex;align-items:center;gap:.5rem;margin-top:.3rem}
-    .cert-bar-wrap{flex:1;height:2px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
-    body.light .cert-bar-wrap{background:rgba(0,0,0,.07)}
-    .cert-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--purple))}
     /* about highlights data style */
     .hl-card{position:relative;overflow:hidden}
     .hl-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.3s}
@@ -479,29 +480,6 @@
     .skill-cat{border-radius:14px;padding:1.6rem}
     .form-box{border-radius:16px;padding:2.2rem}
 
-    /* Loader */
-    #loader{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10000;transition:opacity .55s .05s,visibility .55s .05s}
-    #loader.done{opacity:0;visibility:hidden;pointer-events:none}
-    .loader-logo{font-family:'JetBrains Mono',monospace;font-size:clamp(2.8rem,9vw,5rem);font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;animation:loaderPulse .95s ease-in-out infinite}
-    .loader-bar{width:150px;height:2px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-top:1.6rem}
-    .loader-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));animation:loaderLoad 1.15s ease-out forwards}
-    @keyframes loaderPulse{0%,100%{opacity:1}50%{opacity:.3}}
-    @keyframes loaderLoad{from{width:0}to{width:100%}}
-
-    /* Custom cursor */
-    @media(hover:hover){
-      body{cursor:none}
-      a,button,.btn,.cert-card,.proj-card,.hl-card,.aw-card{cursor:none}
-    }
-    #cursor-dot,#cursor-ring{position:fixed;pointer-events:none;transform:translate(-50%,-50%);border-radius:50%;z-index:9999;display:none}
-    @media(hover:hover){#cursor-dot,#cursor-ring{display:block}}
-    #cursor-dot{width:6px;height:6px;background:var(--cyan);transition:transform .1s,opacity .25s}
-    #cursor-ring{width:26px;height:26px;border:1.5px solid rgba(0,230,118,.45);transition:width .22s,height .22s,border-color .22s,opacity .25s}
-    body.cursor-hover #cursor-ring{width:48px;height:48px;border-color:rgba(0,230,118,.85)}
-    body.cursor-hover #cursor-dot{transform:translate(-50%,-50%) scale(.5)}
-    body.light #cursor-ring{border-color:rgba(0,122,69,.4)}
-    body.light.cursor-hover #cursor-ring{border-color:rgba(0,122,69,.9)}
-
     /* ── mobile photo ── */
     @media(max-width:768px){
       .photo-wrap img{aspect-ratio:3/4!important;object-position:center top!important;border-radius:14px!important}
@@ -510,14 +488,14 @@
     }
 
     /* ── awards grid ── */
-    .awards-grid{grid-template-columns:repeat(2,1fr)!important;gap:1rem}
+    .awards-grid{grid-template-columns:repeat(3,1fr)!important;gap:1rem}
     .aw-card{flex-direction:row!important;align-items:flex-start!important;gap:1.1rem;padding:1.2rem 1.4rem}
     .aw-icon{font-size:1.6rem;margin-bottom:0!important;flex-shrink:0;padding-top:.1rem}
     .aw-title{font-size:.9rem;margin-bottom:.1rem}
     .aw-org{margin-bottom:.3rem}
     .aw-desc{font-size:.81rem;line-height:1.6}
     .aw-date{margin-top:.25rem;font-size:.69rem}
-    @media(max-width:768px){.awards-grid{grid-template-columns:1fr!important}}
+    @media(max-width:900px){.awards-grid{grid-template-columns:1fr!important}}
 
     /* ── contact layout ── */
     .contact-stack{display:flex;flex-direction:column;gap:2.2rem;max-width:680px;margin:0 auto;align-items:center}
@@ -570,13 +548,14 @@
       .hero-content{display:contents}
       .coop-banner{order:1}
       .hero-photo{order:2;margin-top:.5rem!important;align-self:center}
-      .hero-photo .photo-wrap{width:min(300px,85%)!important}
+      .hero-photo .photo-wrap{width:min(210px,58%)!important}
       .hero-greeting{order:3}
       .hero-name{order:4}
       .hero-role{order:5}
-      .hero-desc{order:6}
-      .hero-badges{order:7}
-      .hero-btns{order:8;flex-wrap:wrap!important;justify-content:center;gap:.45rem}
+      /* the buttons come straight after the name so a phone shows them on the first screen */
+      .hero-btns{order:6;flex-wrap:wrap!important;justify-content:center;gap:.45rem}
+      .hero-desc{order:7}
+      .hero-badges{order:8}
       .hero-btns .btn{padding:.6rem 0!important;font-size:.78rem!important;gap:.28rem;flex:1 1 calc(50% - .45rem);justify-content:center}
       .hero-btns .btn svg{width:13px!important;height:13px!important}
       .hero-btns .btn-g{flex:1 1 100%;justify-content:center}
@@ -642,7 +621,7 @@
 
 
     /* ── section content widths ── */
-    .awards-grid{max-width:860px;margin-left:auto;margin-right:auto}
+    .awards-grid{max-width:960px;margin-left:auto;margin-right:auto}
     .certs-grid{max-width:960px;margin-left:auto;margin-right:auto}
     .proj-grid{max-width:960px;margin-left:auto;margin-right:auto}
     .skills-grid{max-width:960px;margin-left:auto;margin-right:auto}
@@ -674,7 +653,8 @@
 
     /* ── print / save-as-PDF ── */
     @media print{
-      nav,#progress,.orb,#canvas-bg,#loader,#cursor-dot,#cursor-ring,.stbtn,.scroll-indicator,.skip-link,.hero-btns,.hero-social,.coop-banner,.hero-role,.form-box,.cs-toggle,.hamburger,.hero-photo{display:none!important}
+      nav,#progress,.orb,#canvas-bg,.stbtn,.scroll-indicator,.skip-link,.hero-btns,.hero-social,.coop-banner,.form-box,.cs-toggle,.hamburger,.hero-photo{display:none!important}
+      .hero-role{opacity:1!important;animation:none!important}
       body,body.light{--bg:#fff;--bg2:#fff;--card:#fff;--text:#111;--muted:#444;--cyan:#0a4d26;--purple:#0a4d26;--pink:#0a4d26;--green:#0a4d26;--border:#ddd;background:#fff!important;color:#111!important;cursor:auto}
       section,#hero{padding:18px 0!important;min-height:0!important;background:none!important}
       .hero-greeting,.hero-name,.hero-desc,.hero-badges,.hero-stats{opacity:1!important;animation:none!important}
@@ -684,21 +664,74 @@
       .proj-card,.skill-cat,.cert-card,.aw-card,.hl-card,.tl-content,.stat-box{box-shadow:none!important;break-inside:avoid;-webkit-backdrop-filter:none;backdrop-filter:none}
       a{text-decoration:none}
     }
+
+    /* ── 2026-09 refresh ── */
+    /* alternating section bands (the old tint was a navy left over from a template) */
+    #skills{background:none}
+    #about,#projects,#certifications,#contact{background:rgba(7,16,7,.55)}
+    body.light #skills{background:none}
+    body.light #about,body.light #projects,body.light #certifications,body.light #contact{background:rgba(22,52,32,.035)}
+
+    /* project rows: a visual beside the write-up */
+    .proj-card{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);align-items:start}
+    .proj-media{padding-block:1.75rem;padding-inline-start:1.75rem}
+    .proj-main{display:flex;flex-direction:column;min-width:0}
+    .proj-chips{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .proj-priv{font-family:'JetBrains Mono',monospace;font-size:.65rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:.2rem .5rem;border-radius:6px}
+    body.light .proj-priv{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.12)}
+    body.light .proj-award{background:rgba(161,98,7,.09);border-color:rgba(161,98,7,.3);color:#7a4f00}
+    .proj-shot{display:block;width:100%;max-width:230px;height:auto;margin:0 auto;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--border);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    body.light .proj-shot{box-shadow:0 10px 28px rgba(22,52,32,.16)}
+    /* architecture strip: one box per stage, arrows between them */
+    .flow{--fg:14px;list-style:none;display:flex;flex-direction:column;gap:var(--fg)}
+    .flow li{position:relative;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.55rem .8rem}
+    .flow li+li::before{content:'';position:absolute;top:calc(-1 * var(--fg));left:50%;width:1px;height:var(--fg);background:var(--cyan);opacity:.45}
+    .flow li+li::after{content:'';position:absolute;top:-5px;left:calc(50% - 3.5px);border-style:solid;border-width:5px 3.5px 0;border-color:var(--cyan) transparent transparent;opacity:.8}
+    .flow-role{display:block;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:.12rem}
+    .flow-node{display:block;font-size:.8rem;font-weight:600;color:var(--text);line-height:1.35}
+    .cs-fig{margin:.2rem 0 .8rem}
+    .cs-fig img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--border)}
+    .cs-fig figcaption{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);margin-top:.4rem}
+
+    /* skills: what the projects use, then what was only studied */
+    .sk-also{max-width:960px;margin:1.6rem auto 0;padding:1.2rem 1.4rem;border:1px dashed var(--border);border-radius:14px}
+    .sk-also-label{display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px}
+
+    /* certification logos sit on white tiles so dark marks (IBM, KAUST) stay readable */
+    .cert-logo{background:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+    .cert-logo img{padding:0;border-radius:0}
+    .cert-logo.text-logo{color:#0064b4;font-size:.62rem}
+
+    /* awards, then volunteering on one line */
+    .vol{max-width:960px;margin:1.2rem auto 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem 1.6rem;padding:1rem 1.4rem;border:1px solid var(--border);border-radius:14px;background:var(--card)}
+    .vol-title{font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:2px}
+    .vol-list{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem}
+    .vol-list li{font-size:.84rem;color:var(--muted)}
+    .vol-name{color:var(--text);font-weight:700}
+    .vol-date{font-family:'JetBrains Mono',monospace;font-size:.7rem;opacity:.8;margin-inline-start:.35rem}
+
+    @media(max-width:768px){
+      .proj-card{grid-template-columns:1fr}
+      .proj-media{padding:1.4rem 1.4rem 0}
+      .proj-shot{max-width:200px}
+      .flow{--fg:10px}
+      .flow li{display:flex;align-items:baseline;gap:.7rem;padding:.45rem .75rem}
+      .flow-role{flex:0 0 4.8rem;margin:0}
+      .vol{flex-direction:column}
+    }
+
+    /* RTL: Latin labels such as "CompTIA Data+" keep their own direction */
+    html[dir="rtl"] .badge,html[dir="rtl"] .tt,html[dir="rtl"] .stag,html[dir="rtl"] .flow-node,html[dir="rtl"] .cert-name,html[dir="rtl"] .cert-date,html[dir="rtl"] .cert-valid{unicode-bidi:plaintext}
+    /* plaintext would left-align the English lines; keep every line on the right edge */
+    html[dir="rtl"] .flow-node,html[dir="rtl"] .cert-name,html[dir="rtl"] .cert-valid{text-align:right}
+    /* the role line breaks between its two halves, never inside "Full-Stack & Data" */
+    .hero-role>span{white-space:nowrap}
+    html[dir="rtl"] .flow-role,html[dir="rtl"] .sk-also-label,html[dir="rtl"] .vol-title{letter-spacing:0}
   </style>
 </head>
 <body>
 <a class="skip-link" href="#hero">Skip to content</a>
 <noscript><style>.fi{opacity:1!important;transform:none!important}</style></noscript>
-
-<!-- Loader -->
-<div id="loader">
-  <div class="loader-logo">MAN</div>
-  <div class="loader-bar"><div class="loader-fill"></div></div>
-</div>
-
-<!-- Custom cursor -->
-<div id="cursor-ring"></div>
-<div id="cursor-dot"></div>
 
 <div id="progress"></div>
 <div class="orb orb1"></div>
@@ -711,8 +744,8 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" data-sec="about">About</a></li>
     <li><a href="#experience" data-sec="experience">Experience</a></li>
-    <li><a href="#skills" data-sec="skills">Skills</a></li>
     <li><a href="#projects" data-sec="projects">Projects</a></li>
+    <li><a href="#skills" data-sec="skills">Skills</a></li>
     <li><a href="#certifications" data-sec="certifications">Certs</a></li>
     <li><a href="#awards" data-sec="awards">Awards</a></li>
     <li><a href="#contact" class="nav-cta" data-sec="contact">Contact</a></li>
@@ -728,14 +761,15 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-    <a href="#contact" class="coop-banner"><span class="coop-dot"></span> Seeking Software Engineering Co-op · Available Now · Jeddah, KSA →</a>
+    <a href="#experience" class="coop-banner"><span class="coop-dot"></span> Software Engineer at MicroMobility · Jeddah, KSA →</a>
     <p class="hero-greeting">Hi, I'm</p>
     <h1 class="hero-name">Malik <span>AlNajjar</span></h1>
-    <p class="hero-role"><span class="sr-only">Data Engineer · Software Engineer · Data Analyst</span><span aria-hidden="true"><span id="tw" class="tw"></span><span class="cur"></span></span></p>
+    <p class="hero-role"><span class="tw">Software Engineer</span> <span>· Full-Stack &amp; Data</span></p>
     <p class="hero-desc">
-      I turn raw data into reliable pipelines — building <strong>ETL/ELT systems</strong>,
-      <strong>AWS cloud infrastructure</strong>, and <strong>IoT ingestion layers</strong> that actually reach production.
-      UBT graduate (GPA <strong>4.97/5.0</strong>, First Class Honours) · 10+ certifications · bilingual.
+      I build production software end to end. At MicroMobility I engineer the booking, check-in and point-of-sale
+      platform behind its rides in Jeddah, on <strong>PostgreSQL</strong>, <strong>Supabase</strong> and <strong>Cloudflare</strong>.
+      My projects span <strong>data pipelines</strong>, <strong>machine learning</strong> and <strong>IoT</strong>.
+      UBT graduate (GPA <strong>4.97/5.0</strong>, First Class Honours) · AWS certified · bilingual.
     </p>
     <div class="hero-badges">
       <span class="badge badge-c">AWS DEA-C01</span>
@@ -787,7 +821,7 @@
     <div class="stat-box"><div class="stat-num">4.97</div><div class="stat-lbl">GPA / 5.0</div></div>
     <div class="stat-box"><div class="stat-num">10+</div><div class="stat-lbl">Certifications</div></div>
     <div class="stat-box"><div class="stat-num">5+</div><div class="stat-lbl">Projects Delivered</div></div>
-    <div class="stat-box"><div class="stat-num">500+</div><div class="stat-lbl">Students Reached</div></div>
+    <div class="stat-box"><div class="stat-num">Top 15</div><div class="stat-lbl">AVITHON · 500+ Teams</div></div>
   </div>
   <a href="#about" class="scroll-indicator" aria-label="Scroll down">
     <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -800,18 +834,18 @@
     <div class="sec-hdr fi">
       <span class="sec-tag">About</span>
       <h2 class="sec-title">Who I <span>Am</span></h2>
-      <p class="sec-sub">A passionate builder at the intersection of data and engineering</p>
+      <p class="sec-sub">A builder at the intersection of software and data</p>
     </div>
     <div class="about-grid">
       <div class="about-text fi" data-d="1">
-        <p>I'm a <strong>Software Engineering graduate</strong> from the University of Business and Technology (UBT) in Jeddah, Saudi Arabia, graduating with First Class Honours and a GPA of <strong>4.97/5.0</strong>.</p>
-        <p>I specialize in <strong>ETL/ELT data pipelines</strong>, <strong>AWS cloud infrastructure</strong>, and <strong>IoT data ingestion systems</strong>. My projects span edge sensors all the way to cloud analytics dashboards and BI reports.</p>
-        <p>I'm bilingual (Arabic/English, IELTS 7.5), an <strong>Agile team contributor</strong>, and a technical community leader through GDG and ACM, driven by data-powered solutions aligned with <strong>Saudi Vision 2030</strong>.</p>
+        <p>I'm a <strong>Software Engineer at MicroMobility</strong> in Jeddah, where I build and run the platform behind the company's group rides: customer booking, check-in, point of sale and reporting, used by staff and riders every ride night.</p>
+        <p>I graduated in <strong>Software Engineering</strong> from the University of Business and Technology (UBT) with First Class Honours and a GPA of <strong>4.97/5.0</strong>. My projects range from <strong>IoT sensing and edge AI</strong> to <strong>data-quality pipelines</strong> and <strong>ML forecasting</strong>, and I hold AWS certifications in data engineering and solutions architecture.</p>
+        <p>I'm bilingual (Arabic/English, IELTS 7.5), a technical community leader through GDG and ACM, and driven by software that solves real problems, aligned with <strong>Saudi Vision 2030</strong>.</p>
         <div class="highlights">
+          <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="16.5" r="3.5"/><circle cx="18.5" cy="16.5" r="3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M5.5 16.5L9 9h7l2.5 7.5M9 9l3.5 7.5L16 9M5.5 16.5h7M9 9V6.5M7.5 6.5h3M16 9l-.5-2.5h2"/></svg></div><div class="hl-title">MicroMobility</div><div class="hl-desc">Software Engineer · since Jun 2026</div></div>
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg></div><div class="hl-title">UBT, Jeddah</div><div class="hl-desc">B.Sc. Software Engineering · GPA 4.97/5.0</div></div>
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><div class="hl-title">AWS Certified</div><div class="hl-desc">DEA-C01 · SAA-C03 · CLF-C02</div></div>
           <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="hl-title">Bilingual</div><div class="hl-desc">Arabic · English (IELTS 7.5)</div></div>
-          <div class="hl-card"><div class="hl-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><div class="hl-title">KAUST AI</div><div class="hl-desc">Advanced AI Specialization · 2025</div></div>
         </div>
       </div>
     </div>
@@ -830,6 +864,43 @@
 
       <div class="exp-card fi" data-d="1">
         <div class="exp-left">
+          <div class="exp-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="16.5" r="3.5"/><circle cx="18.5" cy="16.5" r="3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M5.5 16.5L9 9h7l2.5 7.5M9 9l3.5 7.5L16 9M5.5 16.5h7M9 9V6.5M7.5 6.5h3M16 9l-.5-2.5h2"/></svg></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-meta"><span class="exp-date">Jun 2026 – Present</span><span class="tl-live">Current</span></div>
+          <div class="exp-title">Software Engineer</div>
+          <div class="exp-org">MicroMobility · Jeddah, KSA</div>
+          <ul class="exp-bullets">
+            <li>Build and run the company's booking and operations platform: customer booking with Google/Apple sign-in, staff check-in, point of sale, inventory and refunds</li>
+            <li>Model the backend in PostgreSQL on Supabase: row-level security on every table, staff-only functions, realtime sync across staff devices, 85+ versioned migrations</li>
+            <li>Ship NFC bike check-in, Apple Wallet passes and a 10-language interface, with Arabic and Urdu right-to-left</li>
+            <li>Guard every release with a Playwright end-to-end suite and CI checks for lint, types and translation parity</li>
+          </ul>
+          <div class="exp-tags"><span class="stag">Supabase</span><span class="stag">PostgreSQL</span><span class="stag">JavaScript</span><span class="stag">Cloudflare</span><span class="stag">Playwright</span></div>
+        </div>
+      </div>
+
+      <div class="exp-card fi" data-d="2">
+        <div class="exp-left">
+          <div class="exp-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div class="exp-line"></div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-meta"><span class="exp-date">Apr 2026 – Present</span><span class="tl-live">Current</span></div>
+          <div class="exp-title">Rights Protection Officer</div>
+          <div class="exp-org">AFC Local Organising Committee · KSA</div>
+          <ul class="exp-bullets">
+            <li>Safeguard AFC intellectual property and broadcast rights across the ACLE Finals 2026</li>
+            <li>Monitor live compliance across multiple venues at elite continental club football matches</li>
+            <li>Previously served as Brand Protection Member for the AFC Asian Cup U-23 (Jan 2026)</li>
+          </ul>
+          <div class="exp-tags"><span class="stag">Sports Events</span><span class="stag">Compliance</span><span class="stag">AFC</span></div>
+        </div>
+      </div>
+
+      <div class="exp-card fi" data-d="3">
+        <div class="exp-left">
           <div class="exp-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
           <div class="exp-line"></div>
         </div>
@@ -846,25 +917,7 @@
         </div>
       </div>
 
-      <div class="exp-card fi" data-d="2">
-        <div class="exp-left">
-          <div class="exp-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-          <div class="exp-line"></div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-meta"><span class="exp-date">Apr 2026 – Present</span><span class="tl-live">LIVE · ongoing</span></div>
-          <div class="exp-title">Rights Protection Officer</div>
-          <div class="exp-org">AFC Local Organising Committee · KSA</div>
-          <ul class="exp-bullets">
-            <li>Safeguard AFC intellectual property and broadcast rights across the ACLE Finals 2026</li>
-            <li>Monitor live compliance across multiple venues at elite continental club football matches</li>
-            <li>Previously served as Brand Protection Member for the AFC Asian Cup U-23 (Jan 2026)</li>
-          </ul>
-          <div class="exp-tags"><span class="stag">Sports Events</span><span class="stag">Compliance</span><span class="stag">AFC</span></div>
-        </div>
-      </div>
-
-      <div class="exp-card fi" data-d="3">
+      <div class="exp-card fi" data-d="4">
         <div class="exp-left">
           <div class="exp-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
           <div class="exp-line"></div>
@@ -886,35 +939,6 @@
   </div>
 </section>
 
-<!-- ── Skills ── -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-hdr fi">
-      <span class="sec-tag">Tech Stack</span>
-      <h2 class="sec-title">Technical <span>Arsenal</span></h2>
-      <p class="sec-sub">Tools and technologies I work with daily</p>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-cat fi" data-d="1">
-        <div class="sk-hdr"><div class="sk-icon c"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><div class="sk-title">Cloud & Data Engineering</div></div>
-        <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (S3, Glue, Athena, Lambda)</span><span class="tt">ETL/ELT Pipeline Design</span><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Great Expectations</span><span class="tt">Docker</span><span class="tt">ECS Fargate</span><span class="tt">CloudWatch</span><span class="tt">IAM</span><span class="tt">Apache Iceberg</span></div>
-      </div>
-      <div class="skill-cat fi" data-d="2">
-        <div class="sk-hdr"><div class="sk-icon p"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><div class="sk-title">Languages & Databases</div></div>
-        <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, Scikit-learn)</span><span class="tt">SQL (PostgreSQL, MySQL)</span><span class="tt">JavaScript</span><span class="tt">R</span><span class="tt">Redis</span><span class="tt">FastAPI</span><span class="tt">LightGBM</span><span class="tt">Prophet</span><span class="tt">One-Class SVM</span><span class="tt">Ollama / Local LLMs</span><span class="tt">Supabase</span></div>
-      </div>
-      <div class="skill-cat fi" data-d="3">
-        <div class="sk-hdr"><div class="sk-icon pk"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div class="sk-title">BI & Analytics</div></div>
-        <div class="tech-tags" style="margin-top:0"><span class="tt">Power BI (DAX, Power Query, RLS)</span><span class="tt">Tableau</span><span class="tt">Statistical Analysis / EDA</span><span class="tt">Predictive Analytics</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span><span class="tt">Excel (Adv.)</span><span class="tt">QuickSight</span></div>
-      </div>
-      <div class="skill-cat fi" data-d="4">
-        <div class="sk-hdr"><div class="sk-icon g"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><div class="sk-title">IoT & Systems</div></div>
-        <div class="tech-tags" style="margin-top:0"><span class="tt">IoT (ESP32, MQTT)</span><span class="tt">YOLO / ByteTrack</span><span class="tt">Edge Computing (Jetson Nano, ROS)</span><span class="tt">REST APIs & WebSocket</span><span class="tt">Linux / Bash</span><span class="tt">TLS 1.3</span><span class="tt">AES-256</span><span class="tt">LiDAR</span><span class="tt">RealSense</span><span class="tt">Git</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── Projects ── -->
 <section id="projects">
   <div class="container">
@@ -924,85 +948,170 @@
       <p class="sec-sub">Real-world systems solving real problems</p>
     </div>
     <div class="proj-grid">
-      <div class="proj-card fi" data-d="1">
-        <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div style="display:flex;gap:.5rem;align-items:center"><span class="proj-award">Senior Capstone 2025-26</span><span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:.2rem .5rem;border-radius:6px">Private Repo</span></div></div>
-        <div class="proj-body">
-          <div class="proj-name">AUJ / أوج</div>
-          <div class="proj-type">Smart Retail Shelf System</div>
-          <p class="proj-desc">Dual-sensor smart shelf for small retailers: a load cell and camera on ESP32-S3 publish events over MQTT to a local FastAPI + PostgreSQL hub (29 REST routes, live WebSocket). A fine-tuned YOLOv12n verifier cross-checks every weight event against its camera clip, LightGBM quantile models (q10/q50/q90) forecast per-SKU demand, and a five-rule engine reprices within a ±15% band with a full audit log. Zero PII, fully offline, 143 passing integration tests, 80 SAR per shelf.</p>
-          <div class="proj-stack"><span class="stag">ESP32-S3</span><span class="stag">MQTT</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">LightGBM</span><span class="stag">YOLOv12</span><span class="stag">ByteTrack</span><span class="stag">WebSocket</span><span class="stag">React</span></div>
-          <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
-          <div class="cs-body">
-            <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Give a small Saudi retailer real-time shelf visibility: live inventory, customer behaviour, demand forecasts, and dynamic pricing, on commodity hardware, fully offline, with zero personally identifying data (PDPL-aligned) and an 80 SAR per-shelf budget.</div></div>
-            <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">Each shelf pairs a 10 Hz load cell running a four-state FSM with a camera: confirmed events publish over MQTT while an 8-frame clip uploads over HTTP. The local hub (FastAPI + PostgreSQL 16) cross-checks weight against a fine-tuned YOLOv12n verifier with a frame-diff fallback, tracks aisle behaviour with ByteTrack using transient IDs only, forecasts demand with LightGBM quantile models trained on the M5 dataset, and reprices daily through five rules in strict precedence inside a ±15% band.</div></div>
-            <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Pick-to-dashboard latency in seconds, every price change audit-logged, sensor disagreements raised as discrepancy alerts, and 143 integration tests passing against a real PostgreSQL instance. All data stays in the store: no cloud, no PII.</div></div>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card fi" data-d="2">
-        <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg></div><span class="proj-award">Live & Deployed</span></div>
-        <div class="proj-body">
-          <div class="proj-name">MicroMobility Rentals</div>
-          <div class="proj-type">Bike Rental Booking & Events Platform · PWA</div>
-          <p class="proj-desc">Full-stack PWA running a real bike-rental operation in Jeddah. Real-time queue management with Supabase (Postgres + live subscriptions + RLS), customer accounts with OAuth sign-in, invite-only community events with staff approval workflow, Apple Wallet passes, inventory and POS with cash/card split, refunds, and offline-resilient service worker. Trilingual (Arabic/English/Spanish).</p>
-          <div class="proj-stack"><span class="stag">Supabase</span><span class="stag">PostgreSQL</span><span class="stag">JavaScript</span><span class="stag">PWA</span><span class="stag">Service Worker</span><span class="stag">Real-time</span><span class="stag">Cloudflare Pages</span></div>
-          <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
-          <div class="cs-body">
-            <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Build a production system for a real bike-rental operation: real-time queue updates across multiple staff devices, inventory management, and a full POS — all installable on mobile with offline resilience.</div></div>
-            <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">Supabase Postgres with live subscriptions replaces polling. A service worker enables PWA install and offline fallback. Staff and customer views are fully separate. Sales engine handles cash/card splits, per-receipt discounts, add-ons with photo uploads, and refunds with audit trail.</div></div>
-            <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Live in production — replaced paper-based queuing for a real rental operation. Handles concurrent bookings across multiple staff devices with zero downtime, real-time inventory sync, and a full POS that works offline.</div></div>
-          </div>
-          <a href="https://micromobilityrentals.pages.dev/" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> View Live ↗</a>
-        </div>
-      </div>
 
-      <div class="proj-card fi" data-d="3">
-        <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div><span class="proj-award">GASTAT Finalist</span></div>
-        <div class="proj-body">
-          <div class="proj-name">Sadeed / سديد</div>
-          <div class="proj-type">Data Quality & Validation Platform</div>
-          <p class="proj-desc">Real-time data quality guard for GASTAT field surveys: a browser extension that catches semantic contradictions (a 19-year-old "general manager", a salary with no job) as the record is typed, before submission. Three escalating layers: Great Expectations structural checks, a One-Class SVM statistical gatekeeper, and a local Arabic-capable LLM (Qwen 2.5 via Ollama) that explains each conflict. Detection lifted from 23% to 87.5% (F1 0.829 on real Labour Force Survey data) at over 97% precision, with zero data leaving the government network.</p>
-          <div class="proj-stack"><span class="stag">FastAPI</span><span class="stag">Redis</span><span class="stag">Great Expectations</span><span class="stag">One-Class SVM</span><span class="stag">Qwen 2.5</span><span class="stag">Ollama</span><span class="stag">Docker</span><span class="stag">Browser Ext.</span></div>
-          <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
-          <div class="cs-body">
-            <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Field surveys collect semantic contradictions rigid rule systems cannot see: a 19-year-old "general manager", a respondent with no job but a 12,000 SAR monthly income, work experience exceeding the respondent's age. Unreliable records reach the national data warehouse and are only discovered when re-collection is already expensive.</div></div>
-            <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">A browser extension validates each record live through three escalating layers: Great Expectations structural checks, a One-Class SVM gatekeeper that forwards only suspicious records at near-zero cost, and a swappable local LLM (Qwen 2.5 / Mistral 7B via Ollama, few-shot prompted, full Arabic support) that judges semantics and explains each conflict. Redis queues scale it to thousands of forms a day, and an open REST API integrates with any survey platform without modifying agency systems.</div></div>
-            <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Anomaly detection rose from 23% with rules alone (F1 0.374) to 87.5% (F1 0.829 on real Labour Force Survey records) at over 97% precision with fewer than 5 false positives. Citizen data never leaves the government network. Qualified to the national GASTAT Hackathon finals.</div></div>
-          </div>
-          <a href="https://github.com/malikaalnajjar/sadeed" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> View on GitHub ↗</a>
-        </div>
-      </div>
-      <div class="proj-card fi" data-d="4">
-        <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div><div style="display:flex;gap:.5rem;align-items:center"><span class="proj-award">Top 15 / 500+ Teams</span><span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:.2rem .5rem;border-radius:6px">Private Repo</span></div></div>
-        <div class="proj-body">
-          <div class="proj-name">Tayseer / تيسير</div>
-          <div class="proj-type">Autonomous Smart Wheelchair + Travel Assistant App · AVITHON 2025 (GACA)</div>
-          <p class="proj-desc">Autonomous smart wheelchair paired with a travel assistant app, giving passengers with disabilities full airport independence: ROS mapping with LiDAR, a RealSense depth camera, and wheel encoders fused on Jetson Nano edge AI, with smart routing, emergency monitoring, and adaptive communication for deaf and blind travellers, bookable directly from airline websites. Security by design: TLS 1.3 in transit, AES-256 at rest, MFA with role-based access, and auto-deletion of personal data after boarding (ECC-2 / ISO 27001 aligned). Top 15 of 500+ teams at GACA's AVITHON 2025.</p>
-          <div class="proj-stack"><span class="stag">Jetson Nano</span><span class="stag">ROS</span><span class="stag">LiDAR</span><span class="stag">RealSense</span><span class="stag">Edge AI</span><span class="stag">TLS 1.3</span><span class="stag">AES-256</span><span class="stag">Python</span></div>
-          <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
-          <div class="cs-body">
-            <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Airports overwhelm travellers with disabilities: manual assistance is slow, unreliable, or unavailable at peak times, and existing wheelchairs offer no independence, leaving elderly, blind, deaf, and mobility-impaired passengers lost, dependent on others, and anxious about missing flights or medical emergencies.</div></div>
-            <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">As data scientist on a five-member team: an autonomous wheelchair fusing ROS mapping, LiDAR, a RealSense depth camera, and wheel encoders on Jetson Nano edge AI, paired with a tablet travel assistant offering smart routing, emergency monitoring, and adaptive communication, bookable through airline websites. Security by design: TLS 1.3 in transit, AES-256 at rest, MFA with role-based access, auto-deletion of personal data post-boarding, manual override, and offline operation.</div></div>
-            <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Field research at King Abdulaziz International Airport (interviews with security officers, a counter shift supervisor, and disability support staff) validated the need: assistance buckles at peak hours and many passengers are too shy to ask for it. Ranked Top 15 of 500+ teams nationwide at GACA's AVITHON 2025.</div></div>
+      <article class="proj-card fi" data-d="1">
+        <div class="proj-media"><img class="proj-shot" src="mm-app.webp" width="600" height="800" loading="lazy" decoding="async" alt="MicroMobility booking app on a phone: the event picker, with Open Sports Day at Jeddah Corniche Circuit"></div>
+        <div class="proj-main">
+          <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="16.5" r="3.5"/><circle cx="18.5" cy="16.5" r="3.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M5.5 16.5L9 9h7l2.5 7.5M9 9l3.5 7.5L16 9M5.5 16.5h7M9 9V6.5M7.5 6.5h3M16 9l-.5-2.5h2"/></svg></div><div class="proj-chips"><span class="proj-award">Live in Production</span></div></div>
+          <div class="proj-body">
+            <h3 class="proj-name">MicroMobility Platform</h3>
+            <div class="proj-type">Booking, Check-in &amp; POS Platform · PWA</div>
+            <p class="proj-desc">The production platform behind MicroMobility's group rides and events in Jeddah. Riders book in 10 languages with Google or Apple sign-in and get Apple Wallet passes; staff run check-in (including NFC bike tags), point of sale, inventory, refunds and reports from their own phones, kept in sync in real time. PostgreSQL on Supabase with row-level security, deployed on Cloudflare, with a Playwright end-to-end suite in CI.</p>
+            <div class="proj-stack"><span class="stag">Supabase</span><span class="stag">PostgreSQL</span><span class="stag">JavaScript</span><span class="stag">PWA</span><span class="stag">Cloudflare Pages</span><span class="stag">Playwright</span><span class="stag">GitHub Actions</span></div>
+            <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
+            <div class="cs-body">
+              <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Replace paper queues at a real rental operation: bookings, waivers, check-in and payments on busy ride nights, across several staff phones at once, with customer data locked down.</div></div>
+              <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">One vanilla-JavaScript PWA for riders and staff on Supabase: Postgres with row-level security and staff-only functions, realtime updates instead of polling, and a service worker for install and offline resilience. Cloudflare Pages Functions sign the Apple Wallet passes, and every change passes lint, type and translation checks plus a Playwright suite that stubs the database, so tests never touch production.</div></div>
+              <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">In production every ride night: staff check riders in, assign bikes and take cash or card on their own phones, while riders manage their own bookings in 10 languages, including Arabic and Urdu right-to-left.</div></div>
+            </div>
+            <a href="https://micromobilityrentals.pages.dev/" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg> View Live ↗</a>
           </div>
         </div>
-      </div>
-      <div class="proj-card fi" data-d="5">
-        <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div style="display:flex;gap:.5rem;align-items:center"><span class="proj-award">Aseer Tabtaker 2025</span><span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--muted);padding:.2rem .5rem;border-radius:6px">Private Repo</span></div></div>
-        <div class="proj-body">
-          <div class="proj-name">Masra / مَسرَى</div>
-          <div class="proj-type">Smart Adventure Tourism Platform</div>
-          <p class="proj-desc">Adventure-tourism platform making Aseer's mountain trails safe and bookable: a Flutter + Mapbox app with trail booking, an AI + IoT early-warning system (AWS IoT Core, SageMaker) watching trail conditions, a network of accredited local guides, and a gamified "Aseer Peaks Passport" stamped per completed trail. Its "Peaks Guide" feature lets certified guides film undocumented trails, and AI drafts the optimal route with rest, danger, and service points from video + GPS for expert review. Presented to the Aseer Development Authority at Aseer Tabtaker 2025.</p>
-          <div class="proj-stack"><span class="stag">Flutter</span><span class="stag">Mapbox</span><span class="stag">Node.js</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">AWS SageMaker</span><span class="stag">AWS IoT Core</span><span class="stag">Stripe</span></div>
-          <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
-          <div class="cs-body">
-            <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Aseer's hiking sector is held back by trails nobody knows, serious safety gaps (brain injuries account for 74% of hiking deaths, hitting inexperienced visitors hardest), slow mountain rescue on remote routes, and no unified platform connecting accredited guides with tourists.</div></div>
-            <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">As AI developer on a five-member team: a Flutter + Mapbox app backed by Node.js/Express and PostgreSQL, with Python/FastAPI and scikit-learn models on AWS SageMaker. AWS IoT Core sensors feed the trail early-warning system; the "Peaks Guide" flow turns a certified guide's trail video + GPS into a draft route with rest, danger, and service points for expert review; QR entry manages trail access, with Stripe payments and OpenWeatherMap forecasts.</div></div>
-            <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">A three-phase rollout (Abha pilot, Aseer-wide expansion, national integration with Visit Saudi) projecting 100+ local guide jobs within three years, presented to the Aseer Development Authority at Aseer Tabtaker 2025, in a global adventure-tourism market forecast to reach $2 trillion by 2032.</div></div>
-          </div>
-        </div>
-      </div>
+      </article>
 
+      <article class="proj-card fi" data-d="2">
+        <div class="proj-media">
+          <ol class="flow" aria-label="AUJ architecture">
+            <li><span class="flow-role">Edge</span><span class="flow-node">ESP32-S3 · load cell + camera</span></li>
+            <li><span class="flow-role">Transport</span><span class="flow-node">MQTT events · HTTP clips</span></li>
+            <li><span class="flow-role">Hub</span><span class="flow-node">FastAPI · PostgreSQL 16</span></li>
+            <li><span class="flow-role">ML</span><span class="flow-node">YOLOv12n · LightGBM · pricing rules</span></li>
+            <li><span class="flow-role">Dashboard</span><span class="flow-node">React · live WebSocket</span></li>
+          </ol>
+        </div>
+        <div class="proj-main">
+          <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div class="proj-chips"><span class="proj-award">Senior Capstone 2025-26</span><span class="proj-priv">Private Repo</span></div></div>
+          <div class="proj-body">
+            <h3 class="proj-name">AUJ / أوج</h3>
+            <div class="proj-type">Smart Retail Shelf System</div>
+            <p class="proj-desc">Dual-sensor smart shelf for small retailers: a load cell and camera on ESP32-S3 publish events over MQTT to a local FastAPI + PostgreSQL hub (29 REST routes, live WebSocket). A fine-tuned YOLOv12n verifier cross-checks every weight event against its camera clip, LightGBM quantile models (q10/q50/q90) forecast per-SKU demand, and a five-rule engine reprices within a ±15% band with a full audit log. Zero PII, fully offline, 143 passing integration tests, 80 SAR per shelf.</p>
+            <div class="proj-stack"><span class="stag">ESP32-S3</span><span class="stag">MQTT</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">LightGBM</span><span class="stag">YOLOv12</span><span class="stag">ByteTrack</span><span class="stag">WebSocket</span><span class="stag">React</span></div>
+            <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
+            <div class="cs-body">
+              <figure class="cs-fig"><img src="auj-dashboard.webp" width="1200" height="357" loading="lazy" decoding="async" alt="AUJ dashboard, Behavior tab: recent shelf picks with product, weight change and camera clip"><figcaption>Behavior tab on the live demo rig</figcaption></figure>
+              <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Give a small Saudi retailer real-time shelf visibility: live inventory, customer behaviour, demand forecasts, and dynamic pricing, on commodity hardware, fully offline, with zero personally identifying data (PDPL-aligned) and an 80 SAR per-shelf budget.</div></div>
+              <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">Each shelf pairs a 10 Hz load cell running a four-state FSM with a camera: confirmed events publish over MQTT while an 8-frame clip uploads over HTTP. The local hub (FastAPI + PostgreSQL 16) cross-checks weight against a fine-tuned YOLOv12n verifier with a frame-diff fallback, tracks aisle behaviour with ByteTrack using transient IDs only, forecasts demand with LightGBM quantile models trained on the M5 dataset, and reprices daily through five rules in strict precedence inside a ±15% band.</div></div>
+              <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Pick-to-dashboard latency in seconds, every price change audit-logged, sensor disagreements raised as discrepancy alerts, and 143 integration tests passing against a real PostgreSQL instance. All data stays in the store: no cloud, no PII.</div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card fi" data-d="3">
+        <div class="proj-media">
+          <ol class="flow" aria-label="Sadeed architecture">
+            <li><span class="flow-role">Capture</span><span class="flow-node">Browser extension</span></li>
+            <li><span class="flow-role">Layer 1</span><span class="flow-node">Great Expectations</span></li>
+            <li><span class="flow-role">Layer 2</span><span class="flow-node">One-Class SVM</span></li>
+            <li><span class="flow-role">Layer 3</span><span class="flow-node">Qwen 2.5 · Ollama</span></li>
+            <li><span class="flow-role">Result</span><span class="flow-node">Detection 23% → 87.5%</span></li>
+          </ol>
+        </div>
+        <div class="proj-main">
+          <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div><div class="proj-chips"><span class="proj-award">GASTAT Finalist</span></div></div>
+          <div class="proj-body">
+            <h3 class="proj-name">Sadeed / سديد</h3>
+            <div class="proj-type">Data Quality &amp; Validation Platform</div>
+            <p class="proj-desc">Real-time data quality guard for GASTAT field surveys: a browser extension that catches semantic contradictions (a 19-year-old "general manager", a salary with no job) as the record is typed, before submission. Three escalating layers: Great Expectations structural checks, a One-Class SVM statistical gatekeeper, and a local Arabic-capable LLM (Qwen 2.5 via Ollama) that explains each conflict. Detection lifted from 23% to 87.5% (F1 0.829 on real Labour Force Survey data) at over 97% precision, with zero data leaving the government network.</p>
+            <div class="proj-stack"><span class="stag">FastAPI</span><span class="stag">Redis</span><span class="stag">Great Expectations</span><span class="stag">One-Class SVM</span><span class="stag">Qwen 2.5</span><span class="stag">Ollama</span><span class="stag">Docker</span><span class="stag">Browser Ext.</span></div>
+            <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
+            <div class="cs-body">
+              <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Field surveys collect semantic contradictions rigid rule systems cannot see: a 19-year-old "general manager", a respondent with no job but a 12,000 SAR monthly income, work experience exceeding the respondent's age. Unreliable records reach the national data warehouse and are only discovered when re-collection is already expensive.</div></div>
+              <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">A browser extension validates each record live through three escalating layers: Great Expectations structural checks, a One-Class SVM gatekeeper that forwards only suspicious records at near-zero cost, and a swappable local LLM (Qwen 2.5 / Mistral 7B via Ollama, few-shot prompted, full Arabic support) that judges semantics and explains each conflict. Redis queues scale it to thousands of forms a day, and an open REST API integrates with any survey platform without modifying agency systems.</div></div>
+              <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Anomaly detection rose from 23% with rules alone (F1 0.374) to 87.5% (F1 0.829 on real Labour Force Survey records) at over 97% precision with fewer than 5 false positives. Citizen data never leaves the government network. Qualified to the national GASTAT Hackathon finals.</div></div>
+            </div>
+            <a href="https://github.com/malikaalnajjar/Sadeed_GAStat_Hackathon" target="_blank" rel="noopener noreferrer" class="proj-link"><svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.165c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> View on GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card fi" data-d="4">
+        <div class="proj-media">
+          <ol class="flow" aria-label="Tayseer architecture">
+            <li><span class="flow-role">Sense</span><span class="flow-node">LiDAR · RealSense · encoders</span></li>
+            <li><span class="flow-role">Edge AI</span><span class="flow-node">Jetson Nano · ROS</span></li>
+            <li><span class="flow-role">Navigate</span><span class="flow-node">Autonomous navigation</span></li>
+            <li><span class="flow-role">Assist</span><span class="flow-node">Travel assistant app</span></li>
+            <li><span class="flow-role">Secure</span><span class="flow-node">TLS 1.3 · AES-256 · MFA</span></li>
+          </ol>
+        </div>
+        <div class="proj-main">
+          <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div><div class="proj-chips"><span class="proj-award">Top 15 / 500+ Teams</span><span class="proj-priv">Private Repo</span></div></div>
+          <div class="proj-body">
+            <h3 class="proj-name">Tayseer / تيسير</h3>
+            <div class="proj-type">Autonomous Smart Wheelchair + Travel Assistant App · AVITHON 2025 (GACA)</div>
+            <p class="proj-desc">Autonomous smart wheelchair paired with a travel assistant app, giving passengers with disabilities full airport independence: ROS mapping with LiDAR, a RealSense depth camera, and wheel encoders fused on Jetson Nano edge AI, with smart routing, emergency monitoring, and adaptive communication for deaf and blind travellers, bookable directly from airline websites. Security by design: TLS 1.3 in transit, AES-256 at rest, MFA with role-based access, and auto-deletion of personal data after boarding (ECC-2 / ISO 27001 aligned). Top 15 of 500+ teams at GACA's AVITHON 2025.</p>
+            <div class="proj-stack"><span class="stag">Jetson Nano</span><span class="stag">ROS</span><span class="stag">LiDAR</span><span class="stag">RealSense</span><span class="stag">Edge AI</span><span class="stag">TLS 1.3</span><span class="stag">AES-256</span><span class="stag">Python</span></div>
+            <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
+            <div class="cs-body">
+              <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Airports overwhelm travellers with disabilities: manual assistance is slow, unreliable, or unavailable at peak times, and existing wheelchairs offer no independence, leaving elderly, blind, deaf, and mobility-impaired passengers lost, dependent on others, and anxious about missing flights or medical emergencies.</div></div>
+              <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">As data scientist on a five-member team: an autonomous wheelchair fusing ROS mapping, LiDAR, a RealSense depth camera, and wheel encoders on Jetson Nano edge AI, paired with a tablet travel assistant offering smart routing, emergency monitoring, and adaptive communication, bookable through airline websites. Security by design: TLS 1.3 in transit, AES-256 at rest, MFA with role-based access, auto-deletion of personal data post-boarding, manual override, and offline operation.</div></div>
+              <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">Field research at King Abdulaziz International Airport (interviews with security officers, a counter shift supervisor, and disability support staff) validated the need: assistance buckles at peak hours and many passengers are too shy to ask for it. Ranked Top 15 of 500+ teams nationwide at GACA's AVITHON 2025.</div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj-card fi" data-d="5">
+        <div class="proj-media">
+          <ol class="flow" aria-label="Masra architecture">
+            <li><span class="flow-role">App</span><span class="flow-node">Flutter · Mapbox</span></li>
+            <li><span class="flow-role">Backend</span><span class="flow-node">Node.js · PostgreSQL · Stripe</span></li>
+            <li><span class="flow-role">Sensors</span><span class="flow-node">AWS IoT Core</span></li>
+            <li><span class="flow-role">ML</span><span class="flow-node">SageMaker · scikit-learn</span></li>
+            <li><span class="flow-role">Guides</span><span class="flow-node">Guide video + GPS → route</span></li>
+          </ol>
+        </div>
+        <div class="proj-main">
+          <div class="proj-top"><div class="proj-ico"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="proj-chips"><span class="proj-award">Aseer Tabtaker 2025</span><span class="proj-priv">Private Repo</span></div></div>
+          <div class="proj-body">
+            <h3 class="proj-name">Masra / مَسرَى</h3>
+            <div class="proj-type">Smart Adventure Tourism Platform</div>
+            <p class="proj-desc">Adventure-tourism platform making Aseer's mountain trails safe and bookable: a Flutter + Mapbox app with trail booking, an AI + IoT early-warning system (AWS IoT Core, SageMaker) watching trail conditions, a network of accredited local guides, and a gamified "Aseer Peaks Passport" stamped per completed trail. Its "Peaks Guide" feature lets certified guides film undocumented trails, and AI drafts the optimal route with rest, danger, and service points from video + GPS for expert review. Presented to the Aseer Development Authority at Aseer Tabtaker 2025.</p>
+            <div class="proj-stack"><span class="stag">Flutter</span><span class="stag">Mapbox</span><span class="stag">Node.js</span><span class="stag">PostgreSQL</span><span class="stag">FastAPI</span><span class="stag">AWS SageMaker</span><span class="stag">AWS IoT Core</span><span class="stag">Stripe</span></div>
+            <button class="cs-toggle" onclick="toggleCS(this)" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg> Case Study</button>
+            <div class="cs-body">
+              <div class="cs-row"><div class="cs-label">Challenge</div><div class="cs-text">Aseer's hiking sector is held back by trails nobody knows, serious safety gaps (brain injuries account for 74% of hiking deaths, hitting inexperienced visitors hardest), slow mountain rescue on remote routes, and no unified platform connecting accredited guides with tourists.</div></div>
+              <div class="cs-row"><div class="cs-label">Approach</div><div class="cs-text">As AI developer on a five-member team: a Flutter + Mapbox app backed by Node.js/Express and PostgreSQL, with Python/FastAPI and scikit-learn models on AWS SageMaker. AWS IoT Core sensors feed the trail early-warning system; the "Peaks Guide" flow turns a certified guide's trail video + GPS into a draft route with rest, danger, and service points for expert review; QR entry manages trail access, with Stripe payments and OpenWeatherMap forecasts.</div></div>
+              <div class="cs-row"><div class="cs-label">Impact</div><div class="cs-text">A three-phase rollout (Abha pilot, Aseer-wide expansion, national integration with Visit Saudi) projecting 100+ local guide jobs within three years, presented to the Aseer Development Authority at Aseer Tabtaker 2025, in a global adventure-tourism market forecast to reach $2 trillion by 2032.</div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ── -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-hdr fi">
+      <span class="sec-tag">Tech Stack</span>
+      <h2 class="sec-title">Technical <span>Arsenal</span></h2>
+      <p class="sec-sub">What I use in production and in my projects</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-cat fi" data-d="1">
+        <div class="sk-hdr"><div class="sk-icon p"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg></div><div class="sk-title">Web &amp; Backend</div></div>
+        <div class="tech-tags" style="margin-top:0"><span class="tt">JavaScript</span><span class="tt">TypeScript</span><span class="tt">PostgreSQL (PL/pgSQL, RLS)</span><span class="tt">Supabase (Auth, Realtime)</span><span class="tt">Cloudflare Pages &amp; Workers</span><span class="tt">PWA / Service Workers</span><span class="tt">IndexedDB</span><span class="tt">REST APIs &amp; WebSocket</span><span class="tt">FastAPI</span><span class="tt">React</span></div>
+      </div>
+      <div class="skill-cat fi" data-d="2">
+        <div class="sk-hdr"><div class="sk-icon pk"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div class="sk-title">Data &amp; ML</div></div>
+        <div class="tech-tags" style="margin-top:0"><span class="tt">Python (Pandas, NumPy, scikit-learn)</span><span class="tt">SQL</span><span class="tt">Great Expectations</span><span class="tt">Redis</span><span class="tt">LightGBM</span><span class="tt">One-Class SVM</span><span class="tt">YOLO / ByteTrack</span><span class="tt">Ollama / Local LLMs</span><span class="tt">Power BI (DAX, Power Query)</span></div>
+      </div>
+      <div class="skill-cat fi" data-d="3">
+        <div class="sk-hdr"><div class="sk-icon c"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><div class="sk-title">Cloud, DevOps &amp; Testing</div></div>
+        <div class="tech-tags" style="margin-top:0"><span class="tt">AWS (DEA-C01, SAA-C03)</span><span class="tt">Docker</span><span class="tt">GitHub Actions</span><span class="tt">Playwright</span><span class="tt">pytest</span><span class="tt">Git</span><span class="tt">Linux / Bash</span></div>
+      </div>
+      <div class="skill-cat fi" data-d="4">
+        <div class="sk-hdr"><div class="sk-icon g"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><div class="sk-title">IoT &amp; Edge</div></div>
+        <div class="tech-tags" style="margin-top:0"><span class="tt">ESP32-S3</span><span class="tt">MQTT</span><span class="tt">Jetson Nano</span><span class="tt">ROS</span><span class="tt">LiDAR</span><span class="tt">RealSense</span></div>
+      </div>
+    </div>
+    <div class="sk-also fi" data-d="2">
+      <span class="sk-also-label">Also trained in (certification coursework)</span>
+      <div class="tech-tags"><span class="tt">Apache Kafka</span><span class="tt">dbt</span><span class="tt">Apache Iceberg</span><span class="tt">AWS Glue</span><span class="tt">Athena</span><span class="tt">Lambda</span><span class="tt">Tableau</span><span class="tt">QuickSight</span><span class="tt">R</span><span class="tt">Excel (Advanced)</span><span class="tt">Matplotlib</span><span class="tt">Seaborn</span></div>
     </div>
   </div>
 </section>
@@ -1020,73 +1129,68 @@
       <div class="cert-group-label">Amazon Web Services</div>
 
       <a class="cert-card fi" data-d="1" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/e8f3f85e0d1d48ca96ae3df34a5c1d8b" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:95%"></div></div></div></div>
+        <div class="cert-logo"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div><div class="cert-name">AWS Data Engineer Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">DEA-C01 · Mar 2026</div><div class="cert-valid">Valid until Mar 2029</div></div>
       </a>
 
       <a class="cert-card fi" data-d="2" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/2269df70c0b541a7b84f18c44f1af1d7" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:85%"></div></div></div></div>
+        <div class="cert-logo"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div><div class="cert-name">AWS Solutions Architect Associate</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">SAA-C03 · Feb 2026</div><div class="cert-valid">Valid until Feb 2029</div></div>
       </a>
 
       <a class="cert-card fi" data-d="3" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/8b49917149eb4b62b2511ab26977c150" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(255,153,0,.12)"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
-        <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">CLF-C02 · Nov 2025</div><div class="cert-valid">Valid until Nov 2028</div></div>
+        <div class="cert-logo"><img src="aws.png" alt="AWS" loading="lazy" decoding="async"><span class="fb" style="color:#FF9900">AWS</span></div>
+        <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><div class="cert-date">CLF-C02 · Dec 2025</div><div class="cert-valid">Valid until Dec 2028</div></div>
       </a>
 
-      <div class="cert-group-label">Professional & Management</div>
+      <div class="cert-group-label">Data Engineering &amp; Analytics</div>
 
-      <div class="cert-card fi" data-d="4">
-        <div class="cert-logo" style="background:rgba(0,120,212,.12)"><img src="microsoft.jpg" alt="Microsoft" loading="lazy" decoding="async"><span class="fb" style="color:#F2C811">Power<br>BI</span></div>
-        <div><div class="cert-name">Power BI Data Analyst Associate</div><div class="cert-issuer">Microsoft</div><div class="cert-date">PL-300 · Scheduled Jul 2026</div></div>
-      </div>
-
-      <a class="cert-card fi" data-d="5" href="https://certificates.cdmp.info/23a27237-e1f7-4983-ae06-1fe4cac8e6b5" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(0,58,112,.15)"><img src="dama.png" alt="DAMA" loading="lazy" decoding="async"><span class="fb" style="color:#4a9edd">DAMA</span></div>
-        <div><div class="cert-name">Certified Data Management Prof.</div><div class="cert-issuer">DAMA International</div><div class="cert-date">CDMP · Jan 2026</div><div class="cert-meta"><div class="cert-bar-wrap"><div class="cert-bar" style="width:80%"></div></div></div></div>
+      <a class="cert-card fi" data-d="1" href="https://certificates.cdmp.info/23a27237-e1f7-4983-ae06-1fe4cac8e6b5" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="dama.png" alt="DAMA" loading="lazy" decoding="async"><span class="fb" style="color:#4a9edd">DAMA</span></div>
+        <div><div class="cert-name">Certified Data Management Prof.</div><div class="cert-issuer">DAMA International</div><div class="cert-date">CDMP · Jan 2026</div></div>
       </a>
 
-      <a class="cert-card fi" data-d="6" href="https://www.credly.com/badges/d742f1a6-64b2-4faf-92ae-f039d93beb1f/linked_in_profile" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(212,39,42,.1)"><img src="pmi.png" alt="PMI" loading="lazy" decoding="async"><span class="fb" style="color:#d4272a">PMI</span></div>
-        <div><div class="cert-name">Certified Associate in Project Mgmt</div><div class="cert-issuer">Project Management Institute</div><div class="cert-date">CAPM · Jan 2026</div></div>
-      </a>
-
-      <div class="cert-group-label">Data Engineering & Analytics</div>
-
-      <a class="cert-card fi" data-d="1" href="https://www.coursera.org/account/accomplishments/professional-cert/GQ6JVF1IX8DX" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(5,47,173,.15)"><img src="ibm.png" alt="IBM" loading="lazy" decoding="async"><span class="fb" style="color:#1261FE">IBM</span></div>
+      <a class="cert-card fi" data-d="2" href="https://www.coursera.org/account/accomplishments/professional-cert/GQ6JVF1IX8DX" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="ibm.png" alt="IBM" loading="lazy" decoding="async"><span class="fb" style="color:#1261FE">IBM</span></div>
         <div><div class="cert-name">Data Engineering Professional Cert.</div><div class="cert-issuer">IBM</div><div class="cert-date">Dec 2025</div></div>
       </a>
 
-      <a class="cert-card fi" data-d="2" href="https://www.coursera.org/account/accomplishments/professional-cert/0KKNTJTVIPTL" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
+      <a class="cert-card fi" data-d="3" href="https://cp.certmetrics.com/CompTIA/en/public/verify/credential/d0b8a00c6d3741958627fa9111521119" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="comptia.png" alt="CompTIA" loading="lazy" decoding="async"><span class="fb" style="color:#C8202E">Comp<br>TIA</span></div>
+        <div><div class="cert-name">CompTIA Data+</div><div class="cert-issuer">CompTIA</div><div class="cert-date">DA0-001 · Nov 2025</div><div class="cert-valid">Valid until Nov 2028</div></div>
+      </a>
+
+      <a class="cert-card fi" data-d="4" href="https://www.coursera.org/account/accomplishments/professional-cert/0KKNTJTVIPTL" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
         <div><div class="cert-name">Google Data Analytics Certificate</div><div class="cert-issuer">Google</div><div class="cert-date">Dec 2025</div></div>
       </a>
 
-      <a class="cert-card fi" data-d="3" href="https://www.coursera.org/account/accomplishments/professional-cert/QQUN7XEULA6Z" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(66,133,244,.12)"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
-        <div><div class="cert-name">Google Project Management Cert.</div><div class="cert-issuer">Google</div><div class="cert-date">Jan 2026</div></div>
-      </a>
-
-      <a class="cert-card fi" data-d="4" href="https://www.credly.com/badges/41e7dde9-0e57-4d69-a4c9-40777bfee88c/public_url" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(0,51,102,.15)"><img src="mckinsey.png" alt="McKinsey" loading="lazy" decoding="async"><span class="fb" style="color:#6699cc">McKin<br>sey</span></div>
-        <div><div class="cert-name">McKinsey Forward Program</div><div class="cert-issuer">McKinsey & Company</div><div class="cert-date">Jul 2025</div></div>
-      </a>
-
       <a class="cert-card fi" data-d="5" href="https://www.datacamp.com/completed/statement-of-accomplishment/track/72b470664c1ee41d4f4402e67b110d8fa0a0d6a5" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(3,143,140,.15)"><img src="datacamp.svg" alt="DataCamp" loading="lazy" decoding="async"><span class="fb" style="color:#03EF62">Data<br>Camp</span></div>
+        <div class="cert-logo"><img src="datacamp.png" alt="DataCamp" loading="lazy" decoding="async"><span class="fb" style="color:#03EF62">Data<br>Camp</span></div>
         <div><div class="cert-name">Associate Data Engineer in SQL</div><div class="cert-issuer">DataCamp</div><div class="cert-date">Jun 2025</div></div>
       </a>
 
-      <a class="cert-card fi" data-d="6" href="https://cp.certmetrics.com/CompTIA/en/public/verify/credential/d0b8a00c6d3741958627fa9111521119" target="_blank" rel="noopener noreferrer">
-        <div class="cert-logo" style="background:rgba(200,32,46,.12)"><img src="comptia.png" alt="CompTIA" loading="lazy" decoding="async"><span class="fb" style="color:#C8202E">Comp<br>TIA</span></div>
-        <div><div class="cert-name">CompTIA Data+</div><div class="cert-issuer">CompTIA</div><div class="cert-date">DA0-001 · Nov 2025</div></div>
+      <div class="cert-card fi" data-d="6">
+        <div class="cert-logo text-logo">KAUST</div>
+        <div><div class="cert-name">Advanced AI Specialization</div><div class="cert-issuer">King Abdullah University of Science &amp; Technology</div><div class="cert-date">Jan – Feb 2025</div></div>
+      </div>
+
+      <div class="cert-group-label">Professional &amp; Management</div>
+
+      <a class="cert-card fi" data-d="1" href="https://www.credly.com/badges/d742f1a6-64b2-4faf-92ae-f039d93beb1f/linked_in_profile" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="pmi.png" alt="PMI" loading="lazy" decoding="async"><span class="fb" style="color:#d4272a">PMI</span></div>
+        <div><div class="cert-name">Certified Associate in Project Mgmt</div><div class="cert-issuer">Project Management Institute</div><div class="cert-date">CAPM · Jan 2026</div></div>
       </a>
 
-      <div class="cert-card fi" data-d="1">
-        <div class="cert-logo text-logo" style="background:rgba(0,100,180,.12);color:#0064b4;font-size:.55rem">KAUST</div>
-        <div><div class="cert-name">Advanced AI Specialization</div><div class="cert-issuer">King Abdullah University of Science & Technology</div><div class="cert-date">Jan – Feb 2025</div></div>
-      </div>
+      <a class="cert-card fi" data-d="2" href="https://www.coursera.org/account/accomplishments/professional-cert/QQUN7XEULA6Z" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="google.png" alt="Google" loading="lazy" decoding="async"><span class="fb" style="color:#4285F4">Google</span></div>
+        <div><div class="cert-name">Google Project Management Cert.</div><div class="cert-issuer">Google</div><div class="cert-date">Jan 2026</div></div>
+      </a>
+
+      <a class="cert-card fi" data-d="3" href="https://www.credly.com/badges/41e7dde9-0e57-4d69-a4c9-40777bfee88c/public_url" target="_blank" rel="noopener noreferrer">
+        <div class="cert-logo"><img src="mckinsey.png" alt="McKinsey" loading="lazy" decoding="async"><span class="fb" style="color:#6699cc">McKin<br>sey</span></div>
+        <div><div class="cert-name">McKinsey Forward Program</div><div class="cert-issuer">McKinsey &amp; Company</div><div class="cert-date">Jul 2025</div></div>
+      </a>
 
     </div>
   </div>
@@ -1097,19 +1201,20 @@
   <div class="container">
     <div class="sec-hdr fi">
       <span class="sec-tag">Achievements</span>
-      <h2 class="sec-title">Achievements & <span>Impact</span></h2>
+      <h2 class="sec-title">Achievements &amp; <span>Impact</span></h2>
       <p class="sec-sub">Beyond the code: competing, leading, and contributing</p>
     </div>
     <div class="awards-grid">
       <div class="aw-card fi" data-d="1"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4M7 4h10v4a5 5 0 01-10 0V4zM7 6H4a1 1 0 00-1 1 4 4 0 004 4M17 6h3a1 1 0 011 1 4 4 0 01-4 4"/></svg></div><div><div class="aw-title">Top 15 Nationwide: AVITHON 2025</div><div class="aw-org">GACA, General Authority of Civil Aviation</div><p class="aw-desc">Ranked Top 15 of 500+ teams with Project Tayseer, an autonomous wheelchair designed from field research at KAIA Jeddah Airport.</p><div class="aw-date">Jul 2025</div></div></div>
-      <div class="aw-card fi" data-d="2"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><div class="aw-title">Rights Protection: AFC Champions League Elite Finals</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Safeguarding AFC intellectual property and broadcast rights across elite continental club football — active role, multiple venues.</p><div class="aw-date">Apr 2026 – Present</div></div></div>
-      <div class="aw-card fi" data-d="3"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2z"/></svg></div><div><div class="aw-title">Brand Protection: AFC Asian Cup U-23</div><div class="aw-org">AFC Local Organising Committee, KSA</div><p class="aw-desc">Monitored live broadcast compliance across 3+ venues, enforcing AFC trademark and sponsorship protocols under real-time pressure.</p><div class="aw-date">Jan 2026</div></div></div>
-      <div class="aw-card fi" data-d="4"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div><div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">Beyond Company · Saudi Arabia</div><p class="aw-desc">2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication across all judging categories.</p><div class="aw-date">Dec 2025</div></div></div>
-      <div class="aw-card fi" data-d="5"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><div><div class="aw-title">Outreach Team Leader: GDG On Campus</div><div class="aw-org">Google Developer Groups · UBT</div><p class="aw-desc">Led 5-member team organising cloud and data workshops for 100+ students (30–50/session). Grew attendance 40%+.</p><div class="aw-date">Oct 2025 – Jun 2026</div></div></div>
-      <div class="aw-card fi" data-d="6"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="aw-title">Vice Chair & Treasurer: ACM Chapter</div><div class="aw-org">UBT ACM Student Chapter</div><p class="aw-desc">Managed SAR 5,000 budget; delivered 3–5 technical events per cycle (30+ participants each) including hackathons and cloud workshops.</p><div class="aw-date">Feb – Dec 2025</div></div></div>
-      <div class="aw-card fi" data-d="1"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><div><div class="aw-title">KAUST Advanced AI Specialization</div><div class="aw-org">King Abdullah University of Science & Technology</div><p class="aw-desc">Completed intensive ML, Deep Learning, and Python specialization at one of the region's most prestigious research universities.</p><div class="aw-date">Jan – Feb 2025</div></div></div>
-      <div class="aw-card fi" data-d="2"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div><div class="aw-title">Volunteer: Falling Walls Foundation</div><div class="aw-org">Falling Walls Foundation</div><p class="aw-desc">Supported the Falling Walls global innovation event, connecting researchers and innovators to break walls in science and society.</p><div class="aw-date">Sep 2025</div></div></div>
-      <div class="aw-card fi" data-d="3"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg></div><div><div class="aw-title">Volunteer: APCG 2026</div><div class="aw-org">UBT · Jeddah, Saudi Arabia</div><p class="aw-desc">Volunteered in organising and supporting the APCG 2026 international conference hosted at the University of Business and Technology.</p><div class="aw-date">Feb 2026</div></div></div>
+      <div class="aw-card fi" data-d="2"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2z"/></svg></div><div><div class="aw-title">National Finalist: GASTAT Hackathon</div><div class="aw-org">GASTAT, General Authority for Statistics</div><p class="aw-desc">Reached the national finals with Sadeed, a real-time data-quality guard that raised anomaly detection from 23% to 87.5% on Labour Force Survey data.</p><div class="aw-date">2026</div></div></div>
+      <div class="aw-card fi" data-d="3"><div class="aw-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg></div><div><div class="aw-title">2nd Place: Project Management Championship</div><div class="aw-org">Beyond Company · Saudi Arabia</div><p class="aw-desc">2nd of 30+ teams. Scored highest in planning, risk management, and stakeholder communication across all judging categories.</p><div class="aw-date">Dec 2025</div></div></div>
+    </div>
+    <div class="vol fi" data-d="2">
+      <span class="vol-title">Volunteering</span>
+      <ul class="vol-list">
+        <li><span class="vol-name">Falling Walls Foundation</span> · <span class="vol-desc">global innovation event</span><span class="vol-date">Sep 2025</span></li>
+        <li><span class="vol-name">APCG 2026</span> · <span class="vol-desc">international conference hosted at UBT</span><span class="vol-date">Feb 2026</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1120,12 +1225,12 @@
     <div class="sec-hdr fi">
       <span class="sec-tag">Contact</span>
       <h2 class="sec-title">Let's <span>Connect</span></h2>
-      <p class="sec-sub">Open to co-op placements and exciting opportunities</p>
+      <p class="sec-sub">Have a project, a role or a question? I'd love to hear from you.</p>
     </div>
     <div class="contact-stack">
       <div class="contact-info fi" data-d="1">
         <h3>Ready to build something impactful?</h3>
-        <p>I'm actively seeking a co-op placement in software engineering. UBT graduate (First Class Honours), bilingual, 10+ certifications, and available now.</p>
+        <p>I'm a software engineer at MicroMobility in Jeddah, and I enjoy building systems people rely on every day. Reach out about projects, collaborations or roles.</p>
       </div>
       <div class="form-box fi" data-d="2">
         <h3>Send a Message</h3>
@@ -1136,16 +1241,17 @@
           <div class="fg"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="your@email.com" required></div>
           <div class="fg"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell me about the opportunity..." required></textarea></div>
           <button type="submit" class="form-btn" id="fbtn">Send Message →</button>
+          <p id="fstatus" class="sr-only" role="status" aria-live="polite"></p>
         </form>
       </div>
       <div class="clinks-icons fi" data-d="3">
-        <a href="mailto:malik-naj@hotmail.com" class="clink-icon" title="malik-naj@hotmail.com">
+        <a href="mailto:malik-naj@hotmail.com" class="clink-icon" title="malik-naj@hotmail.com" aria-label="Email malik-naj@hotmail.com">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         </a>
-        <a href="https://linkedin.com/in/malik-alnajjar" target="_blank" rel="noopener noreferrer" class="clink-icon" title="LinkedIn">
+        <a href="https://linkedin.com/in/malik-alnajjar" target="_blank" rel="noopener noreferrer" class="clink-icon" title="LinkedIn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
-        <a href="https://github.com/malikaalnajjar" target="_blank" rel="noopener noreferrer" class="clink-icon" title="GitHub">
+        <a href="https://github.com/malikaalnajjar" target="_blank" rel="noopener noreferrer" class="clink-icon" title="GitHub" aria-label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
         </a>
       </div>
@@ -1158,12 +1264,12 @@
   <div class="footer-inner">
     <div class="footer-divider"></div>
     <p class="footer-copy">Designed & built by <span>Malik AlNajjar</span> · 2026</p>
-    <p class="footer-built">Seeking software engineering co-op · Jeddah, Saudi Arabia</p>
+    <p class="footer-built">Software Engineer · Jeddah, Saudi Arabia</p>
     <a href="mailto:malik-naj@hotmail.com" class="footer-email">malik-naj@hotmail.com</a>
   </div>
 </footer>
 
-<button class="stbtn" id="stbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button class="stbtn" id="stbtn" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
 // ── CANVAS ──
@@ -1228,15 +1334,6 @@ function draw(){
 }
 if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){ init(); draw(); }
 
-// ── TYPEWRITER ──
-const ROLES_EN=['Data Engineer','Software Engineer','Data Analyst','AWS Cloud Architect','ETL Pipeline Builder'];
-const ROLES_AR=['مهندس بيانات','مهندس برمجيات','محلل بيانات','مهندس سحابة AWS','مطوّر خطوط ETL'];
-let roles=ROLES_EN;
-let ri=0,ci=0,del=false;
-const twEl=document.getElementById('tw');
-function type(){ const cur=roles[ri]; if(!del){twEl.textContent=cur.slice(0,++ci);if(ci===cur.length){del=true;setTimeout(type,2100);return;}}else{twEl.textContent=cur.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}} setTimeout(type,del?55:98); }
-setTimeout(type,900);
-
 // ── SCROLL PROGRESS ──
 const prog=document.getElementById('progress');
 function updateProgress(){
@@ -1276,6 +1373,7 @@ nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
 
 // ── STAT COUNTERS ──
 function animCount(el,raw,dur){
+  if(!/^[\d.]/.test(raw)) return; // labels like "Top 15" stay as written
   const isFloat=raw.includes('.');
   const num=parseFloat(raw);
   const suf=raw.replace(/[\d.]/g,'');
@@ -1338,7 +1436,21 @@ function toggleCS(btn){
 }
 
 // ── CONTACT FORM ──
-function handleForm(e){ e.preventDefault(); const btn=document.getElementById('fbtn'); btn.textContent=window.LANGCUR==='ar'?'جارٍ الإرسال…':'Sending…'; btn.disabled=true; const data=new FormData(e.target); fetch('https://formspree.io/f/xpqgdlay',{method:'POST',body:data,headers:{Accept:'application/json'}}).then(r=>{ if(r.ok){ btn.textContent=window.LANGCUR==='ar'?'تم الإرسال! ✓':'Sent! ✓'; btn.style.background='linear-gradient(135deg,#22c55e,#16a34a)'; e.target.reset(); setTimeout(()=>{ btn.textContent=window.LANGCUR==='ar'?'أرسل الرسالة ←':'Send Message →'; btn.style.background=''; btn.disabled=false; },3200); } else { btn.textContent=window.LANGCUR==='ar'?'خطأ - حاول مجدداً':'Error - try again'; btn.style.background='linear-gradient(135deg,#ef4444,#dc2626)'; setTimeout(()=>{ btn.textContent=window.LANGCUR==='ar'?'أرسل الرسالة ←':'Send Message →'; btn.style.background=''; btn.disabled=false; },3000); } }).catch(()=>{ btn.textContent=window.LANGCUR==='ar'?'خطأ - حاول مجدداً':'Error - try again'; btn.style.background='linear-gradient(135deg,#ef4444,#dc2626)'; setTimeout(()=>{ btn.textContent=window.LANGCUR==='ar'?'أرسل الرسالة ←':'Send Message →'; btn.style.background=''; btn.disabled=false; },3000); }); }
+function handleForm(e){
+  e.preventDefault();
+  const ar=window.LANGCUR==='ar';
+  const btn=document.getElementById('fbtn'), status=document.getElementById('fstatus');
+  // show a result on the button, announce it to screen readers, then put the button back
+  const show=(label,bg,fg,ms)=>{
+    btn.textContent=label; status.textContent=label; btn.style.background=bg; btn.style.color=fg;
+    setTimeout(()=>{ btn.textContent=window.LANGCUR==='ar'?'أرسل الرسالة ←':'Send Message →'; btn.style.background=''; btn.style.color=''; btn.disabled=false; },ms);
+  };
+  const fail=()=>show(ar?'خطأ - حاول مجدداً':'Error - try again','#dc2626','#fff',3000);
+  btn.textContent=ar?'جارٍ الإرسال…':'Sending…'; btn.disabled=true;
+  fetch('https://formspree.io/f/xpqgdlay',{method:'POST',body:new FormData(e.target),headers:{Accept:'application/json'}})
+    .then(r=>{ if(!r.ok) return fail(); e.target.reset(); show(ar?'تم الإرسال! ✓':'Sent! ✓','#22c55e','#03130a',3200); })
+    .catch(fail);
+}
 
 // ── PHOTO FALLBACK ──
 const profileImg=document.getElementById('profile-img');
@@ -1356,29 +1468,6 @@ document.addEventListener('mousemove',e=>{
   document.querySelector('.orb1').style.transform=`translate(${x*.4}px,${y*.4}px)`;
   document.querySelector('.orb2').style.transform=`translate(${-x*.3}px,${-y*.3}px)`;
 });
-
-// ── LOADER ──
-window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('loader').classList.add('done'),350); });
-
-// ── CUSTOM CURSOR ──
-(function(){
-  if(!window.matchMedia('(hover:hover)').matches) return;
-  const dot=document.getElementById('cursor-dot');
-  const ring=document.getElementById('cursor-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{
-    mx=e.clientX; my=e.clientY;
-    dot.style.left=mx+'px'; dot.style.top=my+'px';
-  });
-  (function raf(){ rx+=(mx-rx)*.14; ry+=(my-ry)*.14; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(raf); })();
-  const hoverEls='a,button,.btn,.cert-card,.proj-card,.hl-card,.aw-card,.tl-content,.skill-cat';
-  document.querySelectorAll(hoverEls).forEach(el=>{
-    el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
-  });
-  document.addEventListener('mouseleave',()=>{ dot.style.opacity='0'; ring.style.opacity='0'; });
-  document.addEventListener('mouseenter',()=>{ dot.style.opacity='1'; ring.style.opacity='1'; });
-})();
 
 // ── PHOTO 3D TILT ──
 (function(){
@@ -1399,67 +1488,91 @@ window.addEventListener('load',()=>{ setTimeout(()=>document.getElementById('loa
 // ── ARABIC / ENGLISH TOGGLE ──
 // English lives in the DOM and is cached into data-en on first swap, so only
 // Arabic strings are stored here. null in a list = keep that element in English.
-window.LANGCUR = localStorage.getItem('lang') || 'en';
+// Lists follow DOM order: reordering or adding cards means updating them here too.
+// ?lang=ar (or en) picks the language for that visit, so an Arabic link can be shared.
+const _qLang = new URLSearchParams(location.search).get('lang');
+window.LANGCUR = (_qLang==='ar'||_qLang==='en') ? _qLang : (localStorage.getItem('lang') || 'en');
 
 const AR_HTML = {
   '.skip-link': 'تخطَّ إلى المحتوى',
-  'a.coop-banner': '<span class="coop-dot"></span> أبحث عن تدريب تعاوني في هندسة البرمجيات · متاح الآن · جدة، السعودية ←',
+  'a.coop-banner': '<span class="coop-dot"></span> مهندس برمجيات في مايكروموبيليتي · جدة، السعودية ←',
   '.hero-greeting': 'أهلاً، أنا',
   '.hero-name': 'مالك <span>النجار</span>',
-  '.hero-desc': 'أحوّل البيانات الخام إلى خطوط معالجة موثوقة: أبني <strong>أنظمة ETL/ELT</strong> و<strong>بنية سحابية على AWS</strong> و<strong>طبقات استيعاب بيانات إنترنت الأشياء</strong> تصل فعلاً إلى الإنتاج. خريج جامعة الأعمال والتكنولوجيا (معدل <strong>4.97/5.0</strong> بمرتبة الشرف الأولى) · أكثر من 10 شهادات احترافية · ثنائي اللغة.',
+  '.hero-role': '<span class="tw">مهندس برمجيات</span> <span>· تطوير متكامل وبيانات</span>',
+  '.hero-desc': 'أبني برمجيات إنتاجية من البداية إلى النهاية. في مايكروموبيليتي أطوّر منصة الحجز وتسجيل الحضور ونقاط البيع التي تدير رحلاتها في جدة، على <strong>PostgreSQL</strong> و<strong>Supabase</strong> و<strong>Cloudflare</strong>. وتمتد مشاريعي إلى <strong>خطوط البيانات</strong> و<strong>تعلم الآلة</strong> و<strong>إنترنت الأشياء</strong>. خريج جامعة الأعمال والتكنولوجيا (معدل <strong>4.97/5.0</strong> بمرتبة الشرف الأولى) · معتمد من AWS · ثنائي اللغة.',
+  '.cs-fig figcaption': 'تبويب السلوك على نموذج العرض الحي',
+  '.sk-also-label': 'تدرّبت أيضاً على (ضمن مسارات الشهادات)',
+  '.vol-title': 'التطوع',
   '.contact-info h3': 'جاهزون لبناء شيء ذي أثر؟',
-  '.contact-info p': 'أبحث بنشاط عن فرصة تدريب تعاوني في هندسة البرمجيات. خريج UBT بمرتبة الشرف الأولى، ثنائي اللغة، بأكثر من 10 شهادات، ومتاح الآن.',
+  '.contact-info p': 'أعمل مهندس برمجيات في مايكروموبيليتي بجدة، وأستمتع ببناء أنظمة يعتمد عليها الناس كل يوم. تواصل معي بخصوص المشاريع أو التعاون أو الفرص الوظيفية.',
   '.form-box h3': 'أرسل رسالة',
   '.form-box .sub': 'سأرد عليك خلال 24 ساعة.',
   '#fbtn': 'أرسل الرسالة ←',
   '.footer-copy': 'صمّمه وبناه <span>مالك النجار</span> · 2026',
-  '.footer-built': 'أبحث عن تدريب تعاوني في هندسة البرمجيات · جدة، السعودية'
+  '.footer-built': 'مهندس برمجيات · جدة، السعودية'
 };
 
 const AR_LIST = {
-  '.nav-links a[data-sec]': ['عني','الخبرة','المهارات','المشاريع','الشهادات','الجوائز','تواصل'],
-  '.sec-tag': ['عني','الخبرة','التقنيات','المشاريع','الشهادات','الإنجازات','تواصل'],
-  '.sec-title': ['من <span>أنا</span>','الخبرة و<span>القيادة</span>','ترسانتي <span>التقنية</span>','ماذا <span>بنيت</span>','الشهادات <span>الاحترافية</span>','الإنجازات و<span>الأثر</span>','لنبقَ على <span>تواصل</span>'],
-  '.sec-sub': ['مطوّر شغوف عند ملتقى البيانات والهندسة','أدوار قدتُ فيها وبنيتُ وأنجزت','الأدوات والتقنيات التي أعمل بها يومياً','أنظمة حقيقية تحل مشكلات حقيقية','اعتمادات معترف بها في السحابة والبيانات والإدارة','ما وراء الكود: منافسة وقيادة ومساهمة','متاح لتدريب تعاوني وفرص مميزة'],
+  '.nav-links a[data-sec]': ['عني','الخبرة','المشاريع','المهارات','الشهادات','الجوائز','تواصل'],
+  '.sec-tag': ['عني','الخبرة','المشاريع','التقنيات','الشهادات','الإنجازات','تواصل'],
+  '.sec-title': ['من <span>أنا</span>','الخبرة و<span>القيادة</span>','ماذا <span>بنيت</span>','ترسانتي <span>التقنية</span>','الشهادات <span>الاحترافية</span>','الإنجازات و<span>الأثر</span>','لنبقَ على <span>تواصل</span>'],
+  '.sec-sub': ['مطوّر عند ملتقى البرمجيات والبيانات','أدوار قدتُ فيها وبنيتُ وأنجزت','أنظمة حقيقية تحل مشكلات حقيقية','ما أستخدمه في الإنتاج وفي مشاريعي','اعتمادات معترف بها في السحابة والبيانات والإدارة','ما وراء الكود: منافسة وقيادة ومساهمة','لديك مشروع أو فرصة أو سؤال؟ يسعدني تواصلك.'],
   '#about .about-text > p': [
-    'أنا <strong>خريج هندسة برمجيات</strong> من جامعة الأعمال والتكنولوجيا (UBT) في جدة، المملكة العربية السعودية، تخرجت بمرتبة الشرف الأولى وبمعدل <strong>4.97/5.0</strong>.',
-    'أتخصص في <strong>خطوط معالجة البيانات ETL/ELT</strong> و<strong>البنية السحابية على AWS</strong> و<strong>أنظمة استيعاب بيانات إنترنت الأشياء</strong>. تمتد مشاريعي من حساسات الحافة وصولاً إلى لوحات التحليلات السحابية وتقارير ذكاء الأعمال.',
-    'ثنائي اللغة (عربي/إنجليزي، IELTS 7.5)، وعضو فاعل في فرق <strong>أجايل</strong>، وقائد مجتمع تقني عبر GDG وACM، مدفوع بحلول تعتمد على البيانات بما يتماشى مع <strong>رؤية السعودية 2030</strong>.'
+    'أنا <strong>مهندس برمجيات في مايكروموبيليتي</strong> بجدة، أبني وأدير المنصة التي تقوم عليها رحلات الشركة الجماعية: حجز العملاء وتسجيل الحضور ونقاط البيع والتقارير، ويستخدمها الموظفون والدرّاجون في كل ليلة رحلات.',
+    'تخرجت في <strong>هندسة البرمجيات</strong> من جامعة الأعمال والتكنولوجيا (UBT) بمرتبة الشرف الأولى وبمعدل <strong>4.97/5.0</strong>. تمتد مشاريعي من <strong>استشعار إنترنت الأشياء والذكاء الطرفي</strong> إلى <strong>خطوط جودة البيانات</strong> و<strong>التنبؤ بتعلم الآلة</strong>، وأحمل شهادتَي AWS في هندسة البيانات وهندسة الحلول.',
+    'ثنائي اللغة (عربي/إنجليزي، IELTS 7.5)، وقائد مجتمع تقني عبر GDG وACM، ومدفوع ببرمجيات تحل مشكلات حقيقية بما يتماشى مع <strong>رؤية السعودية 2030</strong>.'
   ],
-  '.hl-title': ['جامعة UBT، جدة','معتمد من AWS','ثنائي اللغة','كاوست للذكاء الاصطناعي'],
-  '.hl-desc': ['بكالوريوس هندسة برمجيات · معدل 4.97/5.0',null,'عربي · إنجليزي (IELTS 7.5)','تخصص متقدم في الذكاء الاصطناعي · 2025'],
-  '.tl-live': ['مستمر حالياً'],
-  '.exp-title': ['قائد فريق التواصل المجتمعي','مسؤول حماية الحقوق','نائب الرئيس وأمين الصندوق'],
-  '.exp-org': ['مجموعات مطوري Google في الجامعات · UBT','اللجنة المنظمة المحلية للاتحاد الآسيوي · السعودية','فرع ACM الطلابي · UBT'],
+  '.hl-title': ['مايكروموبيليتي','جامعة UBT، جدة','معتمد من AWS','ثنائي اللغة'],
+  '.hl-desc': ['مهندس برمجيات · منذ يونيو 2026','بكالوريوس هندسة برمجيات · معدل 4.97/5.0',null,'عربي · إنجليزي (IELTS 7.5)'],
+  '.tl-live': ['حالياً','حالياً'],
+  '.exp-title': ['مهندس برمجيات','مسؤول حماية الحقوق','قائد فريق التواصل المجتمعي','نائب الرئيس وأمين الصندوق'],
+  '.exp-org': ['مايكروموبيليتي · جدة، السعودية','اللجنة المنظمة المحلية للاتحاد الآسيوي · السعودية','مجموعات مطوري Google في الجامعات · UBT','فرع ACM الطلابي · UBT'],
   '.exp-bullets li': [
-    'قدت فريق تواصل من 5 أعضاء نظّم ورشاً في السحابة والبيانات والذكاء الاصطناعي داخل الحرم الجامعي',
-    'وصلنا لأكثر من 100 طالب عبر الجلسات، ونما الحضور في كل جلسة بأكثر من 40%',
-    'نسّقت مع قيادة GDG استراتيجية الفعاليات واستقطاب المتحدثين',
+    'أبني وأدير منصة الحجز والتشغيل للشركة: حجز العملاء بتسجيل دخول Google وApple، وتسجيل حضور الموظفين، ونقاط البيع، والمخزون، والاسترداد',
+    'أصمم الخلفية على PostgreSQL وSupabase: أمان على مستوى الصفوف لكل جدول، ودوال خاصة بالموظفين، ومزامنة لحظية بين أجهزتهم، وأكثر من 85 ترحيلاً مُرقّماً لقاعدة البيانات',
+    'أطلق تسجيل الدراجات عبر NFC وبطاقات Apple Wallet وواجهة بعشر لغات تدعم العربية والأردية من اليمين إلى اليسار',
+    'أحمي كل إصدار باختبارات Playwright شاملة وفحوص CI للجودة والأنواع وتطابق الترجمات',
     'حماية الملكية الفكرية وحقوق البث للاتحاد الآسيوي خلال نهائيات دوري أبطال آسيا للنخبة 2026',
     'مراقبة الامتثال المباشر عبر عدة ملاعب في مباريات نخبة الأندية القارية',
     'سبق أن عملت عضواً في حماية العلامة التجارية لكأس آسيا تحت 23 (يناير 2026)',
+    'قدت فريق تواصل من 5 أعضاء نظّم ورشاً في السحابة والبيانات والذكاء الاصطناعي داخل الحرم الجامعي',
+    'وصلنا لأكثر من 100 طالب عبر الجلسات، ونما الحضور في كل جلسة بأكثر من 40%',
+    'نسّقت مع قيادة GDG استراتيجية الفعاليات واستقطاب المتحدثين',
     'أدرت ميزانية سنوية قدرها 5,000 ريال دون أي تجاوز طوال العام',
     'قدمنا 3-5 فعاليات تقنية في كل دورة: هاكاثونات وورش سحابية ومسابقات برمجة',
     'أكثر من 30 مشاركاً في كل فعالية مع نمو العضوية النشطة على مدار العام'
   ],
-  '.sk-title': ['السحابة وهندسة البيانات','اللغات وقواعد البيانات','ذكاء الأعمال والتحليلات','إنترنت الأشياء والأنظمة'],
-  '.proj-type': ['نظام أرفف تجزئة ذكي','منصة حجز دراجات وفعاليات · تطبيق ويب تقدمي','منصة جودة البيانات والتحقق','كرسي متحرك ذاتي القيادة · أفيثون 2025 (هيئة الطيران المدني)','منصة سياحة مغامرات ذكية'],
-  '.proj-award': ['مشروع تخرج 2025-26','مباشر وقيد التشغيل','متأهل لنهائيات الإحصاء','أفضل 15 / +500 فريق','عسير تبتكر 2025'],
+  '.proj-award': ['يعمل في الإنتاج','مشروع تخرج 2025-26','متأهل لنهائيات الإحصاء','أفضل 15 / +500 فريق','عسير تبتكر 2025'],
+  '.proj-priv': ['مستودع خاص','مستودع خاص','مستودع خاص'],
+  '.proj-type': ['منصة حجز وتسجيل حضور ونقاط بيع · تطبيق ويب تقدمي','نظام أرفف تجزئة ذكي','منصة جودة البيانات والتحقق','كرسي متحرك ذاتي القيادة وتطبيق مساعد سفر · أفيثون 2025 (هيئة الطيران المدني)','منصة سياحة مغامرات ذكية'],
   '.proj-desc': [
+    'المنصة الإنتاجية التي تدير رحلات مايكروموبيليتي الجماعية وفعالياتها في جدة. يحجز الدرّاجون بعشر لغات مع تسجيل الدخول عبر Google أو Apple ويحصلون على بطاقات Apple Wallet، ويدير الموظفون تسجيل الحضور (بما فيه وسوم NFC على الدراجات) ونقاط البيع والمخزون والاسترداد والتقارير من هواتفهم مع مزامنة لحظية. قاعدة PostgreSQL على Supabase بأمان على مستوى الصفوف، منشورة على Cloudflare، مع اختبارات Playwright شاملة في CI.',
     'رف تجزئة ذكي ثنائي الاستشعار للمتاجر الصغيرة: خلية وزن وكاميرا على ESP32-S3 تنشران الأحداث عبر MQTT إلى خادم محلي FastAPI مع PostgreSQL (29 نقطة REST مع WebSocket مباشر). يتحقق نموذج YOLOv12n من كل حدث وزن عبر مقطع الكاميرا، وتتنبأ نماذج LightGBM الكمّية (q10/q50/q90) بالطلب لكل صنف، ويعدّل محرك من خمس قواعد الأسعار ضمن نطاق ±15% مع سجل تدقيق كامل. دون أي بيانات شخصية، ويعمل دون اتصال، مع 143 اختبار تكامل ناجحاً وبكلفة 80 ريالاً للرف.',
-    'تطبيق ويب تقدمي متكامل يدير عملية تأجير دراجات حقيقية في جدة. إدارة طوابير لحظية عبر Supabase (Postgres مع اشتراكات مباشرة وRLS)، وحسابات عملاء بتسجيل دخول OAuth، وفعاليات مجتمعية بالدعوة فقط مع سير اعتماد للموظفين، وبطاقات Apple Wallet، ومخزون ونقاط بيع بتقسيم نقدي/بطاقة، واسترداد، وعامل خدمة يعمل دون اتصال. ثلاثي اللغة (عربي/إنجليزي/إسباني).',
     'حارس جودة لحظي لمسوح الهيئة العامة للإحصاء الميدانية: إضافة متصفح تكتشف التناقضات الدلالية (شاب عمره 19 سنة "مدير عام"، دخل مرتفع دون عمل) أثناء الإدخال وقبل إرسال الاستمارة. ثلاث طبقات متصاعدة: تحقق هيكلي عبر Great Expectations، وحارس إحصائي One-Class SVM، ونموذج لغوي محلي يدعم العربية (Qwen 2.5 عبر Ollama) يشرح سبب كل تعارض. ارتفع الاكتشاف من 23% إلى 87.5% (F1 = 0.829 على بيانات حقيقية من مسح القوى العاملة) بدقة تتجاوز 97%، دون خروج أي بيانات من الشبكة الحكومية.',
     'كرسي متحرك ذكي ذاتي القيادة مع تطبيق مساعد سفر يمنح ذوي الإعاقة استقلالية كاملة في المطار: خرائط ROS مع LiDAR وكاميرا عمق RealSense ومشفرات العجلات مدموجة على Jetson Nano بذكاء اصطناعي طرفي، مع توجيه ذكي ومراقبة طوارئ وتواصل متكيف للصم والمكفوفين، ويُحجز مباشرة من مواقع شركات الطيران. أمان بالتصميم: TLS 1.3 أثناء النقل وAES-256 عند التخزين وMFA وحذف تلقائي للبيانات الشخصية بعد الصعود (بمواءمة ECC-2 وISO 27001). ضمن أفضل 15 من بين أكثر من 500 فريق في أفيثون 2025.',
     'منصة سياحة مغامرات تجعل مسارات عسير الجبلية آمنة وقابلة للحجز: تطبيق Flutter مع Mapbox يشمل حجز الرحلات، ونظام إنذار مبكر بالذكاء الاصطناعي وإنترنت الأشياء (AWS IoT Core وSageMaker) يراقب حالة المسارات، وشبكة مرشدين محليين معتمدين، و"جواز قمم عسير" الرقمي يُختم عند إكمال كل مسار. وعبر خاصية "دليل القمم" يصوّر المرشد المعتمد المسارات غير الموثقة فيولّد الذكاء الاصطناعي المسار الأمثل ونقاط الاستراحة والخطر والخدمات لمراجعة فريق مختص. قُدم لهيئة تطوير منطقة عسير في هاكاثون عسير تبتكر 2025.'
   ],
+  // architecture strips: AUJ, Sadeed, Tayseer, Masra (5 stages each)
+  '.flow-role': [
+    'الحافة','النقل','الخادم المحلي','تعلم الآلة','لوحة التحكم',
+    'الالتقاط','الطبقة 1','الطبقة 2','الطبقة 3','النتيجة',
+    'الاستشعار','ذكاء طرفي','التنقل','المساعدة','الأمان',
+    'التطبيق','الخادم','الحساسات','تعلم الآلة','المرشدون'
+  ],
+  '.flow-node': [
+    'خلية وزن وكاميرا · ESP32-S3','أحداث MQTT · مقاطع HTTP',null,'قواعد التسعير · YOLOv12n · LightGBM','لوحة React · WebSocket مباشر',
+    'إضافة متصفح',null,null,null,'الاكتشاف من 23% إلى 87.5%',
+    'مشفرات العجلات · LiDAR · RealSense',null,'تنقل ذاتي','تطبيق مساعد السفر',null,
+    null,null,null,null,'فيديو المرشد وGPS إلى مسار'
+  ],
   '.cs-label': Array(5).fill(['التحدي','الحل','الأثر']).flat(),
   '.cs-text': [
+    'استبدال الطوابير الورقية في عملية تأجير حقيقية: الحجوزات والإقرارات وتسجيل الحضور والمدفوعات في ليالي الرحلات المزدحمة، عبر عدة هواتف للموظفين في الوقت نفسه، مع حماية صارمة لبيانات العملاء.',
+    'تطبيق ويب تقدمي واحد بلغة JavaScript للدرّاجين والموظفين على Supabase: قاعدة Postgres بأمان على مستوى الصفوف ودوال خاصة بالموظفين، وتحديثات لحظية بدلاً من الاستطلاع الدوري، وعامل خدمة للتثبيت والعمل دون اتصال. توقّع دوال Cloudflare Pages بطاقات Apple Wallet، ويمر كل تغيير بفحوص الجودة والأنواع والترجمة وباختبارات Playwright تحاكي قاعدة البيانات فلا تلمس بيانات الإنتاج أبداً.',
+    'يعمل في الإنتاج في كل ليلة رحلات: يسجّل الموظفون حضور الدرّاجين ويخصصون الدراجات ويستلمون الدفع نقداً أو بالبطاقة من هواتفهم، بينما يدير الدرّاجون حجوزاتهم بأنفسهم بعشر لغات، منها العربية والأردية من اليمين إلى اليسار.',
     'منح متاجر التجزئة الصغيرة في السعودية رؤية لحظية للرف: مخزون حي وسلوك عملاء وتنبؤ بالطلب وتسعير ديناميكي، على عتاد شائع، دون إنترنت، ودون أي بيانات تعريف شخصية (متوافق مع نظام حماية البيانات الشخصية) وبميزانية 80 ريالاً للرف.',
     'كل رف يجمع خلية وزن بتردد 10 هرتز مع آلة حالات رباعية وكاميرا: الأحداث المؤكدة تُنشر عبر MQTT بينما يُرفع مقطع من 8 إطارات عبر HTTP. يتحقق الخادم المحلي (FastAPI مع PostgreSQL 16) من الوزن عبر نموذج YOLOv12n مضبوط مع احتياطي فرق الإطارات، ويتتبع سلوك الممر بـ ByteTrack بمعرفات مؤقتة فقط، ويتنبأ بالطلب بنماذج LightGBM الكمّية المدربة على بيانات M5، ويعيد التسعير يومياً عبر خمس قواعد بأسبقية صارمة ضمن نطاق ±15%.',
     'زمن من الالتقاط إلى اللوحة بثوانٍ، وكل تغيير سعر مسجل للتدقيق، وأي تعارض بين الحساسين يُرفع تنبيه تضارب، و143 اختبار تكامل ناجحاً على قاعدة PostgreSQL حقيقية. كل البيانات تبقى داخل المتجر: لا سحابة ولا بيانات شخصية.',
-    'بناء نظام إنتاجي لعملية تأجير دراجات حقيقية: تحديثات طوابير لحظية عبر أجهزة الموظفين، وإدارة مخزون، ونقاط بيع كاملة، وكل ذلك قابل للتثبيت على الجوال مع مرونة دون اتصال.',
-    'Supabase Postgres باشتراكات مباشرة بدلاً من الاستطلاع الدوري، وعامل خدمة يتيح التثبيت والعمل دون اتصال، وفصل كامل بين واجهتي الموظفين والعملاء، ومحرك مبيعات يدعم التقسيم النقدي/بالبطاقة والخصومات والإضافات والاسترداد بسجل تدقيق.',
-    'يعمل في الإنتاج: استبدل الطوابير الورقية لعملية تأجير حقيقية، ويتعامل مع حجوزات متزامنة عبر أجهزة عدة دون توقف مع مزامنة مخزون لحظية.',
     'في الاستبيانات الميدانية تظهر تناقضات دلالية لا تكتشفها القواعد الجامدة: شاب عمره 19 سنة مسماه "مدير عام"، ومستجيب بلا عمل بدخل 12,000 ريال شهرياً، وخبرة تتجاوز عمر صاحبها. تصل السجلات غير الموثوقة إلى مستودعات البيانات ولا يُكتشف التعارض إلا بعد فوات الأوان وبتكلفة عالية.',
     'إضافة متصفح تتحقق من كل سجل لحظياً عبر ثلاث طبقات متصاعدة: تحقق هيكلي عبر Great Expectations، وحارس إحصائي One-Class SVM يمرر السجلات المشبوهة فقط بتكلفة شبه صفرية، ونموذج لغوي محلي قابل للتبديل (Qwen 2.5 / Mistral 7B عبر Ollama بأسلوب Few-Shot وبدعم عربي كامل) يحكم دلالياً ويشرح سبب التعارض. طوابير Redis تتيح معالجة آلاف الاستمارات يومياً، وREST API مفتوح يتكامل مع أي منصة استبيان دون تعديل أنظمة الجهة.',
     'ارتفع اكتشاف الشذوذ من 23% بالقواعد وحدها (F1 = 0.374) إلى 87.5% (F1 = 0.829 على سجلات حقيقية من مسح القوى العاملة) بدقة تتجاوز 97% وأقل من 5 إنذارات كاذبة. بيانات المواطنين لا تغادر الشبكة الحكومية، مع التأهل لنهائيات هاكاثون الهيئة الوطني.',
@@ -1470,23 +1583,19 @@ const AR_LIST = {
     'بصفتي مطور الذكاء الاصطناعي في فريق من خمسة أعضاء: تطبيق Flutter مع Mapbox بخلفية Node.js/Express وPostgreSQL، ونماذج Python/FastAPI وscikit-learn على AWS SageMaker. حساسات AWS IoT Core تغذي نظام الإنذار المبكر بحالة المسار، وخاصية "دليل القمم" تحوّل فيديو المرشد وموقعه الجغرافي إلى مسار مقترح بنقاط الاستراحة والخطر والخدمات لمراجعة المختصين، مع تنظيم الدخول بنظام QR ومدفوعات Stripe وطقس OpenWeatherMap.',
     'خطة إطلاق من ثلاث مراحل (تجربة في أبها، ثم توسع إقليمي في عسير، ثم تكامل وطني مع روح السعودية) تستهدف أكثر من 100 فرصة عمل للمرشدين المحليين خلال ثلاث سنوات، قُدمت لهيئة تطوير منطقة عسير في هاكاثون عسير تبتكر 2025، في سوق عالمي لسياحة المغامرات يُتوقع أن يبلغ 2 تريليون دولار بحلول 2032.'
   ],
-  '.cert-group-label': ['خدمات أمازون السحابية','احترافية وإدارية','هندسة البيانات والتحليلات'],
-  '.aw-title': [
-    'أفضل 15 على مستوى المملكة: أفيثون 2025','حماية الحقوق: نهائيات دوري أبطال آسيا للنخبة','حماية العلامة: كأس آسيا تحت 23','المركز الثاني: بطولة إدارة المشاريع','قائد فريق التواصل: GDG On Campus','نائب الرئيس وأمين الصندوق: فرع ACM','تخصص الذكاء الاصطناعي المتقدم من كاوست','متطوع: مؤسسة Falling Walls','متطوع: مؤتمر APCG 2026'
-  ],
-  '.aw-org': ['الهيئة العامة للطيران المدني','اللجنة المنظمة المحلية للاتحاد الآسيوي · السعودية','اللجنة المنظمة المحلية للاتحاد الآسيوي · السعودية','شركة Beyond · السعودية','مجموعات مطوري Google · UBT','فرع ACM الطلابي في UBT','جامعة الملك عبدالله للعلوم والتقنية','مؤسسة Falling Walls','UBT · جدة، السعودية'],
+  '.sk-title': ['الويب والخلفية','البيانات وتعلم الآلة','السحابة وDevOps والاختبار','إنترنت الأشياء والحافة'],
+  '.cert-group-label': ['خدمات أمازون السحابية','هندسة البيانات والتحليلات','احترافية وإدارية'],
+  '.aw-title': ['أفضل 15 على مستوى المملكة: أفيثون 2025','متأهل للنهائيات الوطنية: هاكاثون الهيئة العامة للإحصاء','المركز الثاني: بطولة إدارة المشاريع'],
+  '.aw-org': ['الهيئة العامة للطيران المدني','الهيئة العامة للإحصاء','شركة Beyond · السعودية'],
   '.aw-desc': [
     'ضمن أفضل 15 من بين أكثر من 500 فريق بمشروع تيسير، كرسي متحرك ذاتي القيادة صُمم بناءً على بحث ميداني في مطار الملك عبدالعزيز بجدة.',
-    'حماية الملكية الفكرية وحقوق البث للاتحاد الآسيوي في نخبة كرة القدم القارية: دور نشط عبر عدة ملاعب.',
-    'مراقبة امتثال البث المباشر عبر أكثر من 3 ملاعب وتطبيق بروتوكولات العلامات والرعاية تحت ضغط لحظي.',
-    'الثاني من بين أكثر من 30 فريقاً، بأعلى الدرجات في التخطيط وإدارة المخاطر والتواصل مع أصحاب المصلحة.',
-    'قيادة فريق من 5 أعضاء لتنظيم ورش سحابة وبيانات لأكثر من 100 طالب (30-50 لكل جلسة) مع نمو حضور تجاوز 40%.',
-    'إدارة ميزانية 5,000 ريال وتقديم 3-5 فعاليات تقنية في كل دورة (أكثر من 30 مشاركاً لكل منها) من هاكاثونات وورش سحابية.',
-    'إكمال تخصص مكثف في تعلم الآلة والتعلم العميق وبايثون في إحدى أعرق الجامعات البحثية بالمنطقة.',
-    'دعم فعالية الابتكار العالمية التي تربط الباحثين والمبتكرين لكسر الجدران في العلوم والمجتمع.',
-    'المشاركة في تنظيم ودعم مؤتمر APCG 2026 الدولي المستضاف في جامعة الأعمال والتكنولوجيا.'
+    'التأهل للنهائيات الوطنية بمشروع سديد، حارس جودة بيانات لحظي رفع اكتشاف الشذوذ من 23% إلى 87.5% على بيانات مسح القوى العاملة.',
+    'الثاني من بين أكثر من 30 فريقاً، بأعلى الدرجات في التخطيط وإدارة المخاطر والتواصل مع أصحاب المصلحة.'
   ],
-  '.stat-lbl': ['المعدل / 5.0','شهادة احترافية','مشروع منجز','طالب مستفيد'],
+  '.vol-name': ['مؤسسة Falling Walls','مؤتمر APCG 2026'],
+  '.vol-desc': ['فعالية ابتكار عالمية','مؤتمر دولي استضافته جامعة الأعمال والتكنولوجيا'],
+  '.stat-num': [null,null,null,'أفضل 15'],
+  '.stat-lbl': ['المعدل / 5.0','شهادة احترافية','مشروع منجز','أفيثون · من أصل 500+ فريق'],
   '.fg label': ['الاسم','البريد الإلكتروني','الرسالة']
 };
 
@@ -1496,7 +1605,7 @@ const AR_TEXT = {
   '.hero-btns .btn-s': ['تواصل معي'],
   '.hero-btns .btn-g': ['تحميل السيرة الذاتية'],
   '.hero-social .soc': [null,null,'البريد'],
-  '.cs-toggle': ['دراسة حالة','دراسة حالة','دراسة حالة','دراسة حالة','دراسة حالة'],
+  '.cs-toggle': Array(5).fill('دراسة حالة'),
   '.proj-link': ['معاينة مباشرة ↗','عرض على GitHub ↗']
 };
 
@@ -1515,18 +1624,12 @@ function applyLang(){
   for(const sel in AR_HTML){ const el=document.querySelector(sel); if(el)swapHtml(el,AR_HTML[sel]); }
   for(const sel in AR_LIST){ document.querySelectorAll(sel).forEach((el,i)=>{ const v=AR_LIST[sel][i]; if(v!==undefined&&v!==null)swapHtml(el,v); }); }
   for(const sel in AR_TEXT){ document.querySelectorAll(sel).forEach((el,i)=>{ const v=AR_TEXT[sel][i]; if(v===undefined||v===null)return; const t=_lastText(el); if(!t)return; if(el.dataset.entxt===undefined)el.dataset.entxt=t.nodeValue; t.nodeValue = ar?' '+v+' ':el.dataset.entxt; }); }
-  // "Private Repo" chips (inline-styled spans without a dedicated class)
-  document.querySelectorAll('.proj-top span').forEach(sp=>{
-    if(sp.dataset.pr||sp.textContent.includes('Private Repo')){ sp.dataset.pr='1'; swapHtml(sp,'مستودع خاص'); }
-  });
   // form placeholders
   [['f-name','اسمك'],['f-msg','حدثني عن الفرصة...']].forEach(([id,v])=>{
     const el=document.getElementById(id); if(!el)return;
     if(el.dataset.enph===undefined)el.dataset.enph=el.getAttribute('placeholder');
     el.setAttribute('placeholder',ar?v:el.dataset.enph);
   });
-  // typewriter roles
-  roles = ar?ROLES_AR:ROLES_EN; ri=0; ci=0; del=false;
   const lb=document.getElementById('langBtn');
   if(lb) lb.setAttribute('aria-label', ar?'Switch to English':'التبديل إلى العربية');
 }
