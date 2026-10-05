@@ -4,3 +4,4 @@
 wrangler.jsonc
 og-banner.html
 .DS_Store
+.gitignore
